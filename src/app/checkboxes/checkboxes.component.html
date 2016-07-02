@@ -1,0 +1,7 @@
+<fieldset>
+  <h4>Checkboxes</h4>
+  <button (click)=toggle()>toggle</button>
+  <label *ngFor="let value of values">
+  <input type="checkbox" [(ngModel)]="value.current"> {{value.name}}
+</label>
+</fieldset>

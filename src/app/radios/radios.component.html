@@ -1,0 +1,6 @@
+<fieldset>
+  <h4>Radios</h4>
+  <label *ngFor="let value of values.getinputValues()">
+  <input type="radio" name="radio" (click)="values.setSingleValue(value.value)" [checked]="value.value === values.getOutputValues()[0]"> {{value.name}}
+</label>
+</fieldset>
