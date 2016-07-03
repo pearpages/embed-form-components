@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormService } from '../form.service';
 import { FormValue } from '../form-value';
 import { Fieldset } from '../fieldset';
@@ -10,10 +10,12 @@ import { Fieldset } from '../fieldset';
   styleUrls: ['checkboxes.component.css']
 })
 export class CheckboxesComponent implements OnInit {
+  @Input() myData;
 
   values;
 
   constructor(private formService: FormService) {
+
     let fieldset = new Fieldset([
       new FormValue('value1','name1',false,false),
       new FormValue('value2','name2',false,true),
@@ -25,6 +27,7 @@ export class CheckboxesComponent implements OnInit {
   }
 
   ngOnInit() {  
+    console.log(this.myData);
   }
 
   protected allChecked() {

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CheckboxesComponent } from './checkboxes/checkboxes.component';
 import { RadiosComponent } from './radios/radios.component';
+import { SelectComponent } from './select/select.component';
 import { FormService } from './form.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { FormService } from './form.service';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [CheckboxesComponent,RadiosComponent],
+  directives: [CheckboxesComponent,RadiosComponent,SelectComponent],
   providers: [FormService]
 })
 export class AppComponent {
@@ -26,11 +27,19 @@ export class AppComponent {
     this.formService.getValue('myRadios').reset();
   }
 
+  resetSelect() {
+    this.formService.getValue('mySelect').reset();
+  }
+
   getCheckboxes() {
     return this.formService.getValue('myCheckboxes').getOutputValues();
   }
 
   getRadios() {
     return this.formService.getValue('myRadios').getOutputValues();
+  }
+
+  getSelect() {
+    return this.formService.getValue('mySelect').getOutputValues();
   }
 }

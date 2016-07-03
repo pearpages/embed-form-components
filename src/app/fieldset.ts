@@ -42,7 +42,7 @@ export class Fieldset {
 
     private getMultiValues(): any[] {
         return this.getinputValues().filter((i) => {
-            return i.current === true
+            return i.current !== false;
         }).map((i) => {
             return i.value;
         });

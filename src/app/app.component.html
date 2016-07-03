@@ -3,13 +3,18 @@
 </h1>
 
 <radios></radios>
-<checkboxes></checkboxes>
+<checkboxes [myData]='{"message":"hellow"}'></checkboxes>
+<my-select></my-select>
 
 <button (click)="resetCheckboxes()">reset checkboxes</button>
 <button (click)="resetRadios()">reset radios</button>
+<button (click)="resetSelect()">reset select</button>
 
 <h4>Checkboxes Values</h4>
 {{getCheckboxes()}}
 
 <h4>Radios values</h4>
 {{getRadios()}}
+
+<h4>MultiSelect</h4>
+{{getSelect()}}
