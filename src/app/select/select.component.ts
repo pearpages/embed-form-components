@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormService } from '../form.service';
 import { Fieldset } from '../fieldset';
 import { FormValue } from '../form-value'
@@ -11,16 +11,18 @@ import { FormValue } from '../form-value'
 })
 export class SelectComponent implements OnInit {
 
+  @Input() multiple: boolean;
+  @Input() id: string;
   values: Fieldset;
   current: string;
 
   constructor(private formService: FormService) {
-    this.formService.setValue('mySelect',new Fieldset([new FormValue('value1','name1',false,'value1'),new FormValue('value2','name2',false,false),new FormValue('value3','name3',false,false)],true));
-    this.values = this.formService.getValue('mySelect');    
+    
   }
 
   ngOnInit() {
-
+    this.formService.setValue(this.id, new Fieldset([new FormValue('value1', 'name1', false, 'value1'), new FormValue('value2', 'name2', false, false), new FormValue('value3', 'name3', false, false)], true));
+    this.values = this.formService.getValue(this.id);
   }
 
   toggle() {
@@ -37,16 +39,16 @@ export class SelectComponent implements OnInit {
   }
 
   areAllSelected() {
-    return this.values.getinputValues().reduce((previous,current) => {
-        return (previous && (current.value === current.current));
-    },true);
+    return this.values.getinputValues().reduce((previous, current) => {
+      return (previous && (current.value === current.current));
+    }, true);
   }
 
   updateValues() {
     let values = this.values.getinputValues();
-    values.forEach((val) => {
-      val.current = (this.current.indexOf(val.value) !== -1) ? val.value : false;
-    });
+      values.forEach((val) => {
+        val.current = (this.current.indexOf(val.value) !== -1) ? val.value : false;
+      });
   }
-  
+
 }

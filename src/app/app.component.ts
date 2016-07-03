@@ -27,8 +27,8 @@ export class AppComponent {
     this.formService.getValue('myRadios').reset();
   }
 
-  resetSelect() {
-    this.formService.getValue('mySelect').reset();
+  resetSelect(value) {
+    this.formService.getValue(value).reset();
   }
 
   getCheckboxes() {
@@ -39,7 +39,7 @@ export class AppComponent {
     return this.formService.getValue('myRadios').getOutputValues();
   }
 
-  getSelect() {
-    return this.formService.getValue('mySelect').getOutputValues();
+  getSelect(value) {
+    return this.formService.getValue(value).getOutputValues();
   }
 }

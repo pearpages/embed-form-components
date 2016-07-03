@@ -1,7 +1,7 @@
 <fieldset>
   <h4>Select</h4>
   <button (click)="toggle()">toggle</button>
-  <select multiple [(ngModel)]="current" (click)=updateValues()>
+  <select [multiple]="multiple" [(ngModel)]="current" (change)=updateValues()>
     <option *ngFor="let value of values.getinputValues()" 
     value="{{value.value}}" 
     [selected]="values.getOutputValues().indexOf(value.value) !== -1"
