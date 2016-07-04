@@ -11,7 +11,7 @@ import { FormValue } from '../form-value';
 })
 export class RadiosComponent implements OnInit {
 
-  values;
+  values: Fieldset;
 
   constructor(private formService: FormService) {
     this.values = new Fieldset([
@@ -26,4 +26,18 @@ export class RadiosComponent implements OnInit {
   ngOnInit() {
   }
 
+  getValues(): FormValue[] {
+    return this.values.getinputValues();
+  }
+
+  updateValue(value: FormValue) {
+    this.getValues().forEach((e) => {
+      e.current = false;
+    });
+    value.current = true;
+  }
+
+  isChecked(value: FormValue) {
+    return value.getValue() === this.values.getOutputValues()[0]
+  }
 }

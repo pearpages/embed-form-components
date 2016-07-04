@@ -93,4 +93,23 @@ describe('Class: Fieldset', () => {
     });
   });
 
+  it('should toggle the visibility of the elements of a set',() => {
+    let value1 = new FormValue('1','1',true,true);
+    let value2 = new FormValue('2','2',true,false);
+    let value3 = new FormValue('3','3',true,false);
+    let value4 = new FormValue('4','4',true,false);
+    let value5 = new FormValue('5','5',true,false);
+    let fieldset = new Fieldset([value1,value2,value3,value4,value5],false);
+
+    let set1 = ['1','2'];
+    fieldset.defineSet('one', set1);
+
+    fieldset.toggleVisibilitySet('one');
+    expect(fieldset.getSet('one')[0].isVisible()).toBe(false);
+    expect(fieldset.getSet('one')[1].isVisible()).toBe(false);
+    fieldset.getSet('one')[0].visible = true;
+    fieldset.toggleVisibilitySet('one');
+    expect(fieldset.getSet('one')[0].isVisible()).toBe(false);
+    expect(fieldset.getSet('one')[1].isVisible()).toBe(true);
+  });
 });

@@ -19,10 +19,7 @@ export class FormService {
   }
 
   getJSON(): string {
-    var res = '';
-    for (let f of this.values) {
-      
-    }
-    return res;
+    // todo
+    return 'todo';
   }
 }
