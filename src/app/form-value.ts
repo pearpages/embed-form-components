@@ -6,7 +6,7 @@ export class FormValue {
         public value:string, 
         public name:string,
         public visible: boolean, 
-        public resetValue:any, 
+        private resetValue:any, 
         public initialValue?: any ) {
 
         this.current = (initialValue) ? initialValue : resetValue;

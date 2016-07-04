@@ -26,4 +26,16 @@ describe('Class: FormValue', () => {
         let formValue3 = new FormValue('1','1',true,false,false);
         expect(formValue3.current).toBe(false);
     }); 
+
+    it('should reset the value',() => {
+        let formValue1 = new FormValue('1','1',true,true);
+        formValue1.current = 'car';
+        formValue1.reset();
+        expect(formValue1.current).toBe(true);
+        
+        let formValue2 = new FormValue('1','1',true,false);
+        formValue2.current = 'cat';
+        formValue2.reset();
+        expect(formValue2.current).toBe(false);
+    });
 });
