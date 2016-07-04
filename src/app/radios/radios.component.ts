@@ -19,7 +19,7 @@ export class RadiosComponent implements OnInit {
       new FormValue('value2','name2',true,false,true),
       new FormValue('value3','name3',true,false,true),
       new FormValue('value4','name4',true,false,false)
-    ],false,false,'value1');
+    ],false);
     this.formService.setValue('myRadios',this.values);
   }
 

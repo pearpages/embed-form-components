@@ -4,8 +4,8 @@
   <select [multiple]="multiple" [(ngModel)]="current" (change)=updateValues()>
     <option *ngIf="values.getOutputValues() == 'false' && !multiple">Select One</option>
     <option *ngFor="let value of values.getinputValues()" 
-    [value]="value.value" 
-    [selected]="values.getOutputValues().indexOf(value.value) !== -1"
-    >{{value.name}}</option>
+    [value]="value.getValue()" 
+    [selected]="values.getOutputValues().indexOf(value.getValue()) !== -1"
+    >{{value.getLabel()}}</option>
   </select>
 </fieldset>

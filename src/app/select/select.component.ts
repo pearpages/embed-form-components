@@ -38,21 +38,21 @@ export class SelectComponent implements OnInit {
       });
     } else {
       values.forEach((value) => {
-        value.current = value.value;
+        value.current = value.getValue();
       });
     }
   }
 
   areAllSelected() {
     return this.values.getinputValues().reduce((previous, current) => {
-      return (previous && (current.value === current.current));
+      return (previous && (current.getValue() === current.current));
     }, true);
   }
 
   updateValues() {
     let values = this.values.getinputValues();
       values.forEach((val) => {
-        val.current = (this.current.indexOf(val.value) !== -1) ? val.value : false;
+        val.current = (this.current.indexOf(val.getValue()) !== -1) ? val.getValue() : false;
       });
   }
 

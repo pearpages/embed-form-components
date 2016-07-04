@@ -2,6 +2,6 @@
   <h4>Checkboxes</h4>
   <button (click)=toggle() [innerText]="allChecked() ? 'Uncheck All' : 'Check All'"></button>
   <label *ngFor="let value of values">
-    <span *ngIf="value.visible"><input type="checkbox" [(ngModel)]="value.current" [disabled]="!value.visible"> {{value.name}}</span>
+    <span *ngIf="value.visible"><input type="checkbox" [(ngModel)]="value.current" [disabled]="!value.visible"> {{value.getLabel()}}</span>
   </label>
 </fieldset>
