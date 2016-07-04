@@ -18,4 +18,11 @@ describe('Class: Fieldset', () => {
     let fieldset = new Fieldset([new FormValue('1','1',true,false)],false);
     expect(fieldset).toBeTruthy();
   });
+
+  it('should tell me whether if it is multi or not', () => {
+    let fieldset1 = new Fieldset([new FormValue('1','1',true,false)],false);
+    let fieldset2 = new Fieldset([new FormValue('1','1',true,false)],true);
+    expect(fieldset1.isMulti()).toBe(false);
+    expect(fieldset2.isMulti()).toBe(true);
+  });
 });

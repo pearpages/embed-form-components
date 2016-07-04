@@ -2,8 +2,14 @@
 
 ## Sets of Values
 
-- *:1
-- *:*
+For a given set of values we can get as an output 1 or N values.
+
+## Testing
+
+```bash
+ng build
+ng test --build=false
+```
 
 ## Functionalities
 
