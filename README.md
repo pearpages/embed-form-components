@@ -1,5 +1,14 @@
 # Forms
 
+The idea is to have a set of basic components like:
+
+```html
+<radios [data]="myJson"></radios>
+<checkboxes [data]="myJson"></chekboxes>
+<my-select [data]="myJson" [multi]="true"></my-select>
+<my-select [data]="myJson" [multi]="false"></my-select>
+```
+
 ## Sets of Values
 
 For a given set of values we can get as an output 1 or N values.
