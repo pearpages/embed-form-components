@@ -1,6 +1,6 @@
 <fieldset>
   <h4>Select</h4>
-  <button (click)="toggle()" *ngIf="multiple">toggle</button>
+  <button (click)="toggle()" *ngIf="multiple" >{{areAllSelected() ? 'Unselect All' : 'Select All'}}</button>
   <select [multiple]="multiple" [(ngModel)]="current" (change)=updateValues()>
     <option *ngIf="values.getOutputValues() == 'false' && !multiple">Select One</option>
     <option *ngFor="let value of values.getinputValues()" 
