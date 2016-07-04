@@ -1,9 +1,10 @@
 <fieldset>
   <h4>Select</h4>
-  <button (click)="toggle()">toggle</button>
+  <button (click)="toggle()" *ngIf="multiple">toggle</button>
   <select [multiple]="multiple" [(ngModel)]="current" (change)=updateValues()>
+    <option *ngIf="values.getOutputValues() == 'false' && !multiple">Select One</option>
     <option *ngFor="let value of values.getinputValues()" 
-    value="{{value.value}}" 
+    [value]="value.value" 
     [selected]="values.getOutputValues().indexOf(value.value) !== -1"
     >{{value.name}}</option>
   </select>

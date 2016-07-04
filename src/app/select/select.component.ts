@@ -21,7 +21,12 @@ export class SelectComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.formService.setValue(this.id, new Fieldset([new FormValue('value1', 'name1', false, 'value1'), new FormValue('value2', 'name2', false, false), new FormValue('value3', 'name3', false, false)], true));
+    this.formService.setValue(this.id, 
+    new Fieldset(
+      [new FormValue('value1', 'name1', true, false, 'value1'), 
+      new FormValue('value2', 'name2', true, false, false), 
+      new FormValue('value3', 'name3', true, false, false)]
+      , true));
     this.values = this.formService.getValue(this.id);
   }
 

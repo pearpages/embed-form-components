@@ -15,31 +15,22 @@ import { FormService } from './form.service';
 export class AppComponent {
   title = 'app works!';
 
-  constructor(private formService: FormService) {
+  constructor(private formService: FormService) {}
 
+  private getFieldset(id) {
+    return this.formService.getValue(id); 
   }
 
-  resetCheckboxes() {
-    this.formService.getValue('myCheckboxes').reset();
+  reset(id){
+    this.getFieldset(id).reset();
   }
 
-  resetRadios() {
-    this.formService.getValue('myRadios').reset();
+  getOutput(id) {
+    return this.getFieldset(id).getOutputValues();
   }
 
-  resetSelect(value) {
-    this.formService.getValue(value).reset();
+  toggleVisibility(id,set) {
+    this.getFieldset(id).toggleVisibilitySet(set);
   }
 
-  getCheckboxes() {
-    return this.formService.getValue('myCheckboxes').getOutputValues();
-  }
-
-  getRadios() {
-    return this.formService.getValue('myRadios').getOutputValues();
-  }
-
-  getSelect(value) {
-    return this.formService.getValue(value).getOutputValues();
-  }
 }

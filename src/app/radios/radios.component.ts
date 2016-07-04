@@ -15,10 +15,10 @@ export class RadiosComponent implements OnInit {
 
   constructor(private formService: FormService) {
     this.values = new Fieldset([
-      new FormValue('value1','name1',false,false),
-      new FormValue('value2','name2',false,true),
-      new FormValue('value3','name3',false,true),
-      new FormValue('value4','name4',false,false)
+      new FormValue('value1','name1',true,false,false),
+      new FormValue('value2','name2',true,false,true),
+      new FormValue('value3','name3',true,false,true),
+      new FormValue('value4','name4',true,false,false)
     ],false,false,'value1');
     this.formService.setValue('myRadios',this.values);
   }
