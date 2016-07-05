@@ -14,6 +14,14 @@ import { FormService } from './form.service';
 })
 export class AppComponent {
   title = 'app works!';
+  data = `{
+    "data": {
+      "1": {"name":"1","label":"1","visible":true","default":"false","initial":"false"},
+      "2": {"name":"2","label":"2","visible":true","default":"false","initial":"false"},
+      "3": {"name":"3","label":"3","visible":true","default":"false","initial":"false"},
+    }
+  }
+  `;
 
   constructor(private formService: FormService) {}
 

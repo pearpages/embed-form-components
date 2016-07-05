@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormService } from '../form.service';
 import { FormValue } from '../form-value';
 import { Fieldset } from '../fieldset';
@@ -11,6 +11,7 @@ import { Fieldset } from '../fieldset';
 })
 export class CheckboxesComponent implements OnInit {
 
+  @Input() data: string; 
   values;
 
   constructor(private formService: FormService) {
@@ -38,7 +39,7 @@ export class CheckboxesComponent implements OnInit {
   }
 
   ngOnInit() {  
-
+    this.formService.mapJSON(this.data);
   }
 
   protected allChecked() {
@@ -57,5 +58,9 @@ export class CheckboxesComponent implements OnInit {
       status = false;
     }
     this.values.filter((e)=> { return e.visible === true}).forEach((e) => { e.current = status });
+  }
+
+  getButtonText() {
+    return this.allChecked() ? 'Uncheck All' : 'Check All';
   }
 }

@@ -4,7 +4,7 @@
 <button (click)="reset('myRadios')">reset radios</button>
 <h4>Radios values: {{getOutput('myRadios')}}</h4>
 
-<checkboxes></checkboxes>
+<checkboxes [data]="data"></checkboxes>
 <button (click)="toggleVisibility('myCheckboxes','one')">toggle visibility set one</button>
 <button (click)="toggleVisibility('myCheckboxes','two')">toggle visibility set two</button>
 <button (click)="toggleVisibility('myCheckboxes','three')">toggle visibility set three</button>
