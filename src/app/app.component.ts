@@ -14,14 +14,28 @@ import { FormService } from './form.service';
 })
 export class AppComponent {
   title = 'app works!';
-  data = `{
-    "data": {
-      "1": {"name":"1","label":"1","visible":true","default":"false","initial":"false"},
-      "2": {"name":"2","label":"2","visible":true","default":"false","initial":"false"},
-      "3": {"name":"3","label":"3","visible":true","default":"false","initial":"false"},
-    }
-  }
-  `;
+  data = `{"values" :[
+    {"value":"1","label":"1","visible":true,"default":false,"initial":false},
+    {"value":"2","label":"2","visible":true,"default":false,"initial":false},
+    {"value":"3","label":"3","visible":true,"default":false,"initial":false},
+    {"value":"4","label":"4","visible":true,"default":false,"initial":false},
+    {"value":"5","label":"5","visible":true,"default":false,"initial":false},
+    {"value":"6","label":"6","visible":true,"default":false,"initial":false},
+    {"value":"7","label":"7","visible":true,"default":false,"initial":false},
+    {"value":"8","label":"8","visible":true,"default":false,"initial":false},
+    {"value":"9","label":"9","visible":true,"default":false,"initial":false},
+    {"value":"10","label":"10","visible":true,"default":false,"initial":false},
+    {"value":"11","label":"11","visible":true,"default":false,"initial":false},
+    {"value":"12","label":"12","visible":true,"default":false,"initial":false}
+    ],
+    "sets": 
+      [
+        {"id":"one", "values" : ["1","2","3"]},
+        {"id":"two","values" : ["4","5","6"]},
+        {"id":"three" , "values" : ["7","8","9","10","11","12"]}
+      ]
+    ,
+  "multi":true}`;
 
   constructor(private formService: FormService) {}
 

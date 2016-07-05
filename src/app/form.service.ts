@@ -7,9 +7,7 @@ export class FormService {
 
   values: any = {};
 
-  constructor() {
-
-  }
+  constructor() {}
 
   setValue(index: string, value: Fieldset) {
     this.values[index] = value;
@@ -19,17 +17,30 @@ export class FormService {
     return this.values[index];
   }
 
-  /*
-    {data: [{name:string,value:string,visible:boolean,default:any,initial:any}]}
-  */
-  mapJSON(json: string): FormValue[] {
-    let obj = JSON.parse(json);
-    
-    return [];
+  mapToFieldset(data: string): Fieldset {
+    let obj = JSON.parse(data);
+    let values = this.mapToFormValues(obj.values);
+    let fieldset = new Fieldset(values,obj.multi);
+    FormService.mapSets(fieldset,obj.sets);
+    return fieldset;
   }
 
   getJSON(): string {
     // todo
     return 'todo';
+  }
+
+  private static mapSets(fieldset: Fieldset,sets: any[]) {
+    sets.forEach((set) => {
+      fieldset.defineSet(set.id,set.values);
+    });
+  }
+
+  private mapToFormValues(values) {
+    let res = [];
+    values.forEach((o) => {
+      res.push(new FormValue(o.value,o.label,o.visible,o.default,o.initial));
+    });
+    return res;
   }
 }

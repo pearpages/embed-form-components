@@ -36,7 +36,9 @@ export class Fieldset {
 
     defineSet(id:string,values: any[]){
         let set = this.set[id] = [];
-        this.inputValues.filter((e) => {return (values.indexOf(e.getValue()) !== -1)}).forEach((e) => { set.push(e)});
+        let filtered = this.inputValues
+            .filter((e) => {return (values.indexOf(e.getValue()) !== -1)})
+            .forEach((e) => { set.push(e)});
         return this;
     }
 
