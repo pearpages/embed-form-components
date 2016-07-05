@@ -21,13 +21,21 @@ export class FormService {
     let obj = JSON.parse(data);
     let values = this.mapToFormValues(obj.values);
     let fieldset = new Fieldset(values,obj.multi);
-    FormService.mapSets(fieldset,obj.sets);
+    if(obj.sets){
+      FormService.mapSets(fieldset,obj.sets);
+    }
     return fieldset;
   }
 
   getJSON(): string {
-    // todo
-    return 'todo';
+    let res = {};
+    for(let index in this.values){
+      let values = this.values[index].getOutputValues();
+      if(values[0] != false){
+        res[index] = values;
+      }
+    }
+    return JSON.stringify(res);
   }
 
   private static mapSets(fieldset: Fieldset,sets: any[]) {

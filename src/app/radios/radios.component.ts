@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormService } from '../form.service';
 import { Fieldset } from '../fieldset';
 import { FormValue } from '../form-value';
@@ -11,19 +11,16 @@ import { FormValue } from '../form-value';
 })
 export class RadiosComponent implements OnInit {
 
+  @Input() name: string;
+  @Input() data: string;
+
   values: Fieldset;
 
-  constructor(private formService: FormService) {
-    this.values = new Fieldset([
-      new FormValue('value1','name1',true,false,false),
-      new FormValue('value2','name2',true,false,true),
-      new FormValue('value3','name3',true,false,true),
-      new FormValue('value4','name4',true,false,false)
-    ],false);
-    this.formService.setValue('myRadios',this.values);
-  }
+  constructor(private formService: FormService) {}
 
   ngOnInit() {
+    this.values = this.formService.mapToFieldset(this.data);
+    this.formService.setValue(this.name,this.values);
   }
 
   getValues(): FormValue[] {

@@ -12,6 +12,7 @@ import { Fieldset } from '../fieldset';
 export class CheckboxesComponent implements OnInit {
 
   @Input() data: string; 
+  @Input() name: string;
   values;
 
   constructor(private formService: FormService) {}
@@ -19,7 +20,7 @@ export class CheckboxesComponent implements OnInit {
   ngOnInit() {  
     let fieldset = this.formService.mapToFieldset(this.data);
     this.values = fieldset.getinputValues();
-    this.formService.setValue('myCheckboxes',fieldset);
+    this.formService.setValue(this.name,fieldset);
   }
 
   protected allChecked() {

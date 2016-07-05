@@ -1,10 +1,10 @@
 <h1>{{title}}</h1>
 
-<radios></radios>
+<radios [name]="'myRadios'" [data]="data"></radios>
 <button (click)="reset('myRadios')">reset radios</button>
 <h4>Radios values: {{getOutput('myRadios')}}</h4>
 
-<checkboxes [data]="data"></checkboxes>
+<checkboxes [data]="data" [name]="'myCheckboxes'"></checkboxes>
 <button (click)="toggleVisibility('myCheckboxes','one')">toggle visibility set one</button>
 <button (click)="toggleVisibility('myCheckboxes','two')">toggle visibility set two</button>
 <button (click)="toggleVisibility('myCheckboxes','three')">toggle visibility set three</button>
@@ -12,10 +12,13 @@
 <button (click)="reset('myCheckboxes')">reset checkboxes</button>
 <h4>Checkboxes Values: {{getOutput('myCheckboxes')}}</h4>
 
-<my-select [id]="'select1'" [multiple]="true"></my-select>
+<my-select [name]="'select1'" [data]="data" [multiple]="true"></my-select>
 <button (click)="reset('select1')">reset multiselect</button>
 <h4>MultiSelect: {{getOutput('select1')}}</h4>
 
-<my-select [id]="'select2'" [multiple]="false"></my-select>
+<my-select [name]="'select2'" [data]="data" [multiple]="false"></my-select>
 <button (click)="reset('select2')">reset select</button>
 <h4>Select: {{getOutput('select2')}}</h4>
+
+<h3>Result in JSON</h3>
+{{getJSON()}}

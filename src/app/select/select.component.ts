@@ -12,22 +12,17 @@ import { FormValue } from '../form-value'
 export class SelectComponent implements OnInit {
 
   @Input() multiple: boolean;
-  @Input() id: string;
+  @Input() name: string;
+  @Input() data: string;
   values: Fieldset;
   current: string;
 
-  constructor(private formService: FormService) {
-    
-  }
+  constructor(private formService: FormService) {}
 
   ngOnInit() {
-    this.formService.setValue(this.id, 
-    new Fieldset(
-      [new FormValue('value1', 'name1', true, false, 'value1'), 
-      new FormValue('value2', 'name2', true, false, false), 
-      new FormValue('value3', 'name3', true, false, false)]
-      , true));
-    this.values = this.formService.getValue(this.id);
+    this.formService.setValue(this.name, 
+    this.formService.mapToFieldset(this.data));
+    this.values = this.formService.getValue(this.name);
   }
 
   toggle() {

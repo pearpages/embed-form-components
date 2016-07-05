@@ -55,4 +55,7 @@ export class AppComponent {
     this.getFieldset(id).toggleVisibilitySet(set);
   }
 
+  getJSON() {
+    return this.formService.getJSON();
+  }
 }
