@@ -3,6 +3,7 @@ import { ReportingfiguresComponent } from '../reportingfigures';
 import { CompanytypeComponent } from '../companytype/companytype.component';
 import { LobsComponent } from '../lobs/lobs.component';
 import { PrimaryexcessComponent } from '../primaryexcess/primaryexcess.component';
+import { OfficesComponent } from '../offices/offices.component';
 import { FormService } from '../form.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { FormService } from '../form.service';
   selector: 'app-showroom2',
   templateUrl: 'showroom2.component.html',
   styleUrls: ['showroom2.component.css'],
-  directives: [ReportingfiguresComponent,CompanytypeComponent,LobsComponent,PrimaryexcessComponent]
+  directives: [ReportingfiguresComponent,CompanytypeComponent,LobsComponent,PrimaryexcessComponent,OfficesComponent]
 })
 export class Showroom2Component implements OnInit {
 
