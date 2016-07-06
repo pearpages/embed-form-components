@@ -36,8 +36,9 @@ const barrels: string[] = [
   'app/radios',
   'app/select',
   'app/showroom',
-  'app/showroom2'
-   /** @cli-barrel */
+  'app/showroom2',
+   'app/reportingfigures'
+  /** @cli-barrel */
 ];
 
 const cliSystemConfigPackages: any = {};

@@ -9,12 +9,13 @@ import { FormService } from '../form.service';
   selector: 'app-showroom',
   templateUrl: 'showroom.component.html',
   styleUrls: ['showroom.component.css'],
-  directives: [CheckboxesComponent,RadiosComponent,SelectComponent],
-  providers: [FormService]
+  directives: [CheckboxesComponent,RadiosComponent,SelectComponent]
 })
 export class ShowroomComponent implements OnInit {
 
-  data = `{"values" :[
+  data = `{
+    "title": "put-here-the-title",
+    "values" :[
     {"value":"1","label":"label 1","visible":true,"default":false,"initial":false},
     {"value":"2","label":"label 2","visible":true,"default":false,"initial":false},
     {"value":"3","label":"label 3","visible":true,"default":false,"initial":false},

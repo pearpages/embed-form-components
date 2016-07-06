@@ -1,7 +1,7 @@
 <div class="form-group">
-  <h4>Checkboxes</h4>
+  <h4>{{title}}</h4>
   <button class="btn btn-default" (click)=toggle() [innerText]="getButtonText()"></button>
-  <label *ngFor="let value of values">
+  <label *ngFor="let value of values.getinputValues()">
     <span *ngIf="value.visible">
       <input type="checkbox" 
       [(ngModel)]="value.current" 

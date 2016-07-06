@@ -20,9 +20,7 @@ export class SelectComponent implements OnInit {
   constructor(private formService: FormService) {}
 
   ngOnInit() {
-    this.formService.setValue(this.name, 
-    this.formService.mapToFieldset(this.data));
-    this.values = this.formService.getValue(this.name);
+    this.values = this.formService.setValue(this.name,this.data);
   }
 
   toggle() {
@@ -49,6 +47,10 @@ export class SelectComponent implements OnInit {
       values.forEach((val) => {
         val.current = (this.current.indexOf(val.getValue()) !== -1) ? val.getValue() : false;
       });
+  }
+
+  isSelected(value):boolean {
+    return this.values.getOutputValues().indexOf(value) !== -1
   }
 
 }

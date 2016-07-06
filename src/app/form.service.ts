@@ -9,22 +9,12 @@ export class FormService {
 
   constructor() {}
 
-  setValue(index: string, value: Fieldset) {
-    this.values[index] = value;
+  setValue(index: string, data: string): Fieldset {
+    return this.values[index] = FormService.mapToFieldset(data);
   }
 
   getValue(index: string): Fieldset {
     return this.values[index];
-  }
-
-  mapToFieldset(data: string): Fieldset {
-    let obj = JSON.parse(data);
-    let values = this.mapToFormValues(obj.values);
-    let fieldset = new Fieldset(values,obj.multi);
-    if(obj.sets){
-      FormService.mapSets(fieldset,obj.sets);
-    }
-    return fieldset;
   }
 
   getJSON(): string {
@@ -44,11 +34,22 @@ export class FormService {
     });
   }
 
-  private mapToFormValues(values) {
+  private static mapToFormValues(values) {
     let res = [];
     values.forEach((o) => {
       res.push(new FormValue(o.value,o.label,o.visible,o.default,o.initial));
     });
     return res;
   }
+
+  private static mapToFieldset(data: string): Fieldset {
+    let obj = JSON.parse(data);
+    let values = FormService.mapToFormValues(obj.values);
+    let fieldset = new Fieldset(values,obj.multi);
+    if(obj.sets){
+      FormService.mapSets(fieldset,obj.sets);
+    }
+    return fieldset;
+  }
+
 }

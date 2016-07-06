@@ -13,14 +13,14 @@ export class RadiosComponent implements OnInit {
 
   @Input() name: string;
   @Input() data: string;
+  @Input() title: string;
 
   values: Fieldset;
 
   constructor(private formService: FormService) {}
 
   ngOnInit() {
-    this.values = this.formService.mapToFieldset(this.data);
-    this.formService.setValue(this.name,this.values);
+    this.values = this.formService.setValue(this.name,this.data);
   }
 
   getValues(): FormValue[] {
