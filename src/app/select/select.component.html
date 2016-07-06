@@ -1,11 +1,11 @@
-<fieldset>
+<div class="form-group">
   <h4>Select</h4>
-  <button (click)="toggle()" *ngIf="multiple" >{{areAllSelected() ? 'Unselect All' : 'Select All'}}</button>
-  <select [multiple]="multiple" [(ngModel)]="current" (change)=updateValues()>
+  <button class="btn btn-default" (click)="toggle()" *ngIf="multiple" >{{areAllSelected() ? 'Unselect All' : 'Select All'}}</button>
+  <select class="form-control" [multiple]="multiple" [(ngModel)]="current" (change)=updateValues()>
     <option *ngIf="values.getOutputValues() == 'false' && !multiple">Select One</option>
     <option *ngFor="let value of values.getinputValues()" 
     [value]="value.getValue()" 
     [selected]="values.getOutputValues().indexOf(value.getValue()) !== -1"
     >{{value.getLabel()}}</option>
   </select>
-</fieldset>
+</div>

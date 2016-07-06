@@ -1,4 +1,4 @@
-<fieldset>
+<div class="form-group">
   <h4>Radios</h4>
   <label *ngFor="let value of values.getinputValues()">
     <input type="radio" 
@@ -6,4 +6,4 @@
     (click)="updateValue(value)" 
     [checked]="isChecked(value)"> {{value.getLabel()}}
 </label>
-</fieldset>
+</div>

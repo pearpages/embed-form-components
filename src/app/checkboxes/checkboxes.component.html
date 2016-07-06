@@ -1,10 +1,10 @@
-<fieldset>
+<div class="form-group">
   <h4>Checkboxes</h4>
-  <button (click)=toggle() [innerText]="getButtonText()"></button>
+  <button class="btn btn-default" (click)=toggle() [innerText]="getButtonText()"></button>
   <label *ngFor="let value of values">
     <span *ngIf="value.visible">
       <input type="checkbox" 
       [(ngModel)]="value.current" 
       [disabled]="!value.visible"> {{value.getLabel()}}</span>
   </label>
-</fieldset>
+</div>
