@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>{{title}}</h1>
+
+    <radios [name]="'myRadios'" [data]="data"></radios>
+    <checkboxes [data]="data" [name]="'myCheckboxes'"></checkboxes>
+    <my-select [name]="'select1'" [data]="data" [multiple]="true"></my-select>
+    <my-select [name]="'select2'" [data]="data" [multiple]="false"></my-select>
+
+    <hr>
+
+    <h2>Form Results</h2>
+
+    <h3>JSON</h3>
+    {{getJSON()}}
+
+    <h4>Radios values: {{getOutput('myRadios')}}</h4>
+    <button (click)="reset('myRadios')">reset radios</button>
+
+    <h4>Checkboxes Values: {{getOutput('myCheckboxes')}}</h4>
+    <button (click)="toggleVisibility('myCheckboxes','one')">toggle visibility set one</button>
+    <button (click)="toggleVisibility('myCheckboxes','two')">toggle visibility set two</button>
+    <button (click)="toggleVisibility('myCheckboxes','three')">toggle visibility set three</button>
+    <br/>
+    <button (click)="reset('myCheckboxes')">reset checkboxes</button>
+
+    <h4>MultiSelect: {{getOutput('select1')}}</h4>
+    <button (click)="reset('select1')">reset multiselect</button>
+
+    <h4>Select: {{getOutput('select2')}}</h4>
+    <button (click)="reset('select2')">reset select</button>
+
+  </div>
+</div>

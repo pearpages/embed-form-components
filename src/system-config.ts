@@ -34,7 +34,8 @@ const barrels: string[] = [
   'app',
   'app/checkboxes',
   'app/radios',
-  'app/select'
+  'app/select',
+  'app/showroom'
   /** @cli-barrel */
 ];
 
