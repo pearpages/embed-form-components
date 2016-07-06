@@ -11,24 +11,20 @@ import { FormService } from '../form.service';
 })
 export class ReportingfiguresComponent implements OnInit {
 
-  data;
+  data: string;
   name: string;
-  title;
+  title: string;
 
-  constructor(private formService: FormService) {
-    this.title = 'Reporting Figures';
-  }
+  constructor(private formService: FormService) { }
 
   ngOnInit() {
     this.data = 
       `{"values" :[
-    {"value":"1","label":"Net of Fac Out","visible":true,"default":false,"initial":false},
-    {"value":"2","label":"Gross of Fac Out","visible":true,"default":false,"initial":false}
+    {"value":"net","label":"Net of Fac Out","visible":true,"default":false,"initial":false},
+    {"value":"gross","label":"Gross of Fac Out","visible":true,"default":false,"initial":false}
     ],
   "multi":false}
     `;
-
-    console.log(JSON.parse(this.data));
 
     this.title = 'Reporting Figures';
     this.name = 'reporting-figures';    
