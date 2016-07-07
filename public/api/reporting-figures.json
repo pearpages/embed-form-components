@@ -1,0 +1,19 @@
+{
+    "values": [
+        {
+            "value": "net",
+            "label": "Net of Fac Out",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "gross",
+            "label": "Gross of Fac Out",
+            "visible": true,
+            "default": false,
+            "initial": false
+        }
+    ],
+    "multi": false
+}

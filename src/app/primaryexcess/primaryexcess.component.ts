@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RadiosComponent } from '../radios/radios.component';
 import { Ifieldset } from '../ifieldset';
+import { ApiService } from '../api.service';
 
 @Component({
   moduleId: module.id,
@@ -15,21 +16,16 @@ export class PrimaryexcessComponent implements OnInit {
   name: string;
   title: string;
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.data =
-      {
-        values: [
-          { value: "all", label: "All", visible: true, default: false, initial: false },
-          { value: "primary", label: "Primary", visible: true, default: false, initial: false },
-          { value: "excess", label: "Excess", visible: true, default: false, initial: false }
-        ],
-        multi: false
-      };
-
     this.title = 'Primary/Excess';
     this.name = 'primary-excess';
+    this.apiService.getPrimaryExcess().subscribe(
+      (data) => this.data = data,
+      (error) => console.error(error),
+      () => console.log('primary excess done')
+    );
   }
 
 }

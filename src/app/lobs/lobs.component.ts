@@ -26,7 +26,7 @@ export class LobsComponent implements OnInit {
     .subscribe(
       (data) => {this.data = data},
       (error) => console.error(error),
-      () => console.log('done')
+      () => console.log('lobs done')
     );
   }
 

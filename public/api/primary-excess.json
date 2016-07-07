@@ -1,0 +1,26 @@
+{
+    "values": [
+        {
+            "value": "all",
+            "label": "All",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "primary",
+            "label": "Primary",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "excess",
+            "label": "Excess",
+            "visible": true,
+            "default": false,
+            "initial": false
+        }
+    ],
+    "multi": false
+}

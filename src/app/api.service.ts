@@ -16,7 +16,19 @@ export class ApiService {
   getCompanyTypes(): Observable<Ifieldset> {
     return this.http.get('/api/company-types.json').map(response => response.json());
   }
+
+  getOffices(): Observable<Ifieldset> {
+    return this.http.get('/api/offices.json').map(response => response.json());
+  }
   
+  getPrimaryExcess(): Observable<Ifieldset> {
+    return this.http.get('/api/primary-excess.json').map(response => response.json());
+  }
+
+  getReportingFigures(): Observable<Ifieldset> {
+    return this.http.get('/api/reporting-figures.json').map(response => response.json());
+  }
+
   private handleError(error: any) {
     // In a real world app, we might use a remote logging infrastructure
     // We'd also dig deeper into the error to get a better message

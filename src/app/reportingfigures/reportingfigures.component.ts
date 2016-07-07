@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RadiosComponent } from '../radios/radios.component';
 import { Ifieldset } from '../ifieldset';
+import { ApiService } from '../api.service';
 
 @Component({
   moduleId: module.id,
@@ -15,20 +16,16 @@ export class ReportingfiguresComponent implements OnInit {
   name: string;
   title: string;
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.data =
-      {
-        values: [
-          { value: "net", label: "Net of Fac Out", visible: true, default: false, initial: false },
-          { value: "gross", label: "Gross of Fac Out", visible: true, default: false, initial: false }
-        ],
-        multi: false
-      };
-
     this.title = 'Reporting Figures';
     this.name = 'reporting-figures';
+    this.apiService.getReportingFigures().subscribe(
+      (data) => this.data,
+      (error) => console.error(error),
+      () => console.log('reporting figures done')
+    );
   }
 
 }
