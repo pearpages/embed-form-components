@@ -15,16 +15,16 @@ export class CheckboxesComponent implements OnInit {
   @Input() data: Ifieldset; 
   @Input() name: string;
   @Input() title: string;
-  values;
+  values: Fieldset;
 
   constructor(private formService: FormService) {}
 
-  ngOnInit() {  
-    this.values = this.formService.setValue(this.name,this.data);
+  ngOnInit() {
+    this.getValues();
   }
 
   protected allChecked() {
-    let values = this.values.getinputValues().filter((e) => {return e.visible === true});
+    let values = this.getValues().filter((e) => {return e.visible === true});
     if(values.length === 0){
       return true;
     }
@@ -38,10 +38,21 @@ export class CheckboxesComponent implements OnInit {
     if(this.allChecked()){
       status = false;
     }
-    this.values.getinputValues().filter((e)=> { return e.visible === true}).forEach((e) => { e.current = status });
+    this.getValues().filter((e)=> { return e.visible === true}).forEach((e) => { e.current = status });
   }
 
   getButtonText() {
     return this.allChecked() ? 'Uncheck All' : 'Check All';
+  }
+
+  getValues(): FormValue[] {
+    if (this.data === undefined) {
+      return [];
+    } else {
+      if(!this.values) {
+        this.values = this.formService.setValue(this.name,this.data);
+      }
+      return this.values.getinputValues();
+    }
   }
 }

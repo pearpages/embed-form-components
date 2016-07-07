@@ -1,6 +1,6 @@
 <div class="form-group">
   <h4>{{title}}</h4>
-  <label *ngFor="let value of values.getinputValues()">
+  <label *ngFor="let value of getValues()">
     <input type="radio" 
     name="radio" 
     (click)="updateValue(value)" 

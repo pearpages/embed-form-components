@@ -52,7 +52,10 @@ export class ShowroomComponent implements OnInit {
     this.getFieldset(id).reset();
   }
 
-  getOutput(id) {
+  getOutput(id): any[] {
+    if(this.getFieldset(id) === undefined) {
+      return [];
+    }
     return this.getFieldset(id).getOutputValues();
   }
 

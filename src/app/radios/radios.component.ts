@@ -20,12 +20,8 @@ export class RadiosComponent implements OnInit {
 
   constructor(private formService: FormService) {}
 
-  ngOnInit() {
-    this.values = this.formService.setValue(this.name,this.data);
-  }
-
-  getValues(): FormValue[] {
-    return this.values.getinputValues();
+  ngOnInit() { 
+    this.getValues();
   }
 
   updateValue(value: FormValue) {
@@ -36,6 +32,20 @@ export class RadiosComponent implements OnInit {
   }
 
   isChecked(value: FormValue) {
+    if(this.getValues().length === 0){
+      return  false;
+    }
     return value.getValue() === this.values.getOutputValues()[0]
+  }
+
+  getValues(): FormValue[] {
+    if (this.data === undefined) {
+      return [];
+    } else {
+      if(!this.values) {
+        this.values = this.formService.setValue(this.name,this.data);
+      }
+      return this.values.getinputValues();
+    }
   }
 }

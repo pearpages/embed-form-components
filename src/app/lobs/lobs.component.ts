@@ -12,7 +12,7 @@ import { Http, Response } from '@angular/http';
 })
 export class LobsComponent implements OnInit {
 
-  data: Ifieldset;
+  data: any;
   name: string;
   title: string;
 
@@ -20,6 +20,7 @@ export class LobsComponent implements OnInit {
 
   ngOnInit() {
 
+/*
     this.data =
       {
         values: [
@@ -37,7 +38,7 @@ export class LobsComponent implements OnInit {
         ],
         multi: true
       };
-
+*/
     this.title = 'UW LOB';
     this.name = 'lobs';
 

@@ -18,14 +18,14 @@ export class SelectComponent implements OnInit {
   values: Fieldset;
   current: string;
 
-  constructor(private formService: FormService) {}
+  constructor(private formService: FormService) { }
 
-  ngOnInit() {
-    this.values = this.formService.setValue(this.name,this.data);
+  ngOnInit() { 
+    this.getValues();
   }
 
   toggle() {
-    let values = this.values.getinputValues();
+    let values = this.getValues();
     if (this.areAllSelected()) {
       values.forEach((value) => {
         value.current = false;
@@ -38,20 +38,42 @@ export class SelectComponent implements OnInit {
   }
 
   areAllSelected() {
-    return this.values.getinputValues().reduce((previous, current) => {
+    return this.getValues().reduce((previous, current) => {
       return (previous && (current.getValue() === current.current));
     }, true);
   }
 
   updateValues() {
-    let values = this.values.getinputValues();
-      values.forEach((val) => {
-        val.current = (this.current.indexOf(val.getValue()) !== -1) ? val.getValue() : false;
-      });
+    let values = this.getValues();
+    values.forEach((val) => {
+      val.current = (this.current.indexOf(val.getValue()) !== -1) ? val.getValue() : false;
+    });
   }
 
-  isSelected(value):boolean {
+  isAnySelected():boolean {
+    if(this.getValues().length === 0){
+      return false;
+    } else {
+      return this.values.getOutputValues()[0] === false;
+    }
+
+  }
+
+  isSelected(value): boolean {
+    if(this.getValues().length === 0){
+      return false;
+    }
     return this.values.getOutputValues().indexOf(value) !== -1
   }
 
+  getValues(): FormValue[] {
+    if (this.data === undefined) {
+      return [];
+    } else {
+      if (!this.values) {
+        this.values = this.formService.setValue(this.name, this.data);
+      }
+      return this.values.getinputValues();
+    }
+  }
 }

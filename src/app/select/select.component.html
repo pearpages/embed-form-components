@@ -2,8 +2,8 @@
   <h4>Select</h4>
   <button class="btn btn-default" (click)="toggle()" *ngIf="multiple" >{{areAllSelected() ? 'Unselect All' : 'Select All'}}</button>
   <select class="form-control" [multiple]="multiple" [(ngModel)]="current" (change)=updateValues()>
-    <option *ngIf="values.getOutputValues() == 'false' ">Select One</option>
-    <option *ngFor="let value of values.getinputValues()" 
+    <option *ngIf="isAnySelected()">Select One</option>
+    <option *ngFor="let value of getValues()" 
     [value]="value.getValue()" 
     [selected]="isSelected(value.getValue())"
     >{{value.getLabel()}}</option>
