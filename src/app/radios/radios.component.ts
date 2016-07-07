@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormService } from '../form.service';
 import { Fieldset } from '../fieldset';
+import { Ifieldset } from '../ifieldset';
 import { FormValue } from '../form-value';
 
 @Component({
@@ -12,7 +13,7 @@ import { FormValue } from '../form-value';
 export class RadiosComponent implements OnInit {
 
   @Input() name: string;
-  @Input() data: string;
+  @Input() data: Ifieldset;
   @Input() title: string;
 
   values: Fieldset;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
+import { Ifieldset } from '../ifieldset';
 
 @Component({
   moduleId: module.id,
@@ -10,7 +11,7 @@ import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
 })
 export class CompanytypeComponent implements OnInit {
 
-  data: string;
+  data: Ifieldset;
   name: string;
   title: string;
 
@@ -19,16 +20,17 @@ export class CompanytypeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data = 
-      `{"values" :[
-    {"value":"financial","label":"Financial Institutions","visible":true,"default":false,"initial":false},
-    {"value":"commercial","label":"Commercial Institutions","visible":true,"default":false,"initial":false}
-    ],
-  "multi":true}
-    `;
+    this.data =
+      {
+        values: [
+          { value: "financial", label: "Financial Institutions", visible: true, default: false, initial: false },
+          { value: "commercial", label: "Commercial Institutions", visible: true, default: false, initial: false }
+        ],
+        multi: true
+      };
 
     this.title = 'Company Type';
-    this.name = 'company-type';    
+    this.name = 'company-type';
   }
 
 }

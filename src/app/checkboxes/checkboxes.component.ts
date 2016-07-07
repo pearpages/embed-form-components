@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormService } from '../form.service';
 import { FormValue } from '../form-value';
 import { Fieldset } from '../fieldset';
+import { Ifieldset } from '../ifieldset';
 
 @Component({
   moduleId: module.id,
@@ -11,7 +12,7 @@ import { Fieldset } from '../fieldset';
 })
 export class CheckboxesComponent implements OnInit {
 
-  @Input() data: string; 
+  @Input() data: Ifieldset; 
   @Input() name: string;
   @Input() title: string;
   values;

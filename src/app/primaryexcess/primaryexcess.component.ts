@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RadiosComponent } from '../radios/radios.component';
+import { Ifieldset } from '../ifieldset';
 
 @Component({
   moduleId: module.id,
@@ -10,24 +11,25 @@ import { RadiosComponent } from '../radios/radios.component';
 })
 export class PrimaryexcessComponent implements OnInit {
 
-  data: string;
+  data: Ifieldset;
   name: string;
   title: string;
 
   constructor() { }
 
   ngOnInit() {
-    this.data = 
-      `{"values" :[
-    {"value":"all","label":"All","visible":true,"default":false,"initial":false},
-    {"value":"primary","label":"Primary","visible":true,"default":false,"initial":false},
-    {"value":"excess","label":"Excess","visible":true,"default":false,"initial":false}
-    ],
-  "multi":false}
-    `;
+    this.data =
+      {
+        values: [
+          { value: "all", label: "All", visible: true, default: false, initial: false },
+          { value: "primary", label: "Primary", visible: true, default: false, initial: false },
+          { value: "excess", label: "Excess", visible: true, default: false, initial: false }
+        ],
+        multi: false
+      };
 
     this.title = 'Primary/Excess';
-    this.name = 'primary-excess';    
+    this.name = 'primary-excess';
   }
 
 }

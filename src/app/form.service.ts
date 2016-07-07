@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Fieldset } from './fieldset';
+import { Ifieldset } from './ifieldset';
 import { FormValue } from './form-value';
 
 @Injectable()
@@ -9,7 +10,7 @@ export class FormService {
 
   constructor() {}
 
-  setValue(index: string, data: string): Fieldset {
+  setValue(index: string, data: Ifieldset): Fieldset {
     return this.values[index] = FormService.mapToFieldset(data);
   }
 
@@ -42,8 +43,7 @@ export class FormService {
     return res;
   }
 
-  private static mapToFieldset(data: string): Fieldset {
-    let obj = JSON.parse(data);
+  private static mapToFieldset(obj: Ifieldset): Fieldset {
     let values = FormService.mapToFormValues(obj.values);
     let fieldset = new Fieldset(values,obj.multi);
     if(obj.sets){
