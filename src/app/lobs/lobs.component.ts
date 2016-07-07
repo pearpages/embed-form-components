@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
 import { Ifieldset } from '../ifieldset';
+import { Http, Response } from '@angular/http';
 
 @Component({
   moduleId: module.id,
@@ -15,9 +16,10 @@ export class LobsComponent implements OnInit {
   name: string;
   title: string;
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   ngOnInit() {
+
     this.data =
       {
         values: [
@@ -38,6 +40,13 @@ export class LobsComponent implements OnInit {
 
     this.title = 'UW LOB';
     this.name = 'lobs';
+
+    this.http.get('/api/lobs.json')
+    .subscribe(
+      (data) => {this.data = data.json(); console.log(data.json())},
+      (error) => console.error(error),
+      () => console.log('done')
+    );
   }
 
 }
