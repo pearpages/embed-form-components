@@ -13,6 +13,10 @@ export class ApiService {
     return this.http.get('/api/lobs.json').map(response => response.json());
   }
 
+  getCompanyTypes(): Observable<Ifieldset> {
+    return this.http.get('/api/company-types.json').map(response => response.json());
+  }
+  
   private handleError(error: any) {
     // In a real world app, we might use a remote logging infrastructure
     // We'd also dig deeper into the error to get a better message

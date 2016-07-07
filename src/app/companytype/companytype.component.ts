@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
 import { Ifieldset } from '../ifieldset';
+import { ApiService } from '../api.service';
 
 @Component({
   moduleId: module.id,
@@ -15,22 +16,19 @@ export class CompanytypeComponent implements OnInit {
   name: string;
   title: string;
 
-  constructor() {
+  constructor(private apiService: ApiService) {
     this.title = 'Reporting Figures';
   }
 
   ngOnInit() {
-    this.data =
-      {
-        values: [
-          { value: "financial", label: "Financial Institutions", visible: true, default: false, initial: false },
-          { value: "commercial", label: "Commercial Institutions", visible: true, default: false, initial: false }
-        ],
-        multi: true
-      };
-
     this.title = 'Company Type';
     this.name = 'company-type';
+
+    this.apiService.getCompanyTypes().subscribe(
+      (data) => this.data = data,
+      (error) => console.error(error),
+      () => console.log('done')
+    );
   }
 
 }

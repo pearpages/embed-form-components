@@ -1,0 +1,19 @@
+{
+    "values": [
+        {
+            "value": "financial",
+            "label": "Financial Institutions",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "commercial",
+            "label": "Commercial Institutions",
+            "visible": true,
+            "default": false,
+            "initial": false
+        }
+    ],
+    "multi": true
+}

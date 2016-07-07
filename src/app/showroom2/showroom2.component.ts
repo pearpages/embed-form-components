@@ -5,13 +5,15 @@ import { LobsComponent } from '../lobs/lobs.component';
 import { PrimaryexcessComponent } from '../primaryexcess/primaryexcess.component';
 import { OfficesComponent } from '../offices/offices.component';
 import { FormService } from '../form.service';
+import { ApiService } from '../api.service';
 
 @Component({
   moduleId: module.id,
   selector: 'app-showroom2',
   templateUrl: 'showroom2.component.html',
   styleUrls: ['showroom2.component.css'],
-  directives: [ReportingfiguresComponent,CompanytypeComponent,LobsComponent,PrimaryexcessComponent,OfficesComponent]
+  directives: [ReportingfiguresComponent,CompanytypeComponent,LobsComponent,PrimaryexcessComponent,OfficesComponent],
+  providers: [ApiService]
 })
 export class Showroom2Component implements OnInit {
 
