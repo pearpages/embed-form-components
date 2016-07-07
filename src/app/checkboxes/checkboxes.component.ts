@@ -15,7 +15,7 @@ export class CheckboxesComponent implements OnInit {
   @Input() data: Ifieldset; 
   @Input() name: string;
   @Input() title: string;
-  values: Fieldset;
+  private fieldset: Fieldset;
 
   constructor(private formService: FormService) {}
 
@@ -24,21 +24,11 @@ export class CheckboxesComponent implements OnInit {
   }
 
   protected allChecked() {
-    let values = this.getValues().filter((e) => {return e.visible === true});
-    if(values.length === 0){
-      return true;
-    }
-    return values.reduce((previous,current) => {
-      return current.current && previous;
-    }, true);
+    return (this.fieldset) ? this.fieldset.haveAllCurrentValuesToTrue() : false;
   }
 
   toggle() {
-    var status = true;
-    if(this.allChecked()){
-      status = false;
-    }
-    this.getValues().filter((e)=> { return e.visible === true}).forEach((e) => { e.current = status });
+    (this.fieldset) ? this.fieldset.toggleCurrentBooleanValues() : 'do nothing';
   }
 
   getButtonText() {
@@ -49,10 +39,10 @@ export class CheckboxesComponent implements OnInit {
     if (this.data === undefined) {
       return [];
     } else {
-      if(!this.values) {
-        this.values = this.formService.setValue(this.name,this.data);
+      if(!this.fieldset) {
+        this.fieldset = this.formService.setValue(this.name,this.data);
       }
-      return this.values.getinputValues();
+      return this.fieldset.getinputValues();
     }
   }
 }

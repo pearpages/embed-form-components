@@ -15,8 +15,8 @@ export class SelectComponent implements OnInit {
   @Input() multiple: boolean;
   @Input() name: string;
   @Input() data: Ifieldset;
-  values: Fieldset;
-  current: string;
+  private fieldset: Fieldset;
+  selectedValues: string[];
 
   constructor(private formService: FormService) { }
 
@@ -25,36 +25,26 @@ export class SelectComponent implements OnInit {
   }
 
   toggle() {
-    let values = this.getValues();
-    if (this.areAllSelected()) {
-      values.forEach((value) => {
-        value.current = false;
-      });
-    } else {
-      values.forEach((value) => {
-        value.current = value.getValue();
-      });
-    }
+    this.fieldset.toggleCurrentBooleanValues();
   }
 
   areAllSelected() {
-    return this.getValues().reduce((previous, current) => {
-      return (previous && (current.getValue() === current.current));
-    }, true);
+    return this.fieldset.haveAllCurrentValuesToTrue();
+  }
+  
+  getButtonText() {
+    return this.areAllSelected() ? 'Unselect All' : 'Select All'
   }
 
   updateValues() {
-    let values = this.getValues();
-    values.forEach((val) => {
-      val.current = (this.current.indexOf(val.getValue()) !== -1) ? val.getValue() : false;
-    });
+    this.fieldset.setToTrueTheCurrentValuesHavingThisValues(this.selectedValues);
   }
 
   isAnySelected():boolean {
     if(this.getValues().length === 0){
       return false;
     } else {
-      return this.values.getOutputValues()[0] === false;
+      return this.fieldset.getOutputValues()[0] === false;
     }
 
   }
@@ -63,17 +53,17 @@ export class SelectComponent implements OnInit {
     if(this.getValues().length === 0){
       return false;
     }
-    return this.values.getOutputValues().indexOf(value) !== -1
+    return this.fieldset.getOutputValues().indexOf(value) !== -1
   }
 
   getValues(): FormValue[] {
     if (this.data === undefined) {
       return [];
     } else {
-      if (!this.values) {
-        this.values = this.formService.setValue(this.name, this.data);
+      if (!this.fieldset) {
+        this.fieldset = this.formService.setValue(this.name, this.data);
       }
-      return this.values.getinputValues();
+      return this.fieldset.getinputValues();
     }
   }
 }

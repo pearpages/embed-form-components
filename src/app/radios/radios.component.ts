@@ -16,7 +16,7 @@ export class RadiosComponent implements OnInit {
   @Input() data: Ifieldset;
   @Input() title: string;
 
-  values: Fieldset;
+  private fieldset: Fieldset;
 
   constructor(private formService: FormService) {}
 
@@ -25,27 +25,21 @@ export class RadiosComponent implements OnInit {
   }
 
   updateValue(value: FormValue) {
-    this.getValues().forEach((e) => {
-      e.current = false;
-    });
-    value.current = true;
+    this.fieldset.putAllCurrentValuesToFalseButThisToTrue(value);
   }
 
   isChecked(value: FormValue) {
-    if(this.getValues().length === 0){
-      return  false;
-    }
-    return value.getValue() === this.values.getOutputValues()[0]
+    return this.fieldset.isCurrentValueTrue(value);
   }
 
   getValues(): FormValue[] {
     if (this.data === undefined) {
       return [];
     } else {
-      if(!this.values) {
-        this.values = this.formService.setValue(this.name,this.data);
+      if(!this.fieldset) {
+        this.fieldset = this.formService.setValue(this.name,this.data);
       }
-      return this.values.getinputValues();
+      return this.fieldset.getinputValues();
     }
   }
 }
