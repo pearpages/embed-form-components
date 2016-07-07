@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
-import { FormService } from '../form.service';
 
 @Component({
   moduleId: module.id,
@@ -15,7 +14,7 @@ export class CompanytypeComponent implements OnInit {
   name: string;
   title: string;
 
-  constructor(private formService: FormService) {
+  constructor() {
     this.title = 'Reporting Figures';
   }
 
@@ -30,7 +29,6 @@ export class CompanytypeComponent implements OnInit {
 
     this.title = 'Company Type';
     this.name = 'company-type';    
-    this.formService.setValue(this.name,this.data);
   }
 
 }

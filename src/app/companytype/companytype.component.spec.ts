@@ -11,12 +11,10 @@ import {
 } from '@angular/core/testing';
 
 import { CompanytypeComponent } from './companytype.component';
-import { FormService } from '../form.service';
-
 
 describe('Component: Companytype', () => {
   it('should create an instance', () => {
-    let component = new CompanytypeComponent(new FormService());
+    let component = new CompanytypeComponent();
     expect(component).toBeTruthy();
   });
 });

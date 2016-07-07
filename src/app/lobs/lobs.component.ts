@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
-import { FormService } from '../form.service';
 
 @Component({
   moduleId: module.id,
@@ -15,7 +14,7 @@ export class LobsComponent implements OnInit {
   name: string;
   title: string;
 
-  constructor(private formService: FormService) { }
+  constructor() { }
 
   ngOnInit() {
     this.data = 
@@ -37,7 +36,6 @@ export class LobsComponent implements OnInit {
 
     this.title = 'UW LOB';
     this.name = 'lobs';    
-    this.formService.setValue(this.name,this.data);
   }
 
 }

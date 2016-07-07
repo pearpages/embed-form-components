@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RadiosComponent } from '../radios/radios.component';
-import { FormService } from '../form.service';
 
 @Component({
   moduleId: module.id,
@@ -15,7 +14,7 @@ export class PrimaryexcessComponent implements OnInit {
   name: string;
   title: string;
 
-  constructor(private formService: FormService) { }
+  constructor() { }
 
   ngOnInit() {
     this.data = 
@@ -29,7 +28,6 @@ export class PrimaryexcessComponent implements OnInit {
 
     this.title = 'Primary/Excess';
     this.name = 'primary-excess';    
-    this.formService.setValue(this.name,this.data);
   }
 
 }

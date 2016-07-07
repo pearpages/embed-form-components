@@ -11,12 +11,10 @@ import {
 } from '@angular/core/testing';
 
 import { PrimaryexcessComponent } from './primaryexcess.component';
-import { FormService } from '../form.service';
-
 
 describe('Component: Primaryexcess', () => {
   it('should create an instance', () => {
-    let component = new PrimaryexcessComponent(new FormService());
+    let component = new PrimaryexcessComponent();
     expect(component).toBeTruthy();
   });
 });

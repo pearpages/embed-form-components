@@ -11,11 +11,10 @@ import {
 } from '@angular/core/testing';
 
 import { ReportingfiguresComponent } from './reportingfigures.component';
-import { FormService } from '../form.service';
 
 describe('Component: Reportingfigures', () => {
   it('should create an instance', () => {
-    let component = new ReportingfiguresComponent(new FormService());
+    let component = new ReportingfiguresComponent();
     expect(component).toBeTruthy();
   });
 });
