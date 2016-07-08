@@ -1,5 +1,11 @@
 # Forms
 
+## Pending Log
+
+Refacto selects for re-rendering
+
+## Intro
+
 The idea is to have a set of basic components like:
 
 ```html
