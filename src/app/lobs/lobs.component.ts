@@ -12,7 +12,7 @@ import { ApiService } from '../api.service';
 })
 export class LobsComponent implements OnInit {
 
-  data: any;
+  data: Ifieldset;
   name: string;
   title: string;
 
