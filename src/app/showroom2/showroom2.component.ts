@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ReportingfiguresComponent } from '../reportingfigures';
 import { CompanytypeComponent } from '../companytype/companytype.component';
 import { LobsComponent } from '../lobs/lobs.component';
@@ -17,9 +17,21 @@ import { ApiService } from '../api.service';
 })
 export class Showroom2Component implements OnInit {
 
+  @ViewChild(LobsComponent) lobs: LobsComponent;
+  @ViewChild(ReportingfiguresComponent) reportingFigures: ReportingfiguresComponent;
+  @ViewChild(CompanytypeComponent) companyType: CompanytypeComponent;
+  @ViewChild(PrimaryexcessComponent) primaryExcess: PrimaryexcessComponent;
+  @ViewChild(OfficesComponent) offices: OfficesComponent;
+  components: any[];
+
   constructor(public formService: FormService) {}
 
   ngOnInit() {
+    this.components = [this.lobs,this.reportingFigures,this.companyType,this.primaryExcess,this.offices];
+  }
+
+  forceRefresh() {
+    this.components.forEach(c => c.forceRefresh());
   }
 
 }

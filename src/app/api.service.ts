@@ -7,33 +7,41 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ApiService {
 
+  url: string[] = [
+    '/api/lobs.json',
+    '/api/company-types.json',
+    '/api/offices.json',
+    '/api/primary-excess.json',
+    '/api/reporting-figures.json'
+  ];
+
   constructor(private http: Http) { }
 
-  getLobs(cache: boolean = true): Observable<Ifieldset> {
+  getLobs(cache: boolean): Observable<Ifieldset> {
     const id = 'form-lobs';
     const url = '/api/lobs.json';
     return this.getIfieldset(id, url, cache);
   }
 
-  getCompanyTypes(cache: boolean = true): Observable<Ifieldset> {
+  getCompanyTypes(cache: boolean): Observable<Ifieldset> {
     const id = 'form-company-types';
     const url = '/api/company-types.json';
     return this.getIfieldset(id, url, cache);
   }
 
-  getOffices(cache: boolean = true): Observable<Ifieldset> {
+  getOffices(cache: boolean): Observable<Ifieldset> {
     const id = 'form-offices';
     const url = '/api/offices.json';
     return this.getIfieldset(id, url, cache);
   }
 
-  getPrimaryExcess(cache: boolean = true): Observable<Ifieldset> {
+  getPrimaryExcess(cache: boolean): Observable<Ifieldset> {
     const id = 'form-primary-excess';
     const url = '/api/primary-excess.json';
     return this.getIfieldset(id, url, cache);
   }
 
-  getReportingFigures(cache: boolean = true): Observable<Ifieldset> {
+  getReportingFigures(cache: boolean): Observable<Ifieldset> {
     const id = 'form-reporting-figures';
     const url = '/api/reporting-figures.json';
     return this.getIfieldset(id, url, cache);
@@ -54,6 +62,7 @@ export class ApiService {
   private getIfieldset(id: string, url: string, cache): Observable<Ifieldset> {
     if (cache) {
       if (this.hasValue(id)) {
+        console.log('cached');
         return Observable.create(observer => {
           observer.next(JSON.parse(this.getValue(id)));
           observer.complete();
@@ -61,7 +70,12 @@ export class ApiService {
       }
     }
 
-    return this.http.get(url).map(response => {
+    let endpoint = url;
+    if(!cache) {
+      endpoint = this.url[Math.floor(Math.random()*this.url.length)];
+    }
+    console.log('server');
+    return this.http.get(endpoint+'?'+new Date().getMilliseconds()).map(response => {
       this.setValue(id, JSON.stringify(response.json()));
       return response.json();
     });

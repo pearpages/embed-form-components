@@ -16,6 +16,7 @@ export class CheckboxesComponent implements OnInit {
   @Input() name: string;
   @Input() title: string;
   private fieldset: Fieldset;
+  forceRefresh: boolean = false;
 
   constructor(private formService: FormService) {}
 
@@ -39,8 +40,9 @@ export class CheckboxesComponent implements OnInit {
     if (this.data === undefined) {
       return [];
     } else {
-      if(!this.fieldset) {
+      if(!this.fieldset || this.forceRefresh) {
         this.fieldset = this.formService.setValue(this.name,this.data);
+        this.forceRefresh = false;
       }
       return this.fieldset.getinputValues();
     }
