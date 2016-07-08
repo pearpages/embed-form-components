@@ -23,6 +23,7 @@ export class Showroom2Component implements OnInit {
   @ViewChild(PrimaryexcessComponent) primaryExcess: PrimaryexcessComponent;
   @ViewChild(OfficesComponent) offices: OfficesComponent;
   components: any[];
+  json: string = '';
 
   constructor(public formService: FormService) {}
 
@@ -34,4 +35,7 @@ export class Showroom2Component implements OnInit {
     this.components.forEach(c => c.forceRefresh());
   }
 
+  getJson() {
+    return this.json = this.formService.getJSON();
+  }
 }
