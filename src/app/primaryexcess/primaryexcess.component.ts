@@ -24,7 +24,7 @@ export class PrimaryexcessComponent implements OnInit {
     this.apiService.getPrimaryExcess().subscribe(
       (data) => this.data = data,
       (error) => console.error(error),
-      () => console.log('primary excess done')
+      () => 'put any debug comments here'
     );
   }
 

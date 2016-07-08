@@ -9,24 +9,63 @@ export class ApiService {
 
   constructor(private http: Http) { }
 
-  getLobs(): Observable<Ifieldset> {
-    return this.http.get('/api/lobs.json').map(response => response.json());
+  getLobs(cache: boolean = true): Observable<Ifieldset> {
+    const id = 'form-lobs';
+    const url = '/api/lobs.json';
+    return this.getIfieldset(id, url, cache);
   }
 
-  getCompanyTypes(): Observable<Ifieldset> {
-    return this.http.get('/api/company-types.json').map(response => response.json());
+  getCompanyTypes(cache: boolean = true): Observable<Ifieldset> {
+    const id = 'form-company-types';
+    const url = '/api/company-types.json';
+    return this.getIfieldset(id, url, cache);
   }
 
-  getOffices(): Observable<Ifieldset> {
-    return this.http.get('/api/offices.json').map(response => response.json());
-  }
-  
-  getPrimaryExcess(): Observable<Ifieldset> {
-    return this.http.get('/api/primary-excess.json').map(response => response.json());
+  getOffices(cache: boolean = true): Observable<Ifieldset> {
+    const id = 'form-offices';
+    const url = '/api/offices.json';
+    return this.getIfieldset(id, url, cache);
   }
 
-  getReportingFigures(): Observable<Ifieldset> {
-    return this.http.get('/api/reporting-figures.json').map(response => response.json());
+  getPrimaryExcess(cache: boolean = true): Observable<Ifieldset> {
+    const id = 'form-primary-excess';
+    const url = '/api/primary-excess.json';
+    return this.getIfieldset(id, url, cache);
+  }
+
+  getReportingFigures(cache: boolean = true): Observable<Ifieldset> {
+    const id = 'form-reporting-figures';
+    const url = '/api/reporting-figures.json';
+    return this.getIfieldset(id, url, cache);
+  }
+
+  private hasValue(id: string): boolean {
+    return (localStorage.getItem(id) !== null);
+  }
+
+  private getValue(id: string): string {
+    return localStorage.getItem(id);
+  }
+
+  private setValue(id: string, data: string) {
+    localStorage.setItem(id, data);
+  }
+
+  private getIfieldset(id: string, url: string, cache): Observable<Ifieldset> {
+    if (cache) {
+      if (this.hasValue(id)) {
+        return Observable.create(observer => {
+          observer.next(JSON.parse(this.getValue(id)));
+          observer.complete();
+        });
+      }
+    }
+
+    return this.http.get(url).map(response => {
+      this.setValue(id, JSON.stringify(response.json()));
+      return response.json();
+    });
+
   }
 
   private handleError(error: any) {

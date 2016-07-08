@@ -24,7 +24,7 @@ export class ReportingfiguresComponent implements OnInit {
     this.apiService.getReportingFigures().subscribe(
       (data) => this.data,
       (error) => console.error(error),
-      () => console.log('reporting figures done')
+      () => 'put any debug comments here'
     );
   }
 

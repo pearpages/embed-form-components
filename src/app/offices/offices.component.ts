@@ -25,7 +25,7 @@ export class OfficesComponent implements OnInit {
     this.apiService.getOffices().subscribe(
       (data) => this.data = data,
       (error) => console.error(error),
-      () => console.log('offices loaded')
+      () => 'put any debug comments here'
     );
   }
 

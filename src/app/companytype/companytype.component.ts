@@ -27,7 +27,7 @@ export class CompanytypeComponent implements OnInit {
     this.apiService.getCompanyTypes().subscribe(
       (data) => this.data = data,
       (error) => console.error(error),
-      () => console.log('company type')
+      () => 'put any debug comments here'
     );
   }
 
