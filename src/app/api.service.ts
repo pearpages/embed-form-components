@@ -47,6 +47,12 @@ export class ApiService {
     return this.getIfieldset(id, url, cache);
   }
 
+  getUws(cache: boolean): Observable<Ifieldset> {
+    const id = 'form-uws';
+    const url = '/api/uws.json';
+    return this.getIfieldset(id,url,cache);
+  }
+
   private hasValue(id: string): boolean {
     return (localStorage.getItem(id) !== null);
   }
