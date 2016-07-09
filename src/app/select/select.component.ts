@@ -13,6 +13,7 @@ import { FormValue } from '../form-value'
 export class SelectComponent implements OnInit {
 
   @Input() multiple: boolean;
+  @Input() title: string;
   @Input() name: string;
   @Input() data: Ifieldset;
   @Input() classes: string;

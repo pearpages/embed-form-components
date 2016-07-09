@@ -1,5 +1,5 @@
 <div class="form-group">
-  <h4>Select</h4>
+  <h4>{{title}}</h4>
   <button class="btn btn-default" (click)="toggle()" *ngIf="multiple" >{{getButtonText()}}</button>
   <select [class]="'form-control ' + classes" [multiple]="multiple" [(ngModel)]="selectedValues" (change)=updateValues()>
     <option *ngIf="isAnySelected()">Select One</option>
