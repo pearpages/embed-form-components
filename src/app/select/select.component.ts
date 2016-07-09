@@ -15,6 +15,7 @@ export class SelectComponent implements OnInit {
   @Input() multiple: boolean;
   @Input() name: string;
   @Input() data: Ifieldset;
+  @Input() classes: string;
   private fieldset: Fieldset;
   selectedValues: string[];
 
