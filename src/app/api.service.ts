@@ -53,6 +53,24 @@ export class ApiService {
     return this.getIfieldset(id,url,cache);
   }
 
+  getGroups(cache: boolean): Observable<Ifieldset> {
+    const id = 'form-groups';
+    const url = '/api/groups.json';
+    return this.getIfieldset(id,url,cache);
+  }
+
+  getRegions(cache: boolean): Observable<Ifieldset> {
+    const id = 'form-regions';
+    const url = '/api/regions.json';
+    return this.getIfieldset(id,url,cache);
+  }
+
+  getCountries(cache: boolean): Observable<Ifieldset> {
+    const id = 'form-countries';
+    const url = '/api/countries.json';
+    return this.getIfieldset(id,url,cache);
+  }
+
   private hasValue(id: string): boolean {
     return (localStorage.getItem(id) !== null);
   }

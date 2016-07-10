@@ -1,0 +1,26 @@
+{
+        "values": [
+            {
+                "value": "group1",
+                "label": "Group 1",
+                "visible": true,
+                "default": false,
+                "initial": false
+            },
+            {
+                "value": "group2",
+                "label": "Group 2",
+                "visible": true,
+                "default": false,
+                "initial": false
+            },
+            {
+                "value": "group3",
+                "label": "Group 3",
+                "visible": true,
+                "default": false,
+                "initial": false
+            }
+        ],
+        "multi": false
+    }

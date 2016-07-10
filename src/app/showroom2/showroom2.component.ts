@@ -8,13 +8,17 @@ import { UwComponent } from '../uw/uw.component';
 import { FormService } from '../form.service';
 import { ApiService } from '../api.service';
 import { GroupscountriesregionsComponent } from '../groupscountriesregions/groupscountriesregions.component';
+import { CountriesComponent } from '../countries/countries.component';
+import { RegionsComponent } from '../regions/regions.component';
+import { GroupsComponent } from '../groups/groups.component';
 
 @Component({
   moduleId: module.id,
   selector: 'app-showroom2',
   templateUrl: 'showroom2.component.html',
   styleUrls: ['showroom2.component.css'],
-  directives: [ReportingfiguresComponent,CompanytypeComponent,LobsComponent,PrimaryexcessComponent,OfficesComponent,UwComponent,GroupscountriesregionsComponent],
+  directives: [ReportingfiguresComponent,CompanytypeComponent,LobsComponent,PrimaryexcessComponent,OfficesComponent,UwComponent,GroupscountriesregionsComponent,
+  RegionsComponent,GroupsComponent,CountriesComponent],
   providers: [ApiService]
 })
 export class Showroom2Component implements OnInit {

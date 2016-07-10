@@ -1,0 +1,221 @@
+{
+    "values": [
+        {
+            "value": "region1",
+            "label": "Region 1",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region2",
+            "label": "Region 2",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region3",
+            "label": "Region 3",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region4",
+            "label": "Region 4",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region5",
+            "label": "Region 5",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region6",
+            "label": "Region 6",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region7",
+            "label": "Region 7",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region8",
+            "label": "Region 8",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region9",
+            "label": "Region 9",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region10",
+            "label": "Region 10",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region11",
+            "label": "Region 11",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region12",
+            "label": "Region 12",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region13",
+            "label": "Region 13",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region14",
+            "label": "Region 14",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region15",
+            "label": "Region 15",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region16",
+            "label": "Region 16",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region17",
+            "label": "Region 17",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region18",
+            "label": "Region 18",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region19",
+            "label": "Region 19",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },{
+            "value": "region20",
+            "label": "Region 20",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region21",
+            "label": "Region 21",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region22",
+            "label": "Region 22",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region23",
+            "label": "Region 23",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region24",
+            "label": "Region 24",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region25",
+            "label": "Region 25",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region26",
+            "label": "Region 26",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region27",
+            "label": "Region 27",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region28",
+            "label": "Region 28",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region29",
+            "label": "Region 29",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region30",
+            "label": "Region 30",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region31",
+            "label": "Region 31",
+            "visible": true,
+            "default": false,
+            "initial": false
+        }
+    ],
+    "multi": true
+}

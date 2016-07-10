@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-countries',
+  selector: 'countries',
   templateUrl: 'countries.component.html',
   styleUrls: ['countries.component.css']
 })
