@@ -21,17 +21,13 @@ export class ReportingfiguresComponent implements OnInit, IFormelement {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getReportingFigures(true).subscribe(
-      (data) => this.data = data,
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-    );
+    this.forceRefresh(true);
   }
 
-  forceRefresh() { 
-    this.apiService.getReportingFigures(false)
+  forceRefresh(useCache: boolean = false) { 
+    this.apiService.getReportingFigures(useCache)
     .subscribe(
-      (data) => {this.radios.forceRefresh = true; this.data = data},
+      (data) => {this.radios.forceRefresh = !useCache; this.data = data},
       (error) => console.error(error),
       () => 'put any debug comments here'
     );    

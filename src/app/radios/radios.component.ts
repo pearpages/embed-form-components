@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { FormService } from '../form.service';
 import { Fieldset } from '../fieldset';
 import { Ifieldset } from '../ifieldset';
@@ -15,6 +15,7 @@ export class RadiosComponent implements OnInit {
   @Input() name: string;
   @Input() data: Ifieldset;
   @Input() title: string;
+  @Output() valueChange = new EventEmitter();
   forceRefresh: boolean = false;
 
   private fieldset: Fieldset;
@@ -35,12 +36,14 @@ export class RadiosComponent implements OnInit {
 
   getValues(): FormValue[] {
     if (this.data === undefined) {
+      this.valueChange.emit({value: []});
       return [];
     } else {
       if(!this.fieldset || this.forceRefresh) {
         this.fieldset = this.formService.setValue(this.name,this.data);
         this.forceRefresh = false;
       }
+      this.valueChange.emit({value: this.fieldset.getOutputValues()});
       return this.fieldset.getinputValues();
     }
   }

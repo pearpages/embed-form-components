@@ -21,17 +21,13 @@ export class OfficesComponent implements OnInit, IFormelement {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getOffices(true).subscribe(
-      (data) => this.data = data,
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-    );
+    this.forceRefresh(true);
   }
 
-  forceRefresh() {
-    this.apiService.getOffices(false)
+  forceRefresh(useCache: boolean = false) {
+    this.apiService.getOffices(useCache)
     .subscribe(
-      (data) => {this.checkboxes.forceRefresh = true; this.data = data},
+      (data) => {this.checkboxes.forceRefresh = !useCache; this.data = data},
       (error) => console.error(error),
       () => 'put any debug comments here'
     );    

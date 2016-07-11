@@ -15,26 +15,19 @@ export class CompanytypeComponent implements OnInit, IFormelement {
 
   @ViewChild(CheckboxesComponent) checkboxes: CheckboxesComponent;
   data: Ifieldset;
-  name: string;
-  title: string;
+  name: string= 'company-type';
+  title: string = 'Company Type';
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.title = 'Company Type';
-    this.name = 'company-type';
-
-    this.apiService.getCompanyTypes(true).subscribe(
-      (data) => this.data = data,
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-    );
+    this.forceRefresh(true);
   }
 
-  forceRefresh() {
-    this.apiService.getCompanyTypes(false)
+  forceRefresh(useCache:boolean = false ):void {
+    this.apiService.getCompanyTypes(useCache)
     .subscribe(
-      (data) => {this.checkboxes.forceRefresh = true; this.data = data},
+      (data) => {this.checkboxes.forceRefresh = !useCache; this.data = data},
       (error) => console.error(error),
       () => 'put any debug comments here'
     );    

@@ -132,7 +132,8 @@
             "visible": true,
             "default": false,
             "initial": false
-        },{
+        },
+        {
             "value": "country20",
             "label": "Country 20",
             "visible": true,
@@ -215,6 +216,84 @@
             "visible": true,
             "default": false,
             "initial": false
+        }
+    ],
+    "sets": [
+        {
+            "id": "region1",
+            "values": [
+                "country1",
+                "country2",
+                "country3"
+            ]
+        },
+        {
+            "id": "region2",
+            "values": [
+                "country4",
+                "country5",
+                "country6"
+            ]
+        },
+        {
+            "id": "region3",
+            "values": [
+                "country7",
+                "country8",
+                "country9"
+            ]
+        },
+        {
+            "id": "region4",
+            "values": [
+                "country10",
+                "country12",
+                "country12"
+            ]
+        },
+        {
+            "id": "region5",
+            "values": [
+                "country13",
+                "country14",
+                "country15"
+            ]
+        },
+        {
+            "id": "region6",
+            "values": [
+                "country16",
+                "country17",
+                "country18"
+            ]
+        },
+        {
+            "id": "region7",
+            "values": [
+                "country19",
+                "country20",
+                "country21"
+            ]
+        },
+        {
+            "id": "region8",
+            "values": [
+                "country22",
+                "country23",
+                "country24"
+            ]
+        },
+        {
+            "id": "region9",
+            "values": [
+                "country25",
+                "country26",
+                "country27",
+                "country28",
+                "country29",
+                "country30",
+                "country31"
+            ]
         }
     ],
     "multi": true

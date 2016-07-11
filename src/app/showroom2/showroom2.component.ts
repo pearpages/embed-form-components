@@ -28,13 +28,17 @@ export class Showroom2Component implements OnInit {
   @ViewChild(CompanytypeComponent) companyType: CompanytypeComponent;
   @ViewChild(PrimaryexcessComponent) primaryExcess: PrimaryexcessComponent;
   @ViewChild(OfficesComponent) offices: OfficesComponent;
+  @ViewChild(CountriesComponent) countries: CountriesComponent;
+  @ViewChild(RegionsComponent) regions: RegionsComponent;
+  @ViewChild(GroupsComponent) groups: GroupsComponent;
+
   components: any[];
   json: string = '';
 
   constructor(public formService: FormService) {}
 
   ngOnInit() {
-    this.components = [this.lobs,this.reportingFigures,this.companyType,this.primaryExcess,this.offices];
+    this.components = [this.lobs,this.reportingFigures,this.companyType,this.primaryExcess,this.offices,this.countries,this.regions,this.groups];
   }
 
   forceRefresh() {

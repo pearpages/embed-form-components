@@ -20,18 +20,13 @@ export class CountriesComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getCountries(true)
-    .subscribe(
-      (data) => {this.data = data},
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-    );
+    this.forceRefresh(true);
   }
 
-  forceRefresh(cache) {
-    this.apiService.getCountries(cache)
+  forceRefresh(useCache: boolean = false) {
+    this.apiService.getCountries(useCache)
     .subscribe(
-      (data) => {this.checkboxes.forceRefresh = true; this.data = data},
+      (data) => {this.checkboxes.forceRefresh = !useCache; this.data = data},
       (error) => console.error(error),
       () => 'put any debug comments here'
     );

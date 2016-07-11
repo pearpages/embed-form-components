@@ -2,7 +2,8 @@
 
 ## Pending Log
 
-Refacto selects for re-rendering
+- Refacto selects for refreshing values from server side and ignore local cache
+- Check event emitter coliding with automatic refresh
 
 ## Intro
 

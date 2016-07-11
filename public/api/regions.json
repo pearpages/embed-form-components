@@ -64,5 +64,31 @@
             "initial": false
         }
     ],
+    "sets": [
+        {
+            "id": "group1",
+            "values": [
+                "region1",
+                "region2",
+                "region3"
+            ]
+        },
+        {
+            "id": "group2",
+            "values": [
+                "region4",
+                "region5",
+                "region6"
+            ]
+        },
+        {
+            "id": "group3",
+            "values": [
+                "region7",
+                "region8",
+                "region9"
+            ]
+        }
+    ],
     "multi": true
 }

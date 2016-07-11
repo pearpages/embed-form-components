@@ -22,18 +22,13 @@ export class LobsComponent implements OnInit, IFormelement {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getLobs(true)
-    .subscribe(
-      (data) => {this.data = data},
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-    );
+    this.forceRefresh(true);
   }
 
-  forceRefresh(cache) {
-    this.apiService.getLobs(cache)
+  forceRefresh(useCache: boolean = false) {
+    this.apiService.getLobs(useCache)
     .subscribe(
-      (data) => {this.checkboxes.forceRefresh = true; this.data = data},
+      (data) => {this.checkboxes.forceRefresh = !useCache; this.data = data},
       (error) => console.error(error),
       () => 'put any debug comments here'
     );

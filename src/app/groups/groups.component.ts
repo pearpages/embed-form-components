@@ -3,6 +3,7 @@ import { RadiosComponent } from '../radios/radios.component';
 import { Ifieldset } from '../ifieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
+import { FormService } from '../form.service';
 
 @Component({
   moduleId: module.id,
@@ -18,22 +19,25 @@ export class GroupsComponent implements OnInit, IFormelement {
   name: string = 'groups';
   title: string = 'Groups';
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private formService: FormService) { }
 
   ngOnInit() {
-    this.apiService.getGroups(true).subscribe(
-      (data) => this.data = data,
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-    );
+    this.forceRefresh(true);
   }
 
-  forceRefresh() { 
-    this.apiService.getGroups(false)
+  forceRefresh(useCache: boolean = false) { 
+    this.apiService.getGroups(useCache)
     .subscribe(
-      (data) => {this.radios.forceRefresh = true; this.data = data},
+      (data) => {this.radios.forceRefresh = !useCache; this.data = data},
       (error) => console.error(error),
       () => 'put any debug comments here'
     );    
+  }
+
+  groupChange(event) {
+    let set = event.value[0];
+    if(set){
+      this.formService.getValue('regions').toggleVisibilitySet(set);
+    }
   }
 }
