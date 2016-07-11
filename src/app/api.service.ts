@@ -7,14 +7,6 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ApiService {
 
-  url: string[] = [
-    '/api/lobs.json',
-    '/api/company-types.json',
-    '/api/offices.json',
-    '/api/primary-excess.json',
-    '/api/reporting-figures.json'
-  ];
-
   constructor(private http: Http) { }
 
   getLobs(cache: boolean): Observable<Ifieldset> {
@@ -86,7 +78,6 @@ export class ApiService {
   private getIfieldset(id: string, url: string, cache): Observable<Ifieldset> {
     if (cache) {
       if (this.hasValue(id)) {
-        console.log('cached');
         return Observable.create(observer => {
           observer.next(JSON.parse(this.getValue(id)));
           observer.complete();
@@ -95,11 +86,8 @@ export class ApiService {
     }
 
     let endpoint = url;
-    if(!cache) {
-      endpoint = this.url[Math.floor(Math.random()*this.url.length)];
-    }
-    console.log('server');
-    return this.http.get(endpoint+'?'+new Date().getMilliseconds()).map(response => {
+    if(!cache) 
+    return this.http.get(url+'?'+new Date().getMilliseconds()).map(response => {
       this.setValue(id, JSON.stringify(response.json()));
       return response.json();
     });
