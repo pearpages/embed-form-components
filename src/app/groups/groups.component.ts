@@ -34,10 +34,4 @@ export class GroupsComponent implements OnInit, IFormelement {
     );    
   }
 
-  groupChange(event) {
-    let set = event.value[0];
-    if(set){
-      this.formService.getValue('regions').toggleVisibilitySet(set);
-    }
-  }
 }
