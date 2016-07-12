@@ -21,7 +21,11 @@ export class FormService {
     return this.values[index];
   }
 
-  hasValue(id:string) {
+  hasValue(index:string): boolean {
+    return (this.values[index]) ? true: false;
+  }
+
+  isCached(id:string) {
     return (localStorage.getItem(id) !== null);
   }
 

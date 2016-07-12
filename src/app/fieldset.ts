@@ -89,6 +89,17 @@ export class Fieldset {
         this.set[id].forEach((e) => { e.visible = !e.visible });
     }
 
+    showOnlyThisSet(id: string){
+        for(let set in this.set){
+            if(set !== id){
+                this.set[set].forEach((e) => {
+                    e.visible = false;
+                });
+            }
+        }
+        this.set[id].forEach((e) => e.visible = true);        
+    }
+
     private getMultiValues(): any[] {
         return this.getinputValues().filter((i) => {
             return i.current !== false;
