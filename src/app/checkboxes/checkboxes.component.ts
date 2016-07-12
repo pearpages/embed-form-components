@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { FormService } from '../form.service';
 import { FormValue } from '../form-value';
 import { Fieldset } from '../fieldset';
@@ -15,6 +15,7 @@ export class CheckboxesComponent implements OnInit {
   @Input() data: Ifieldset; 
   @Input() name: string;
   @Input() title: string;
+  @Output() checkboxesChange = new EventEmitter();
   private fieldset: Fieldset;
   forceRefresh: boolean = false;
 
@@ -30,10 +31,20 @@ export class CheckboxesComponent implements OnInit {
 
   toggle() {
     (this.fieldset) ? this.fieldset.toggleCurrentBooleanValues() : 'do nothing';
+    this.tellParents();
+  }
+
+  updateValue(value: FormValue) {
+    value.current = !value.current;
+    this.tellParents();
   }
 
   getButtonText() {
     return this.allChecked() ? 'Uncheck All' : 'Check All';
+  }
+
+  tellParents() {
+    this.checkboxesChange.emit({value: this.fieldset.getOutputValues()});
   }
 
   getValues(): FormValue[] {

@@ -31,7 +31,11 @@ export class SelectComponent implements OnInit {
   }
 
   areAllSelected() {
-    return this.fieldset.haveAllCurrentValuesToTrue();
+    if(this.fieldset){
+      return this.fieldset.haveAllCurrentValuesToTrue();
+    } else {
+      return false;
+    }
   }
   
   getButtonText() {

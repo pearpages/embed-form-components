@@ -85,8 +85,6 @@ export class ApiService {
       }
     }
 
-    let endpoint = url;
-    if(!cache) 
     return this.http.get(url+'?'+new Date().getMilliseconds()).map(response => {
       this.setValue(id, JSON.stringify(response.json()));
       return response.json();

@@ -12,7 +12,7 @@ export class FormService {
 
   setValue(index: string, data: Ifieldset): Fieldset {
     if(this.values[index] !== undefined) {
-      throw new Error(index+' already defined');
+      console.log(index+' already defined');
     }
     return this.values[index] = FormService.mapToFieldset(data);
   }

@@ -26,9 +26,13 @@ export class RadiosComponent implements OnInit {
     this.getValues();
   }
 
+  tellParents() {
+    this.radiosChange.emit({value: this.fieldset.getOutputValues()});
+  }
+
   updateValue(value: FormValue) {
     this.fieldset.putAllCurrentValuesToFalseButThisToTrue(value);
-    this.radiosChange.emit({value: this.fieldset.getOutputValues()});
+    this.tellParents();    
   }
 
   isChecked(value: FormValue) {

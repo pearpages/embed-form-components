@@ -3,7 +3,7 @@ import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
 import { Ifieldset } from '../ifieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
-
+import { FormService } from '../form.service';
 
 @Component({
   moduleId: module.id,
@@ -19,7 +19,7 @@ export class RegionsComponent implements OnInit {
   name: string = 'regions';
   title: string = 'Regions';
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService,private formService: FormService) { }
 
   ngOnInit() {
     this.forceRefresh(true);
@@ -34,5 +34,11 @@ export class RegionsComponent implements OnInit {
     );
   }
 
-
+  updateCountries(event){
+      let countries = this.formService.getValue('countries');
+      countries.hideAllSets();
+      event.value.forEach((value) => {
+        countries.showSet(value);
+      });
+  }
 }

@@ -37,7 +37,12 @@ export class GroupsComponent implements OnInit, IFormelement {
   onGroupsChange(event) {
     let groupid = event.value[0];
     if(this.formService.hasValue('regions')){
-      this.formService.getValue('regions').showOnlyThisSet(groupid);
+      let regions = this.formService.getValue('regions');
+      if(groupid === false) {
+        regions.hideAllSets();
+      } else {
+        regions.showOnlyThisSet(groupid);
+      }
     }
   }
 
