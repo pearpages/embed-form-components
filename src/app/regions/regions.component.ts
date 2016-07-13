@@ -14,7 +14,6 @@ import { Fieldset } from '../fieldset';
 })
 export class RegionsComponent implements OnInit, IFormelement {
 
-  @ViewChild(CheckboxesComponent) checkboxes: CheckboxesComponent;
   data: Fieldset;
   name: string = 'regions';
   title: string = 'Regions';
@@ -28,7 +27,7 @@ export class RegionsComponent implements OnInit, IFormelement {
   forceRefresh(useCache: boolean = false) {
     this.apiService.getRegions(useCache)
       .subscribe(
-      (data) => { this.checkboxes.forceRefresh = !useCache; this.data = data; },
+      (data) => { this.data = data; },
       (error) => console.error(error),
       () => 'put any debug comments here'
       );

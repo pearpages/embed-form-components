@@ -13,7 +13,6 @@ import { IFormelement } from '../iformelement';
 })
 export class CompanytypeComponent implements OnInit, IFormelement {
 
-  @ViewChild(CheckboxesComponent) checkboxes: CheckboxesComponent;
   data: Fieldset;
   name: string = 'company-type';
   title: string = 'Company Type';
@@ -27,7 +26,7 @@ export class CompanytypeComponent implements OnInit, IFormelement {
   forceRefresh(useCache:boolean = false ):void {
     this.apiService.getCompanyTypes(useCache)
     .subscribe(
-      (data) => {this.checkboxes.forceRefresh = !useCache; this.data = data},
+      (data) => {this.data = data},
       (error) => console.error(error),
       () => 'put any debug comments here'
     );    

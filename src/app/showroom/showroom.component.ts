@@ -44,7 +44,7 @@ export class ShowroomComponent implements OnInit {
   constructor(private formService: FormService) { }
 
   private getFieldset(id) {
-    return this.formService.getValue(id);
+    return this.data;
   }
 
   ngOnInit() { }

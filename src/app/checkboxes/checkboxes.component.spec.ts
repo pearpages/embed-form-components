@@ -15,7 +15,7 @@ import { FormService} from '../form.service';
 
 describe('Component: CheckboxesComponent', () => {
   it('should create an instance', () => {
-    let component = new CheckboxesComponent(new FormService());
+    let component = new CheckboxesComponent();
     expect(component).toBeTruthy();
   });
 });

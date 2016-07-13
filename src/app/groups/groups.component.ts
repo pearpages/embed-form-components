@@ -14,7 +14,6 @@ import { FormService } from '../form.service';
 })
 export class GroupsComponent implements OnInit, IFormelement {
 
-  @ViewChild(RadiosComponent) radios: RadiosComponent;
   data: Fieldset;
   name: string = 'groups';
   title: string = 'Groups';
@@ -28,7 +27,7 @@ export class GroupsComponent implements OnInit, IFormelement {
   forceRefresh(useCache: boolean = false) { 
     this.apiService.getGroups(useCache)
     .subscribe(
-      (data) => {this.radios.forceRefresh = !useCache; this.data = data},
+      (data) => {this.data = data},
       (error) => console.error(error),
       () => 'put any debug comments here'
     );    

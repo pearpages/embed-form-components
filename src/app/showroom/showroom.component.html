@@ -2,10 +2,10 @@
   <div class="col-md-12">
     <h1>{{title}}</h1>
 
-    <radios [title]="'Radios'" [name]="'myRadios'" [data]="data"></radios>
-    <checkboxes [title]="'Checkboxes'" [data]="data" [name]="'myCheckboxes'"></checkboxes>
-    <my-select [title]="'MultiSelect'" [name]="'select1'" [data]="data" [multiple]="true"></my-select>
-    <my-select [title]="'Select'" [name]="'select2'" [data]="data" [multiple]="false"></my-select>
+    <radios [title]="'Radios'" [fieldset]="data"></radios>
+    <checkboxes [title]="'Checkboxes'" [fieldset]="data" ></checkboxes>
+    <my-select [title]="'MultiSelect'" [fieldset]="data" [multiple]="true"></my-select>
+    <my-select [title]="'Select'" [fieldset]="data" [multiple]="false"></my-select>
 
     <hr>
 

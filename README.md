@@ -3,7 +3,7 @@
 ## Pending Log
 
 - Refacto selects for refreshing values from server side and ignore local cache
-- I need to create a Set for the CollectionSet class
+- remove service from the basic components (checkboxes,radios,select)
 
 ## Intro
 

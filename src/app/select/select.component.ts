@@ -13,10 +13,8 @@ export class SelectComponent implements OnInit {
 
   @Input() multiple: boolean;
   @Input() title: string;
-  @Input() name: string;
-  @Input() data: Fieldset;
+  @Input() fieldset: Fieldset;
   @Input() classes: string;
-  private fieldset: Fieldset;
   selectedValues: string[];
 
   constructor(private formService: FormService) { }
@@ -62,12 +60,9 @@ export class SelectComponent implements OnInit {
   }
 
   getValues(): FormValue[] {
-    if (this.data === undefined) {
+    if (this.fieldset === undefined) {
       return [];
     } else {
-      if (!this.fieldset) {
-        this.fieldset = this.formService.setValue(this.name, this.data);
-      }
       return this.fieldset.getinputValues();
     }
   }

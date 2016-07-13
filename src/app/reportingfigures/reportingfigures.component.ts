@@ -27,7 +27,7 @@ export class ReportingfiguresComponent implements OnInit, IFormelement {
   forceRefresh(useCache: boolean = false) { 
     this.apiService.getReportingFigures(useCache)
     .subscribe(
-      (data) => {this.radios.forceRefresh = !useCache; this.data = data},
+      (data) => {this.data = data},
       (error) => console.error(error),
       () => 'put any debug comments here'
     );    

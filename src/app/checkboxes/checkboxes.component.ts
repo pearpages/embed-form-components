@@ -1,8 +1,6 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
-import { FormService } from '../form.service';
 import { FormValue } from '../form-value';
 import { Fieldset } from '../fieldset';
-import { Ifieldset } from '../ifieldset';
 
 @Component({
   moduleId: module.id,
@@ -12,14 +10,11 @@ import { Ifieldset } from '../ifieldset';
 })
 export class CheckboxesComponent implements OnInit {
 
-  @Input() data: Fieldset; 
-  @Input() name: string;
+  @Input() fieldset: Fieldset; 
   @Input() title: string;
   @Output() checkboxesChange = new EventEmitter();
-  private fieldset: Fieldset;
-  forceRefresh: boolean = false;
-
-  constructor(private formService: FormService) {}
+  
+  constructor() {}
 
   ngOnInit() {
     this.getValues();
@@ -48,14 +43,9 @@ export class CheckboxesComponent implements OnInit {
   }
 
   getValues(): FormValue[] {
-    if (this.data === undefined) {
+    if (this.fieldset === undefined) {
       return [];
-    } else {
-      if(!this.fieldset || this.forceRefresh) {
-        this.fieldset = this.formService.setValue(this.name,this.data);
-        this.forceRefresh = false;
-      }
-      return this.fieldset.getinputValues();
-    }
+    } 
+    return this.fieldset.getinputValues();
   }
 }

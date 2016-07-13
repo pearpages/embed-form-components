@@ -27,7 +27,7 @@ export class OfficesComponent implements OnInit, IFormelement {
   forceRefresh(useCache: boolean = false) {
     this.apiService.getOffices(useCache)
     .subscribe(
-      (data) => {this.checkboxes.forceRefresh = !useCache; this.data = data},
+      (data) => {this.data = data},
       (error) => console.error(error),
       () => 'put any debug comments here'
     );    

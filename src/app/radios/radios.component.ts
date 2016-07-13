@@ -11,13 +11,9 @@ import { FormValue } from '../form-value';
 })
 export class RadiosComponent implements OnInit {
 
-  @Input() name: string;
-  @Input() data: Fieldset;
+  @Input() fieldset: Fieldset;
   @Input() title: string;
   @Output() radiosChange = new EventEmitter();
-  forceRefresh: boolean = false;
-
-  private fieldset: Fieldset;
 
   constructor(private formService: FormService) {}
 
@@ -39,14 +35,9 @@ export class RadiosComponent implements OnInit {
   }
 
   getValues(): FormValue[] {
-    if (this.data === undefined) {
+    if (this.fieldset === undefined) {
       return [];
-    } else {
-      if(!this.fieldset || this.forceRefresh) {
-        this.fieldset = this.formService.setValue(this.name,this.data);
-        this.forceRefresh = false;
-      }
-      return this.fieldset.getinputValues();
-    }
+    } 
+    return this.fieldset.getinputValues();
   }
 }

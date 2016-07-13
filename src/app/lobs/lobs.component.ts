@@ -28,7 +28,7 @@ export class LobsComponent implements OnInit, IFormelement {
   forceRefresh(useCache: boolean = false) {
     this.apiService.getLobs(useCache)
     .subscribe(
-      (data) => {this.checkboxes.forceRefresh = !useCache; this.data = data},
+      (data) => {this.data = data},
       (error) => console.error(error),
       () => 'put any debug comments here'
     );

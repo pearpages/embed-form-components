@@ -26,7 +26,7 @@ export class PrimaryexcessComponent implements OnInit, IFormelement {
   forceRefresh(useCache: boolean = false) {
     this.apiService.getPrimaryExcess(useCache)
     .subscribe(
-      (data) => {this.radios.forceRefresh= !useCache; this.data = data},
+      (data) => {this.data = data},
       (error) => console.error(error),
       () => 'put any debug comments here'
     );
