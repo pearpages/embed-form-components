@@ -27,6 +27,12 @@ export class Fieldset {
         return this;
     }
 
+    setToFalseAllCurrentValues() {
+        this.inputValues.forEach((e) => {
+            e.current = false;
+        });
+    }
+
     setToTrueTheCurrentValuesHavingThisValues(selected:string[]) {
         let values = this.getinputValues();
         values.forEach((val) => {
