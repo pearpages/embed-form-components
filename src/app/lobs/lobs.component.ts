@@ -14,7 +14,6 @@ import { IFormelement } from '../iformelement';
 })
 export class LobsComponent implements OnInit, IFormelement {
 
-  @ViewChild(CheckboxesComponent) checkboxes: CheckboxesComponent;
   data: Fieldset;
   name: string = 'lobs';
   title: string = 'UW LOB';
