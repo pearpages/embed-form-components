@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectComponent } from '../select/select.component';
-import { Ifieldset } from '../Ifieldset';
+import { Fieldset } from '../fieldset';
 import { IFormelement } from '../iformelement';
 import { ApiService } from '../api.service';
 
@@ -14,7 +14,7 @@ import { ApiService } from '../api.service';
 export class UwComponent implements OnInit, IFormelement {
 
   name: string = 'uw';
-  data: Ifieldset;
+  data: Fieldset;
   title: string = 'UWs';
 
   constructor(private apiService: ApiService) {}
@@ -32,4 +32,7 @@ export class UwComponent implements OnInit, IFormelement {
     
   }
 
+  validate():boolean {
+    return true;
+  }
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { FormService } from '../form.service';
 import { Fieldset } from '../fieldset';
-import { Ifieldset } from '../ifieldset';
 import { FormValue } from '../form-value';
 
 @Component({
@@ -13,7 +12,7 @@ import { FormValue } from '../form-value';
 export class RadiosComponent implements OnInit {
 
   @Input() name: string;
-  @Input() data: Ifieldset;
+  @Input() data: Fieldset;
   @Input() title: string;
   @Output() radiosChange = new EventEmitter();
   forceRefresh: boolean = false;

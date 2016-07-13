@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
-import { Ifieldset } from '../ifieldset';
+import { Fieldset } from '../fieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
 
@@ -14,7 +14,7 @@ import { IFormelement } from '../iformelement';
 export class OfficesComponent implements OnInit, IFormelement {
 
   @ViewChild(CheckboxesComponent) checkboxes: CheckboxesComponent;
-  data: Ifieldset;
+  data: Fieldset;
   name: string = 'offices'
   title: string = 'Office';
 
@@ -31,5 +31,9 @@ export class OfficesComponent implements OnInit, IFormelement {
       (error) => console.error(error),
       () => 'put any debug comments here'
     );    
+  }
+
+  validate(){
+    return true;
   }
 }

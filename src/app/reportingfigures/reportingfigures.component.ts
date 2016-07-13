@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { RadiosComponent } from '../radios/radios.component';
-import { Ifieldset } from '../ifieldset';
+import { Fieldset } from '../fieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
 
@@ -14,7 +14,7 @@ import { IFormelement } from '../iformelement';
 export class ReportingfiguresComponent implements OnInit, IFormelement {
 
   @ViewChild(RadiosComponent) radios: RadiosComponent;
-  data: Ifieldset;
+  data: Fieldset;
   name: string = 'reporting-figures';
   title: string = 'Reporting Figures';
 
@@ -31,5 +31,9 @@ export class ReportingfiguresComponent implements OnInit, IFormelement {
       (error) => console.error(error),
       () => 'put any debug comments here'
     );    
+  }
+
+  validate() {
+    return true;
   }
 }

@@ -3,7 +3,8 @@ import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
 import { RadiosComponent } from '../radios/radios.component';
 import { SelectComponent } from '../select/select.component';
 import { FormService } from '../form.service';
-import { Ifieldset } from '../ifieldset';
+import { Fieldsetmapper } from '../fieldsetmapper';
+import { Fieldset } from '../fieldset';
 
 @Component({
   moduleId: module.id,
@@ -14,7 +15,7 @@ import { Ifieldset } from '../ifieldset';
 })
 export class ShowroomComponent implements OnInit {
 
-  data: Ifieldset = {
+  data: Fieldset = Fieldsetmapper.mapToFieldset({
     title: "put-here-the-title",
     values: [
       { value: "1", label: "label 1", visible: true, default: false, initial: false },
@@ -38,7 +39,7 @@ export class ShowroomComponent implements OnInit {
     ]
     ,
     multi: true
-  };
+  });
 
   constructor(private formService: FormService) { }
 

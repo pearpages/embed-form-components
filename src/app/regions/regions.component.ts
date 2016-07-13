@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
-import { Ifieldset } from '../ifieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
 import { FormService } from '../form.service';
+import { Fieldset } from '../fieldset';
 
 @Component({
   moduleId: module.id,
@@ -12,36 +12,53 @@ import { FormService } from '../form.service';
   styleUrls: ['regions.component.css'],
   directives: [CheckboxesComponent]
 })
-export class RegionsComponent implements OnInit {
+export class RegionsComponent implements OnInit, IFormelement {
 
   @ViewChild(CheckboxesComponent) checkboxes: CheckboxesComponent;
-  data: Ifieldset;
+  data: Fieldset;
   name: string = 'regions';
   title: string = 'Regions';
 
-  constructor(private apiService: ApiService,private formService: FormService) { }
+  constructor(private apiService: ApiService, private formService: FormService) { }
 
   ngOnInit() {
     this.forceRefresh(true);
   }
 
-  forceRefresh(useCache:boolean = false) {
+  forceRefresh(useCache: boolean = false) {
     this.apiService.getRegions(useCache)
-    .subscribe(
-      (data) => {this.checkboxes.forceRefresh = !useCache; this.data = data;},
+      .subscribe(
+      (data) => { this.checkboxes.forceRefresh = !useCache; this.data = data; },
       (error) => console.error(error),
       () => 'put any debug comments here'
-    );
+      );
   }
 
-  updateCountries(event){
-      let countries = this.formService.getValue('countries');
-      countries.set.hideAll();
-      event.value.forEach((value) => {
-        countries.set.getSet(value).show();
+  updateCountries(event) {
+    this.getCountriesData().set.hideAll();
+    this.showCountries(event.value);
+    this.uncheckCountries();
+  }
+
+  validate():boolean {
+    return true;
+  }
+
+  private getCountriesData(): Fieldset {
+    return this.formService.getValue('countries');
+  }
+
+  private showCountries(selectedRegions) {
+    if (selectedRegions[0] !== false) {
+      selectedRegions.forEach((regionSet) => {
+        this.getCountriesData().set.getSet(regionSet).show();
       });
-      countries.set.getHiddenSets().forEach((set) => {
-        set.setFalse();
-      });
+    }
+  }
+
+  private uncheckCountries() {
+    this.getCountriesData().set.getHiddenSets().forEach((set) => {
+      set.setFalse();
+    });
   }
 }

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
-import { Ifieldset } from './ifieldset';
+import { Fieldset } from './fieldset';
+import { Fieldsetmapper } from './fieldsetmapper';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -9,58 +10,58 @@ export class ApiService {
 
   constructor(private http: Http) { }
 
-  getLobs(cache: boolean): Observable<Ifieldset> {
+  getLobs(cache: boolean): Observable<Fieldset> {
     const id = 'form-lobs';
     const url = '/api/lobs.json';
-    return this.getIfieldset(id, url, cache);
+    return this.getFieldset(id, url, cache);
   }
 
-  getCompanyTypes(cache: boolean): Observable<Ifieldset> {
+  getCompanyTypes(cache: boolean): Observable<Fieldset> {
     const id = 'form-company-types';
     const url = '/api/company-types.json';
-    return this.getIfieldset(id, url, cache);
+    return this.getFieldset(id, url, cache);
   }
 
-  getOffices(cache: boolean): Observable<Ifieldset> {
+  getOffices(cache: boolean): Observable<Fieldset> {
     const id = 'form-offices';
     const url = '/api/offices.json';
-    return this.getIfieldset(id, url, cache);
+    return this.getFieldset(id, url, cache);
   }
 
-  getPrimaryExcess(cache: boolean): Observable<Ifieldset> {
+  getPrimaryExcess(cache: boolean): Observable<Fieldset> {
     const id = 'form-primary-excess';
     const url = '/api/primary-excess.json';
-    return this.getIfieldset(id, url, cache);
+    return this.getFieldset(id, url, cache);
   }
 
-  getReportingFigures(cache: boolean): Observable<Ifieldset> {
+  getReportingFigures(cache: boolean): Observable<Fieldset> {
     const id = 'form-reporting-figures';
     const url = '/api/reporting-figures.json';
-    return this.getIfieldset(id, url, cache);
+    return this.getFieldset(id, url, cache);
   }
 
-  getUws(cache: boolean): Observable<Ifieldset> {
+  getUws(cache: boolean): Observable<Fieldset> {
     const id = 'form-uws';
     const url = '/api/uws.json';
-    return this.getIfieldset(id,url,cache);
+    return this.getFieldset(id, url, cache);
   }
 
-  getGroups(cache: boolean): Observable<Ifieldset> {
+  getGroups(cache: boolean): Observable<Fieldset> {
     const id = 'form-groups';
     const url = '/api/groups.json';
-    return this.getIfieldset(id,url,cache);
+    return this.getFieldset(id, url, cache);
   }
 
-  getRegions(cache: boolean): Observable<Ifieldset> {
+  getRegions(cache: boolean): Observable<Fieldset> {
     const id = 'form-regions';
     const url = '/api/regions.json';
-    return this.getIfieldset(id,url,cache);
+    return this.getFieldset(id, url, cache);
   }
 
-  getCountries(cache: boolean): Observable<Ifieldset> {
+  getCountries(cache: boolean): Observable<Fieldset> {
     const id = 'form-countries';
     const url = '/api/countries.json';
-    return this.getIfieldset(id,url,cache);
+    return this.getFieldset(id, url, cache);
   }
 
   private hasValue(id: string): boolean {
@@ -71,23 +72,23 @@ export class ApiService {
     return localStorage.getItem(id);
   }
 
-  private setValue(id: string, data: string) {
+  private setLocalCache(id: string, data: string) {
     localStorage.setItem(id, data);
   }
 
-  private getIfieldset(id: string, url: string, cache): Observable<Ifieldset> {
+  private getFieldset(id: string, url: string, cache): Observable<Fieldset> {
     if (cache) {
       if (this.hasValue(id)) {
         return Observable.create(observer => {
-          observer.next(JSON.parse(this.getValue(id)));
+          observer.next(Fieldsetmapper.mapToFieldset(JSON.parse(this.getValue(id))));
           observer.complete();
         });
       }
     }
 
-    return this.http.get(url+'?'+new Date().getMilliseconds()).map(response => {
-      this.setValue(id, JSON.stringify(response.json()));
-      return response.json();
+    return this.http.get(url + '?' + new Date().getMilliseconds()).map(response => {
+      this.setLocalCache(id, JSON.stringify(response.json()));
+      return Fieldsetmapper.mapToFieldset(response.json());
     });
 
   }

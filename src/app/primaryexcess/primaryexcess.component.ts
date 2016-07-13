@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { RadiosComponent } from '../radios/radios.component';
-import { Ifieldset } from '../ifieldset';
+import { Fieldset } from '../fieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
 
@@ -14,7 +14,7 @@ import { IFormelement } from '../iformelement';
 export class PrimaryexcessComponent implements OnInit, IFormelement {
 
   @ViewChild(RadiosComponent) radios: RadiosComponent;
-  data: Ifieldset;
+  data: Fieldset;
   name: string = 'primary-excess';
   title: string = 'Primary/Excess';
   constructor(private apiService: ApiService) { }
@@ -32,4 +32,7 @@ export class PrimaryexcessComponent implements OnInit, IFormelement {
     );
   }
 
+  validate():boolean{
+    return true;
+  } 
 }

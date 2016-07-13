@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Fieldset } from './fieldset';
-import { Ifieldset } from './ifieldset';
 import { FormValue } from './form-value';
+
+interface IfieldsetHash {
+  [id:string]: Fieldset;
+}
 
 @Injectable()
 export class FormService {
 
-  values: any = {};
+  values: IfieldsetHash = {};
 
   constructor() {}
 
-  setValue(index: string, data: Ifieldset): Fieldset {
+  setValue(index: string, data: Fieldset): Fieldset {
     if(this.values[index] !== undefined) {
       console.log(index+' already defined');
     }
-    return this.values[index] = FormService.mapToFieldset(data);
+    return this.values[index] = data;
   }
 
   getValue(index: string): Fieldset {
@@ -46,29 +49,6 @@ export class FormService {
       }
     }
     return JSON.stringify(res);
-  }
-
-  private static mapSets(fieldset: Fieldset,sets: any[]) {
-    sets.forEach((set) => {
-      fieldset.defineSet(set.id,set.values);
-    });
-  }
-
-  private static mapToFormValues(values) {
-    let res = [];
-    values.forEach((o) => {
-      res.push(new FormValue(o.value,o.label,o.visible,o.default,o.initial));
-    });
-    return res;
-  }
-
-  private static mapToFieldset(obj: Ifieldset): Fieldset {
-    let values = FormService.mapToFormValues(obj.values);
-    let fieldset = new Fieldset(values,obj.multi);
-    if(obj.sets){
-      FormService.mapSets(fieldset,obj.sets);
-    }
-    return fieldset;
   }
 
 }

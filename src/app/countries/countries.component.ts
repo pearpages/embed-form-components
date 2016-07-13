@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
-import { Ifieldset } from '../ifieldset';
+import { Fieldset } from '../fieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
 @Component({
@@ -10,10 +10,10 @@ import { IFormelement } from '../iformelement';
   styleUrls: ['countries.component.css'],
   directives: [CheckboxesComponent]
 })
-export class CountriesComponent implements OnInit {
+export class CountriesComponent implements OnInit, IFormelement {
 
  @ViewChild(CheckboxesComponent) checkboxes: CheckboxesComponent;
-  data: Ifieldset;
+  data: Fieldset;
   name: string = 'countries';
   title: string = 'Countries';
 
@@ -30,6 +30,10 @@ export class CountriesComponent implements OnInit {
       (error) => console.error(error),
       () => 'put any debug comments here'
     );
+  }
+
+  validate():boolean {
+    return true;
   }
 
 }

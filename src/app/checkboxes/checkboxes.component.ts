@@ -12,7 +12,7 @@ import { Ifieldset } from '../ifieldset';
 })
 export class CheckboxesComponent implements OnInit {
 
-  @Input() data: Ifieldset; 
+  @Input() data: Fieldset; 
   @Input() name: string;
   @Input() title: string;
   @Output() checkboxesChange = new EventEmitter();

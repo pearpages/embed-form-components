@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
-import { Ifieldset } from '../ifieldset';
+import { Fieldset } from '../fieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
 
@@ -15,7 +15,7 @@ import { IFormelement } from '../iformelement';
 export class LobsComponent implements OnInit, IFormelement {
 
   @ViewChild(CheckboxesComponent) checkboxes: CheckboxesComponent;
-  data: Ifieldset;
+  data: Fieldset;
   name: string = 'lobs';
   title: string = 'UW LOB';
 
@@ -34,4 +34,7 @@ export class LobsComponent implements OnInit, IFormelement {
     );
   }
 
+  validate() {
+    return true;
+  }
 }

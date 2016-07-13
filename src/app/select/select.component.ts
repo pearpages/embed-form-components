@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormService } from '../form.service';
 import { Fieldset } from '../fieldset';
-import { Ifieldset } from '../ifieldset';
 import { FormValue } from '../form-value'
 
 @Component({
@@ -15,7 +14,7 @@ export class SelectComponent implements OnInit {
   @Input() multiple: boolean;
   @Input() title: string;
   @Input() name: string;
-  @Input() data: Ifieldset;
+  @Input() data: Fieldset;
   @Input() classes: string;
   private fieldset: Fieldset;
   selectedValues: string[];

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { RadiosComponent } from '../radios/radios.component';
-import { Ifieldset } from '../ifieldset';
+import { Fieldset } from '../fieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
 import { FormService } from '../form.service';
@@ -15,7 +15,7 @@ import { FormService } from '../form.service';
 export class GroupsComponent implements OnInit, IFormelement {
 
   @ViewChild(RadiosComponent) radios: RadiosComponent;
-  data: Ifieldset;
+  data: Fieldset;
   name: string = 'groups';
   title: string = 'Groups';
 
@@ -45,6 +45,10 @@ export class GroupsComponent implements OnInit, IFormelement {
         regions.set.showOnlyThisSet(groupid);
       }
     }
+  }
+
+  validate():boolean {
+    return true;
   }
 
 }

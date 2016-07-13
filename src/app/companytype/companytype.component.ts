@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
-import { Ifieldset } from '../ifieldset';
+import { Fieldset } from '../fieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
 
@@ -14,8 +14,8 @@ import { IFormelement } from '../iformelement';
 export class CompanytypeComponent implements OnInit, IFormelement {
 
   @ViewChild(CheckboxesComponent) checkboxes: CheckboxesComponent;
-  data: Ifieldset;
-  name: string= 'company-type';
+  data: Fieldset;
+  name: string = 'company-type';
   title: string = 'Company Type';
 
   constructor(private apiService: ApiService) {}
@@ -33,4 +33,7 @@ export class CompanytypeComponent implements OnInit, IFormelement {
     );    
   }
 
+  validate():boolean {
+    return true;
+  }
 }
