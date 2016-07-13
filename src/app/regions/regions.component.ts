@@ -40,5 +40,10 @@ export class RegionsComponent implements OnInit {
       event.value.forEach((value) => {
         countries.set.showSet(value);
       });
+      countries.set.getHiddenSets().forEach((set) => {
+        set.forEach((country) => {
+        country.current = false;
+        });
+      });
   }
 }

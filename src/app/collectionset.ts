@@ -32,6 +32,26 @@ export class CollectionSet {
         }
     }
 
+    getVisibleSets():FormValue[][] {
+        let res = [];
+        for(let set in this.set) {
+            if(this.set[set].reduce((previous,current) => { return (current.visible && previous); },true) === true) {
+                res.push(this.set[set]);
+            }
+        }
+        return res;
+    }
+
+    getHiddenSets():FormValue[][] {
+        let res = [];
+        for(let set in this.set) {
+            if(this.set[set].reduce((previous,current) => { return (current.visible || previous); },false) === false) {
+                res.push(this.set[set]);
+            }
+        }
+        return res;
+    }
+
     showOnlyThisSet(id: string) {
         for (let set in this.set) {
             if (set !== id) {
