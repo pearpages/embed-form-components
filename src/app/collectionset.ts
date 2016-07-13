@@ -1,51 +1,46 @@
-import { FormValue } from './form-value'
+import { FormValue } from './form-value';
+import { Set } from './set';
+
+interface SetHash {
+    [key: string] : Set;
+}
 
 export class CollectionSet {
 
-    private set: any = {};
+    private set: SetHash = {};
 
     defineSet(id: string, values: any[], inputValues: FormValue[]): CollectionSet {
-        let set = this.set[id] = [];
+        let set = this.set[id] = new Set(id);
         let filtered = inputValues
             .filter((e) => { return (values.indexOf(e.getValue()) !== -1) })
-            .forEach((e) => { set.push(e) });
+            .forEach((e) => { set.addValue(e) });
         return this;
     }
 
-    getSet(id: string): FormValue[] {
+    getSet(id: string): Set {
         return this.set[id];
     }
 
-    toggleVisibilitySet(id: string) {
-        this.set[id].forEach((e) => { e.visible = !e.visible });
-    }
-
-    hideAllSets() {
+    hideAll() {
         for (let set in this.set) {
-            this.set[set].forEach((e) => e.visible = false);
+            this.set[set].hide();
         }
     }
 
-    showSet(id: string) {
-        if (this.set[id]) {
-            this.set[id].forEach((e) => e.visible = true);
-        }
-    }
-
-    getVisibleSets():FormValue[][] {
+    getVisibleSets():Set[] {
         let res = [];
         for(let set in this.set) {
-            if(this.set[set].reduce((previous,current) => { return (current.visible && previous); },true) === true) {
+            if(this.set[set].isVisible()) {
                 res.push(this.set[set]);
             }
         }
         return res;
     }
 
-    getHiddenSets():FormValue[][] {
+    getHiddenSets():Set[] {
         let res = [];
         for(let set in this.set) {
-            if(this.set[set].reduce((previous,current) => { return (current.visible || previous); },false) === false) {
+            if(!this.set[set].isVisible()) {
                 res.push(this.set[set]);
             }
         }
@@ -55,11 +50,9 @@ export class CollectionSet {
     showOnlyThisSet(id: string) {
         for (let set in this.set) {
             if (set !== id) {
-                this.set[set].forEach((e) => {
-                    e.visible = false;
-                });
+                this.set[set].hide();
             }
         }
-        this.set[id].forEach((e) => e.visible = true);
+        this.set[id].show();
     }
 }

@@ -60,7 +60,7 @@ export class ShowroomComponent implements OnInit {
   }
 
   toggleVisibility(id, set) {
-    this.getFieldset(id).set.toggleVisibilitySet(set);
+    this.getFieldset(id).set.getSet(set).toggle();
   }
 
   getJSON() {

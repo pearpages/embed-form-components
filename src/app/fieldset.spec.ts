@@ -81,16 +81,12 @@ describe('Class: Fieldset', () => {
     let set2 = ['1','5'];
     fieldset.defineSet('two', set2);
 
-    expect(fieldset.set.getSet('one').length).toEqual(set1.length);
-    expect(fieldset.set.getSet('two').length).toEqual(set2.length);
+    expect(fieldset.set.getSet('one').size()).toEqual(set1.length);
+    expect(fieldset.set.getSet('two').size()).toEqual(set2.length);
     
-    fieldset.set.getSet('one').forEach((e) => {
-      expect(set1.indexOf(e.getValue())).not.toBe(-1);
-    });
+    set1.forEach(v => expect(fieldset.set.getSet('one').hasValue(v)).toBe(true));
+    set2.forEach(v => expect(fieldset.set.getSet('two').hasValue(v)).toBe(true));
 
-    fieldset.set.getSet('two').forEach((e) => {
-      expect(set2.indexOf(e.getValue())).not.toBe(-1);
-    });
   });
 
   it('should toggle the visibility of the elements of a set',() => {
@@ -104,11 +100,11 @@ describe('Class: Fieldset', () => {
     let set1 = ['1','2'];
     fieldset.defineSet('one', set1);
 
-    fieldset.set.toggleVisibilitySet('one');
+    fieldset.set.getSet('one').toggle();
     expect(fieldset.set.getSet('one')[0].isVisible()).toBe(false);
     expect(fieldset.set.getSet('one')[1].isVisible()).toBe(false);
     fieldset.set.getSet('one')[0].visible = true;
-    fieldset.set.toggleVisibilitySet('one');
+    fieldset.set.getSet('one').toggle();
     expect(fieldset.set.getSet('one')[0].isVisible()).toBe(false);
     expect(fieldset.set.getSet('one')[1].isVisible()).toBe(true);
   });
