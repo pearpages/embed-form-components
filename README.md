@@ -3,7 +3,7 @@
 ## Pending Log
 
 - Refacto selects for refreshing values from server side and ignore local cache
-- Check event emitter coliding with automatic refresh
+- I need to create a Set for the CollectionSet class
 
 ## Intro
 
