@@ -81,14 +81,14 @@ describe('Class: Fieldset', () => {
     let set2 = ['1','5'];
     fieldset.defineSet('two', set2);
 
-    expect(fieldset.getSet('one').length).toEqual(set1.length);
-    expect(fieldset.getSet('two').length).toEqual(set2.length);
+    expect(fieldset.set.getSet('one').length).toEqual(set1.length);
+    expect(fieldset.set.getSet('two').length).toEqual(set2.length);
     
-    fieldset.getSet('one').forEach((e) => {
+    fieldset.set.getSet('one').forEach((e) => {
       expect(set1.indexOf(e.getValue())).not.toBe(-1);
     });
 
-    fieldset.getSet('two').forEach((e) => {
+    fieldset.set.getSet('two').forEach((e) => {
       expect(set2.indexOf(e.getValue())).not.toBe(-1);
     });
   });
@@ -104,12 +104,12 @@ describe('Class: Fieldset', () => {
     let set1 = ['1','2'];
     fieldset.defineSet('one', set1);
 
-    fieldset.toggleVisibilitySet('one');
-    expect(fieldset.getSet('one')[0].isVisible()).toBe(false);
-    expect(fieldset.getSet('one')[1].isVisible()).toBe(false);
-    fieldset.getSet('one')[0].visible = true;
-    fieldset.toggleVisibilitySet('one');
-    expect(fieldset.getSet('one')[0].isVisible()).toBe(false);
-    expect(fieldset.getSet('one')[1].isVisible()).toBe(true);
+    fieldset.set.toggleVisibilitySet('one');
+    expect(fieldset.set.getSet('one')[0].isVisible()).toBe(false);
+    expect(fieldset.set.getSet('one')[1].isVisible()).toBe(false);
+    fieldset.set.getSet('one')[0].visible = true;
+    fieldset.set.toggleVisibilitySet('one');
+    expect(fieldset.set.getSet('one')[0].isVisible()).toBe(false);
+    expect(fieldset.set.getSet('one')[1].isVisible()).toBe(true);
   });
 });

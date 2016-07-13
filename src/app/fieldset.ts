@@ -1,13 +1,18 @@
 import { FormValue } from './form-value';
+import { CollectionSet } from './collectionset';
 
 export class Fieldset {
 
-    private set: any = {};
+    set: CollectionSet = new CollectionSet();
 
     constructor(private inputValues: FormValue[], private multi: boolean) { }
 
     isMulti(): boolean {
         return this.multi;
+    }
+
+    defineSet(id: string, values: any[]): CollectionSet {
+        return this.set.defineSet(id,values,this.inputValues);
     }
 
     getinputValues(): FormValue[] {
@@ -63,14 +68,6 @@ export class Fieldset {
         }
     }
 
-    defineSet(id: string, values: any[]) {
-        let set = this.set[id] = [];
-        let filtered = this.inputValues
-            .filter((e) => { return (values.indexOf(e.getValue()) !== -1) })
-            .forEach((e) => { set.push(e) });
-        return this;
-    }
-
     haveAllCurrentValuesToTrue(): boolean {
         let values = this.getinputValues().filter((e) => { return e.visible === true });
         if (values.length === 0) {
@@ -81,38 +78,7 @@ export class Fieldset {
         }, true);
     }
 
-    getSet(id: string): FormValue[] {
-        return this.set[id];
-    }
-
-    toggleVisibilitySet(id: string) {
-        this.set[id].forEach((e) => { e.visible = !e.visible });
-    }
-
-    hideAllSets() {
-        for(let set in this.set) {
-            this.set[set].forEach((e) => e.visible = false);
-        }
-    }
-
-    showSet(id: string) {
-        if(this.set[id]) {
-            this.set[id].forEach((e) => e.visible = true);
-        }
-    }
-
-    showOnlyThisSet(id: string){
-        for(let set in this.set){
-            if(set !== id){
-                this.set[set].forEach((e) => {
-                    e.visible = false;
-                });
-            }
-        }
-        this.set[id].forEach((e) => e.visible = true);        
-    }
-
-    private getMultiValues(): any[] {
+   private getMultiValues(): any[] {
         return this.getinputValues().filter((i) => {
             return i.current !== false;
         }).map((i) => {

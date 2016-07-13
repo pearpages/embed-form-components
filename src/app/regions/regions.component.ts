@@ -36,9 +36,9 @@ export class RegionsComponent implements OnInit {
 
   updateCountries(event){
       let countries = this.formService.getValue('countries');
-      countries.hideAllSets();
+      countries.set.hideAllSets();
       event.value.forEach((value) => {
-        countries.showSet(value);
+        countries.set.showSet(value);
       });
   }
 }
