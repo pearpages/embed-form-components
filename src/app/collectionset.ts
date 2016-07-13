@@ -10,7 +10,7 @@ export class CollectionSet {
     private set: SetHash = {};
 
     defineSet(id: string, values: any[], inputValues: FormValue[]): CollectionSet {
-        let set = this.set[id] = new Set(id);
+        let set = this.set[id] = new Set();
         let filtered = inputValues
             .filter((e) => { return (values.indexOf(e.getValue()) !== -1) })
             .forEach((e) => { set.addValue(e) });
