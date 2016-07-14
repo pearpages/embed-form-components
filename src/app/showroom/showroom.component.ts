@@ -48,7 +48,7 @@ export class ShowroomComponent implements OnInit {
 
   constructor(private formService: FormService) { }
 
-  private getFieldset(id) {
+  private getFieldset(id): Fieldset {
     return this[id];
   }
 

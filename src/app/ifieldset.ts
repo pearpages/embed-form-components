@@ -1,5 +1,15 @@
-import { Ivalues } from './ivalues'
-import { Iset } from './iset';
+interface Iset {
+    id:string;
+    values: string[];
+}
+
+interface Ivalues {
+  value:string;
+  label:string;
+  visible:boolean;
+  default:any;
+  initial:any;  
+}
 
 export interface Ifieldset {
     title?:string;

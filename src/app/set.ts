@@ -25,7 +25,15 @@ export class Set {
     }
 
     toggle(): Set {
-        this.values.forEach((e) => { e.visible = !e.visible });
+        if(this.isVisible()) {
+            this.setFalse();
+            this.hide();
+        } else if (this.isHidden()) {
+            this.setFalse();
+            this.show();
+        } else {
+            console.log('neither hidden or visible');
+        }
         return this;
     }
 
@@ -34,7 +42,7 @@ export class Set {
     }
 
     isHidden():boolean {
-        return !this.isVisible();
+        return this.values.reduce((previous,current) => { return (!current.visible && previous); },true);
     }
 
     size():number {
