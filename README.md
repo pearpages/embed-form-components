@@ -2,7 +2,7 @@
 
 ## Pending Log
 
-
+- Try abstract class Wiget
 
 ## Intro
 
