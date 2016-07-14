@@ -2,10 +2,10 @@
   <div class="col-md-12">
     <h1>{{title}}</h1>
 
-    <radios [title]="'Radios'" [fieldset]="data"></radios>
-    <checkboxes [title]="'Checkboxes'" [fieldset]="data" ></checkboxes>
-    <my-select [title]="'MultiSelect'" [fieldset]="data" [multiple]="true"></my-select>
-    <my-select [title]="'Select'" [fieldset]="data" [multiple]="false"></my-select>
+    <radios [title]="'Radios'" [fieldset]="f1"></radios>
+    <checkboxes [title]="'Checkboxes'" [fieldset]="f2" ></checkboxes>
+    <my-select [title]="'MultiSelect'" [fieldset]="f3" [multiple]="true"></my-select>
+    <my-select [title]="'Select'" [fieldset]="f4" [multiple]="false"></my-select>
 
     <hr>
 
@@ -19,20 +19,20 @@
     <h2>External Events</h2>
 
     <h4>Radios values: {{getOutput('myRadios')}}</h4>
-    <button (click)="reset('myRadios')">reset radios</button>
+    <button (click)="reset('f1')">reset radios</button>
 
     <h4>Checkboxes Values: {{getOutput('myCheckboxes')}}</h4>
-    <button (click)="toggleVisibility('myCheckboxes','one')">toggle visibility set one</button>
-    <button (click)="toggleVisibility('myCheckboxes','two')">toggle visibility set two</button>
-    <button (click)="toggleVisibility('myCheckboxes','three')">toggle visibility set three</button>
+    <button (click)="toggleVisibility('f2','one')">toggle visibility set one</button>
+    <button (click)="toggleVisibility('f2','two')">toggle visibility set two</button>
+    <button (click)="toggleVisibility('f2','three')">toggle visibility set three</button>
     <br/>
-    <button (click)="reset('myCheckboxes')">reset checkboxes</button>
+    <button (click)="reset('f2')">reset checkboxes</button>
 
     <h4>MultiSelect: {{getOutput('select1')}}</h4>
-    <button (click)="reset('select1')">reset multiselect</button>
+    <button (click)="reset('f3')">reset multiselect</button>
 
     <h4>Select: {{getOutput('select2')}}</h4>
-    <button (click)="reset('select2')">reset select</button>
+    <button (click)="reset('f4')">reset select</button>
 
   </div>
 </div>

@@ -2,7 +2,7 @@
 
 ## Pending Log
 
-- Refacto selects for refreshing values from server side and ignore local cache
+
 
 ## Intro
 

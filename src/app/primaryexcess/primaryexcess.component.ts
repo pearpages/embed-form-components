@@ -3,6 +3,7 @@ import { RadiosComponent } from '../radios/radios.component';
 import { Fieldset } from '../fieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
+import { FormService } from '../form.service';
 
 @Component({
   moduleId: module.id,
@@ -17,10 +18,11 @@ export class PrimaryexcessComponent implements OnInit, IFormelement {
   data: Fieldset;
   name: string = 'primary-excess';
   title: string = 'Primary/Excess';
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private form: FormService) { }
 
   ngOnInit() {
     this.forceRefresh(true);
+    this.form.setValue(this.name,this.data);
   }
 
   forceRefresh(useCache: boolean = false) {

@@ -3,6 +3,7 @@ import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
 import { Fieldset } from '../fieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
+import { FormService } from '../form.service';
 
 @Component({
   moduleId: module.id,
@@ -18,10 +19,11 @@ export class OfficesComponent implements OnInit, IFormelement {
   name: string = 'offices'
   title: string = 'Office';
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private form: FormService) { }
 
   ngOnInit() {
     this.forceRefresh(true);
+    this.form.setValue(this.name,this.data);
   }
 
   forceRefresh(useCache: boolean = false) {

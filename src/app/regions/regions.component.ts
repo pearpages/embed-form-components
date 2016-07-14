@@ -18,10 +18,11 @@ export class RegionsComponent implements OnInit, IFormelement {
   name: string = 'regions';
   title: string = 'Regions';
 
-  constructor(private apiService: ApiService, private formService: FormService) { }
+  constructor(private apiService: ApiService, private form: FormService) { }
 
   ngOnInit() {
     this.forceRefresh(true);
+    this.form.setValue(this.name,this.data);
   }
 
   forceRefresh(useCache: boolean = false) {
@@ -44,7 +45,7 @@ export class RegionsComponent implements OnInit, IFormelement {
   }
 
   private getCountriesData(): Fieldset {
-    return this.formService.getValue('countries');
+    return this.form.getValue('countries');
   }
 
   private showCountries(selectedRegions) {

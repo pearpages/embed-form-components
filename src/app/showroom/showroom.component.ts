@@ -5,6 +5,7 @@ import { SelectComponent } from '../select/select.component';
 import { FormService } from '../form.service';
 import { Fieldsetmapper } from '../fieldsetmapper';
 import { Fieldset } from '../fieldset';
+import { Ifieldset } from '../ifieldset';
 
 @Component({
   moduleId: module.id,
@@ -15,7 +16,7 @@ import { Fieldset } from '../fieldset';
 })
 export class ShowroomComponent implements OnInit {
 
-  data: Fieldset = Fieldsetmapper.mapToFieldset({
+  data: Ifieldset = {
     title: "put-here-the-title",
     values: [
       { value: "1", label: "label 1", visible: true, default: false, initial: false },
@@ -39,12 +40,16 @@ export class ShowroomComponent implements OnInit {
     ]
     ,
     multi: true
-  });
+  };
+  f1: Fieldset = Fieldsetmapper.mapToFieldset(this.data);
+  f2: Fieldset = Fieldsetmapper.mapToFieldset(this.data);
+  f3: Fieldset = Fieldsetmapper.mapToFieldset(this.data);
+  f4: Fieldset = Fieldsetmapper.mapToFieldset(this.data);
 
   constructor(private formService: FormService) { }
 
   private getFieldset(id) {
-    return this.data;
+    return this[id];
   }
 
   ngOnInit() { }

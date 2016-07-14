@@ -18,10 +18,11 @@ export class GroupsComponent implements OnInit, IFormelement {
   name: string = 'groups';
   title: string = 'Groups';
 
-  constructor(private apiService: ApiService, private formService: FormService) { }
+  constructor(private apiService: ApiService, private form: FormService) { }
 
   ngOnInit() {
     this.forceRefresh(true);
+    this.form.setValue(this.name,this.data);
   }
 
   forceRefresh(useCache: boolean = false) { 
@@ -35,8 +36,8 @@ export class GroupsComponent implements OnInit, IFormelement {
 
   onGroupsChange(event) {
     let groupid = event.value[0];
-    if(this.formService.hasValue('regions')){
-      let regions = this.formService.getValue('regions');
+    if(this.form.hasValue('regions')){
+      let regions = this.form.getValue('regions');
       regions.setToFalseAllCurrentValues();
       if(groupid === false) {
         regions.set.hideAll();
