@@ -1,3 +1,4 @@
+<button (click)="validate()">Validate</button>
 <form-error [errorMessages]="errorMessages" (hovering)="getHover($event)"></form-error>
 
 <p>Date widget missing</p>
@@ -25,5 +26,4 @@
 
 <h4>JSON</h4>
 <button (click)="getJson()">Update JSON</button><p>{{json}}</p>
-<button (click)="validate()">Validate</button>
 <button (click)="forceRefresh()">Refresh All</button>

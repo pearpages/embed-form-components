@@ -10,7 +10,8 @@ import { Fieldset} from '../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'regions',
-  template: `<checkboxes [fieldset]="data" [title]="title" (checkboxesChange)="updateCountries($event)"></checkboxes>`,
+  template: `<checkboxes [class.highlighted]="highlighted" 
+  [fieldset]="data" [title]="title" (checkboxesChange)="updateCountries($event)"></checkboxes>`,
   directives: [CheckboxesComponent]
 })
 export class RegionsComponent extends Widget {
@@ -26,7 +27,7 @@ export class RegionsComponent extends Widget {
   }
 
   validate(f: Fieldset):valid {
-    return {valid:true,error: ''};
+    return {valid:true,error: 'Please selsect at least one region'};
   }
 
   private getCountriesData(): Fieldset {

@@ -10,7 +10,7 @@ import { Fieldset} from '../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'offices',
-  template: `<checkboxes [title]="title" [fieldset]="data"></checkboxes>`,
+  template: `<checkboxes [class.highlighted]="highlighted" [title]="title" [fieldset]="data"></checkboxes>`,
   directives: [CheckboxesComponent]
 })
 export class OfficesComponent extends Widget {
@@ -20,6 +20,6 @@ export class OfficesComponent extends Widget {
   }
 
   validate(f: Fieldset):valid {
-    return {valid:true,error: ''};
+    return {valid:true,error: 'Please select at least one office'};
   }
 }

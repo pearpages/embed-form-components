@@ -10,7 +10,7 @@ import { Fieldset} from '../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'groups',
-  template: `<radios [title]="title" 
+  template: `<radios [class.highlighted]="highlighted" [title]="title" 
   [fieldset]="data" (radiosChange)="onGroupsChange($event)"></radios>`,
   directives: [RadiosComponent]
 })
@@ -34,7 +34,7 @@ export class GroupsComponent extends Widget {
   }
 
   validate(f: Fieldset):valid {
-    return {valid:true,error: ''};
+    return {valid:true,error: 'Please select a group type'};
   }
 
 }

@@ -9,7 +9,8 @@ import { Fieldset} from '../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'uw',
-  template: `<my-select [fieldset]="data" [classes]="'uws'" [title]="title" [multiple]="true"></my-select>`,
+  template: `<my-select [class.highlighted]="highlighted" 
+  [fieldset]="data" [classes]="'uws'" [title]="title" [multiple]="true"></my-select>`,
   directives: [SelectComponent]
 })
 export class UwComponent extends Widget {
@@ -19,6 +20,6 @@ export class UwComponent extends Widget {
   }
 
   validate(f: Fieldset):valid {
-    return {valid:true,error: ''};
+    return {valid:true,error: 'Please select at least one UW'};
   }
 }

@@ -9,7 +9,7 @@ import { Fieldset} from '../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'countries',
-  template: `<checkboxes [fieldset]="data" [title]="title"></checkboxes>`,
+  template: `<checkboxes [class.highlighted]="highlighted" [fieldset]="data" [title]="title"></checkboxes>`,
   directives: [CheckboxesComponent]
 })
 export class CountriesComponent extends Widget {
@@ -19,7 +19,7 @@ export class CountriesComponent extends Widget {
   }
 
   validate(f: Fieldset):valid {
-    return {valid:true,error: ''};
+    return {valid:true,error: 'Please select at least one country'};
   }
 
 }

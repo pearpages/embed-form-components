@@ -9,7 +9,7 @@ import { Fieldset} from '../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'primary-excess',
-  template: `<radios [title]="title" [fieldset]="data"></radios>`,
+  template: `<radios [title]="title" [class.highlighted]="highlighted" [fieldset]="data"></radios>`,
   directives: [RadiosComponent]
 })
 export class PrimaryexcessComponent extends Widget {
@@ -19,6 +19,6 @@ export class PrimaryexcessComponent extends Widget {
   }
 
   validate(f: Fieldset):valid {
-    return {valid:true,error: ''};
+    return {valid:true,error: 'Please selecet Primary or Excess'};
   }
 }

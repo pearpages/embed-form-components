@@ -24,7 +24,7 @@ import { FormErrorComponent } from '../form-error/form-error.component';
 })
 export class Showroom2Component implements OnInit {
 
-  errorMessages: any[] = [{id:'reporting-figures',error:'Selec either Net or Gross'}];
+  errorMessages: any[] = [];
 
   @ViewChild(LobsComponent) lobs: LobsComponent;
   @ViewChild(ReportingfiguresComponent) reportingFigures: ReportingfiguresComponent;
@@ -41,7 +41,6 @@ export class Showroom2Component implements OnInit {
   constructor(public formService: FormService) {}
 
   getHover(event) {
-    console.log(event);
     let id = event.split(' ')[1];
     if(event.includes('on')){
       this.formService.getWidget(id).highlight(true);
