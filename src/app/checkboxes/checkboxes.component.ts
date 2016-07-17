@@ -1,12 +1,11 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
-import { FormValue } from '../form-value';
-import { Fieldset } from '../fieldset';
+import { FormValue } from '../models/form-value';
+import { Fieldset } from '../models/fieldset';
 
 @Component({
   moduleId: module.id,
   selector: 'checkboxes',
-  templateUrl: 'checkboxes.component.html',
-  styleUrls: ['checkboxes.component.css']
+  templateUrl: 'checkboxes.component.html'
 })
 export class CheckboxesComponent implements OnInit {
 

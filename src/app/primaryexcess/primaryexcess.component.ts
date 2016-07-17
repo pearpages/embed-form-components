@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { Widget } from '../abstract/widget';
 import { RadiosComponent } from '../radios/radios.component';
-import { Fieldset } from '../fieldset';
-import { ApiService } from '../api.service';
-import { IFormelement } from '../iformelement';
-import { FormService } from '../form.service';
+import { ApiService } from '../services/api.service';
+import { FormService } from '../services/form.service';
 
 @Component({
   moduleId: module.id,
@@ -11,26 +10,10 @@ import { FormService } from '../form.service';
   template: `<radios [title]="title" [fieldset]="data"></radios>`,
   directives: [RadiosComponent]
 })
-export class PrimaryexcessComponent implements OnInit, IFormelement {
+export class PrimaryexcessComponent extends Widget {
 
-  @ViewChild(RadiosComponent) radios: RadiosComponent;
-  data: Fieldset;
-  name: string = 'primary-excess';
-  title: string = 'Primary/Excess';
-  constructor(private apiService: ApiService, private form: FormService) { }
-
-  ngOnInit() {
-    this.forceRefresh(true);
-    this.form.setValue(this.name,this.data);
-  }
-
-  forceRefresh(useCache: boolean = false) {
-    this.apiService.getPrimaryExcess(useCache)
-    .subscribe(
-      (data) => {this.data = data},
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-    );
+  constructor(protected apiService: ApiService, protected form: FormService) {
+    super(apiService,form,'primary-excess','Primary/Excess','getPrimaryExcess');
   }
 
   validate():boolean{

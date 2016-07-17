@@ -10,15 +10,11 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { RadiosComponent } from './radios.component';
-import { FormService} from '../services/form.service';
+import { FormErrorComponent } from './form-error.component';
 
-describe('Component: CheckboxesComponent', () => {
-  
+describe('Component: FormError', () => {
   it('should create an instance', () => {
-    let component = new RadiosComponent(new FormService());
+    let component = new FormErrorComponent();
     expect(component).toBeTruthy();
   });
-
-  
 });

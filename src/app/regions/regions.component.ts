@@ -1,38 +1,21 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { Widget } from '../abstract/widget';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
-import { ApiService } from '../api.service';
-import { IFormelement } from '../iformelement';
-import { FormService } from '../form.service';
-import { Fieldset } from '../fieldset';
+import { ApiService } from '../services/api.service';
+import { FormService } from '../services/form.service';
+import { Fieldset } from '../models/fieldset';
 
 @Component({
   moduleId: module.id,
   selector: 'regions',
-  templateUrl: 'regions.component.html',
-  styleUrls: ['regions.component.css'],
+  template: `<checkboxes [fieldset]="data" [title]="title" (checkboxesChange)="updateCountries($event)"></checkboxes>`,
   directives: [CheckboxesComponent]
 })
-export class RegionsComponent implements OnInit, IFormelement {
+export class RegionsComponent extends Widget {
 
-  data: Fieldset;
-  name: string = 'regions';
-  title: string = 'Regions';
-
-  constructor(private apiService: ApiService, private form: FormService) { }
-
-  ngOnInit() {
-    this.forceRefresh(true);
-    this.form.setValue(this.name,this.data);
-  }
-
-  forceRefresh(useCache: boolean = false) {
-    this.apiService.getRegions(useCache)
-      .subscribe(
-      (data) => { this.data = data; },
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-      );
-  }
+  constructor(protected apiService: ApiService, protected form: FormService) {
+    super(apiService,form,'regions','Regions','getRegions');
+   }
 
   updateCountries(event) {
     this.getCountriesData().set.hideAll();

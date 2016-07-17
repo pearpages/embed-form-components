@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
-import {FormService} from './form.service'
+import {FormService} from './services/form.service'
 
 @Component({
   moduleId: module.id,

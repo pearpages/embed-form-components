@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Fieldset } from './fieldset';
-import { FormValue } from './form-value';
+import { Fieldset } from '../models/fieldset';
+import { FormValue } from '../models/form-value';
 
 interface IfieldsetHash {
   [id:string]: Fieldset;

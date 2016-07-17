@@ -1,7 +1,7 @@
 import { OnInit } from '@angular/core';
-import { ApiService } from './api.service';
-import { FormService } from './form.service';
-import { Fieldset } from './fieldset';
+import { ApiService } from '../services/api.service';
+import { FormService } from '../services/form.service';
+import { Fieldset } from '../models/fieldset';
 
 export abstract class Widget implements OnInit {
     protected data: Fieldset;

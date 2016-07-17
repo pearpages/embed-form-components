@@ -1,10 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { RadiosComponent } from '../radios/radios.component';
-import { Fieldset } from '../fieldset';
-import { ApiService } from '../api.service';
-import { IFormelement } from '../iformelement';
-import { FormService } from '../form.service';
-import { Widget } from '../widget';
+import { ApiService } from '../services/api.service';
+import { FormService } from '../services/form.service';
+import { Widget } from '../abstract/widget';
 
 @Component({
   moduleId: module.id,

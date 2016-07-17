@@ -1,4 +1,4 @@
-import { Fieldset } from './fieldset';
+import { Fieldset } from '../models/fieldset';
 
 export interface IFormelement {
     title:string;

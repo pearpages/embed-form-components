@@ -1,38 +1,20 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { Widget } from '../abstract/widget';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
-import { Fieldset } from '../fieldset';
-import { ApiService } from '../api.service';
-import { IFormelement } from '../iformelement';
-import { FormService } from '../form.service';
+import { ApiService } from '../services/api.service';
+import { FormService } from '../services/form.service';
 
 @Component({
   moduleId: module.id,
   selector: 'lobs',
-  templateUrl: 'lobs.component.html',
-  styleUrls: ['lobs.component.css'],
+  template: `<checkboxes [title]="title" [fieldset]="data"></checkboxes>`,
   directives: [CheckboxesComponent]
 })
-export class LobsComponent implements OnInit, IFormelement {
+export class LobsComponent extends Widget {
 
-  data: Fieldset;
-  name: string = 'lobs';
-  title: string = 'UW LOB';
-
-  constructor(private apiService: ApiService,private form: FormService) { }
-
-  ngOnInit() {
-    this.forceRefresh(true);
-    this.form.setValue(this.name,this.data);
-  }
-
-  forceRefresh(useCache: boolean = false) {
-    this.apiService.getLobs(useCache)
-    .subscribe(
-      (data) => {this.data = data},
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-    );
-  }
+  constructor(protected apiService: ApiService,protected form: FormService) {
+    super(apiService,form,'lobs','UW LOB','getLobs');
+   }
 
   validate() {
     return true;

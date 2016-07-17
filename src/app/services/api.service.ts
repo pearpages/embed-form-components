@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
-import { Fieldset } from './fieldset';
-import { Fieldsetmapper } from './fieldsetmapper';
+import { Fieldset } from '../models/fieldset';
+import { Fieldsetmapper } from '../models/fieldsetmapper';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()

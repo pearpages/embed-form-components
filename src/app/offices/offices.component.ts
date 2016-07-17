@@ -1,39 +1,20 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { Widget } from '../abstract/widget';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
-import { Fieldset } from '../fieldset';
-import { ApiService } from '../api.service';
-import { IFormelement } from '../iformelement';
-import { FormService } from '../form.service';
+import { ApiService } from '../services/api.service';
+import { FormService } from '../services/form.service';
 
 @Component({
   moduleId: module.id,
   selector: 'offices',
-  templateUrl: 'offices.component.html',
-  styleUrls: ['offices.component.css'],
+  template: `<checkboxes [title]="title" [fieldset]="data"></checkboxes>`,
   directives: [CheckboxesComponent]
 })
-export class OfficesComponent implements OnInit, IFormelement {
+export class OfficesComponent extends Widget {
 
-  @ViewChild(CheckboxesComponent) checkboxes: CheckboxesComponent;
-  data: Fieldset;
-  name: string = 'offices'
-  title: string = 'Office';
-
-  constructor(private apiService: ApiService, private form: FormService) { }
-
-  ngOnInit() {
-    this.forceRefresh(true);
-    this.form.setValue(this.name,this.data);
-  }
-
-  forceRefresh(useCache: boolean = false) {
-    this.apiService.getOffices(useCache)
-    .subscribe(
-      (data) => {this.data = data},
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-    );    
-  }
+  constructor(protected apiService: ApiService, protected form: FormService) {
+    super(apiService,form,'offices','Offices','getOffices');
+   }
 
   validate(){
     return true;

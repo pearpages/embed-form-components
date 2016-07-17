@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { Widget } from '../abstract/widget';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
-import { Fieldset } from '../fieldset';
-import { ApiService } from '../api.service';
-import { IFormelement } from '../iformelement';
-import { FormService } from '../form.service';
+import { ApiService } from '../services/api.service';
+import { FormService } from '../services/form.service';
 
 @Component({
   moduleId: module.id,
@@ -11,29 +10,13 @@ import { FormService } from '../form.service';
   template: `<checkboxes [fieldset]="data" [title]="title"></checkboxes>`,
   directives: [CheckboxesComponent]
 })
-export class CountriesComponent implements OnInit, IFormelement {
+export class CountriesComponent extends Widget {
 
-  data: Fieldset;
-  name: string = 'countries';
-  title: string = 'Countries';
-
-  constructor(private apiService: ApiService, private form: FormService) { }
-
-  ngOnInit() {
-    this.forceRefresh(true);
-    this.form.setValue(this.name,this.data);
+  constructor(protected apiService: ApiService, protected form: FormService) {
+    super(apiService, form, 'countries', 'Countries', 'getCountries');
   }
 
-  forceRefresh(useCache: boolean = false) {
-    this.apiService.getCountries(useCache)
-    .subscribe(
-      (data) => {this.data = data},
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-    );
-  }
-
-  validate():boolean {
+  validate(): boolean {
     return true;
   }
 

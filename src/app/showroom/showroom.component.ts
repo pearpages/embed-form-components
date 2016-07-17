@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
 import { RadiosComponent } from '../radios/radios.component';
 import { SelectComponent } from '../select/select.component';
-import { FormService } from '../form.service';
-import { Fieldsetmapper } from '../fieldsetmapper';
-import { Fieldset } from '../fieldset';
-import { Ifieldset } from '../ifieldset';
+import { FormService } from '../services/form.service';
+import { Fieldsetmapper } from '../models/fieldsetmapper';
+import { Fieldset } from '../models/fieldset';
+import { Ifieldset } from '../interfaces/ifieldset';
 
 @Component({
   moduleId: module.id,

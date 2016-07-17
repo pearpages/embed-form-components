@@ -1,4 +1,4 @@
-import { Ifieldset } from './ifieldset';
+import { Ifieldset } from '../interfaces/ifieldset';
 import { Fieldset } from './fieldset';
 import { FormValue } from './form-value';
 

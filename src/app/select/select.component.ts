@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormService } from '../form.service';
-import { Fieldset } from '../fieldset';
-import { FormValue } from '../form-value'
+import { FormService } from '../services/form.service';
+import { Fieldset } from '../models/fieldset';
+import { FormValue } from '../models/form-value'
 
 @Component({
   moduleId: module.id,

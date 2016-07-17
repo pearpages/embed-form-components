@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { Widget } from '../abstract/widget';
 import { RadiosComponent } from '../radios/radios.component';
-import { Fieldset } from '../fieldset';
-import { ApiService } from '../api.service';
-import { IFormelement } from '../iformelement';
-import { FormService } from '../form.service';
+import { ApiService } from '../services/api.service';
+import { FormService } from '../services/form.service';
 
 @Component({
   moduleId: module.id,
@@ -12,26 +11,10 @@ import { FormService } from '../form.service';
   [fieldset]="data" (radiosChange)="onGroupsChange($event)"></radios>`,
   directives: [RadiosComponent]
 })
-export class GroupsComponent implements OnInit, IFormelement {
+export class GroupsComponent extends Widget {
 
-  data: Fieldset;
-  name: string = 'groups';
-  title: string = 'Groups';
-
-  constructor(private apiService: ApiService, private form: FormService) { }
-
-  ngOnInit() {
-    this.forceRefresh(true);
-    this.form.setValue(this.name,this.data);
-  }
-
-  forceRefresh(useCache: boolean = false) { 
-    this.apiService.getGroups(useCache)
-    .subscribe(
-      (data) => {this.data = data},
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-    );    
+  constructor(protected apiService: ApiService, protected form: FormService) { 
+    super(apiService,form,'groups','Groups','getGroups');
   }
 
   onGroupsChange(event) {

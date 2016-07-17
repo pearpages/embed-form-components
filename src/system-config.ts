@@ -46,7 +46,8 @@ const barrels: string[] = [
   'app/groupscountriesregions',
   'app/groups',
   'app/regions',
-  'app/countries'
+  'app/countries',
+  'app/form-error'
   /** @cli-barrel */
 ];
 
