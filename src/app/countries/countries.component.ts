@@ -8,8 +8,7 @@ import { FormService } from '../form.service';
 @Component({
   moduleId: module.id,
   selector: 'countries',
-  templateUrl: 'countries.component.html',
-  styleUrls: ['countries.component.css'],
+  template: `<checkboxes [fieldset]="data" [title]="title"></checkboxes>`,
   directives: [CheckboxesComponent]
 })
 export class CountriesComponent implements OnInit, IFormelement {

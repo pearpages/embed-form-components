@@ -8,8 +8,8 @@ import { FormService } from '../form.service';
 @Component({
   moduleId: module.id,
   selector: 'groups',
-  templateUrl: 'groups.component.html',
-  styleUrls: ['groups.component.css'],
+  template: `<radios [title]="title" 
+  [fieldset]="data" (radiosChange)="onGroupsChange($event)"></radios>`,
   directives: [RadiosComponent]
 })
 export class GroupsComponent implements OnInit, IFormelement {

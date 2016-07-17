@@ -8,8 +8,7 @@ import { FormService } from '../form.service';
 @Component({
   moduleId: module.id,
   selector: 'primary-excess',
-  templateUrl: 'primaryexcess.component.html',
-  styleUrls: ['primaryexcess.component.css'],
+  template: `<radios [title]="title" [fieldset]="data"></radios>`,
   directives: [RadiosComponent]
 })
 export class PrimaryexcessComponent implements OnInit, IFormelement {

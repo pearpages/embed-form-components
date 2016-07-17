@@ -6,7 +6,8 @@ import { Fieldset } from './fieldset';
 export abstract class Widget implements OnInit {
     protected data: Fieldset;
 
-    constructor(protected apiService: ApiService, protected form: FormService,protected name:string,protected title:string,protected method: string) { }
+    constructor(protected apiService: ApiService, 
+    protected form: FormService,protected name:string,protected title:string,protected method: string) { }
 
     ngOnInit() {
         this.forceRefresh(true);

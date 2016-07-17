@@ -4,34 +4,18 @@ import { Fieldset } from '../fieldset';
 import { ApiService } from '../api.service';
 import { IFormelement } from '../iformelement';
 import { FormService } from '../form.service';
+import { Widget } from '../widget';
 
 @Component({
   moduleId: module.id,
   selector: 'company-type',
-  templateUrl: 'companytype.component.html',
-  styleUrls: ['companytype.component.css'],
+  template: `<checkboxes [title]="title" [fieldset]="data"></checkboxes>`,
   directives: [CheckboxesComponent]
 })
-export class CompanytypeComponent implements OnInit, IFormelement {
+export class CompanytypeComponent extends Widget {
 
-  data: Fieldset;
-  name: string = 'company-type';
-  title: string = 'Company Type';
-
-  constructor(private apiService: ApiService, private form: FormService) {}
-
-  ngOnInit() {
-    this.forceRefresh(true);
-    this.form.setValue(this.name,this.data);
-  }
-
-  forceRefresh(useCache:boolean = false ):void {
-    this.apiService.getCompanyTypes(useCache)
-    .subscribe(
-      (data) => {this.data = data},
-      (error) => console.error(error),
-      () => 'put any debug comments here'
-    );    
+  constructor(protected apiService: ApiService, protected form: FormService) {
+    super(apiService,form,'company-type','Company Type','getCompanyTypes');
   }
 
   validate():boolean {

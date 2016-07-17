@@ -28,18 +28,6 @@ export class FormService {
     return (this.values[index]) ? true: false;
   }
 
-  isCached(id:string) {
-    return (localStorage.getItem(id) !== null);
-  }
-
-  saveToLocalStorage(id,value) {
-    localStorage.setItem(id,value);
-  }
-
-  getFromLocalStorage(id) {
-    return localStorage.getItem(id);
-  }
-
   getJSON(): string {
     let res = {};
     for(let index in this.values){
