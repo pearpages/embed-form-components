@@ -42,10 +42,10 @@ export class Showroom2Component implements OnInit {
 
   getHover(event) {
     let id = event.split(' ')[1];
-    if(event.includes('on')){
-      this.formService.getWidget(id).highlight(true);
-    }else{
+    if(event.includes('off')){
       this.formService.getWidget(id).highlight(false);
+    }else{
+      this.formService.getWidget(id).highlight(true);
     }
   }
 
