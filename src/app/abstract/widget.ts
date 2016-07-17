@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { FormService } from '../services/form.service';
 import { Fieldset } from '../models/fieldset';
@@ -6,6 +6,7 @@ import { Ivalidate, valid } from '../interfaces/ivalidate';
 
 export abstract class Widget implements OnInit {
     protected data: Fieldset;
+    protected highlighted: boolean = false;
 
     constructor(protected apiService: ApiService, 
     protected form: FormService,protected name:string,protected title:string,protected method: string) { }
@@ -29,6 +30,8 @@ export abstract class Widget implements OnInit {
 
     abstract validate(f: Fieldset): valid;
 
-    highlight(status:boolean) {}
+    highlight(status:boolean) {
+        this.highlighted = status;
+    }
 
 }

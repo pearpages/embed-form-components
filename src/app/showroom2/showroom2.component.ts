@@ -63,6 +63,6 @@ export class Showroom2Component implements OnInit {
   }
 
   validate() {
-    return this.formService.validate();
+    this.errorMessages = this.formService.validate();
   }
 }

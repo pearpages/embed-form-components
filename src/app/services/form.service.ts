@@ -43,9 +43,13 @@ export class FormService {
   }
 
   validate() {
+    let res = [];
     for(let name in this.values) {
-      console.log(name,this.values[name].isValid(),this.values[name].getStatus());
+      let v = this.values[name].getStatus();
+      v.id = name;
+      res.push(v);
     }
+    return res;
   }
 
   getJSON(): string {

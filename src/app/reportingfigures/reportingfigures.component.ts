@@ -9,12 +9,10 @@ import { Fieldset } from '../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'reporting-figures',
-  template: `<radios [style.display]="'block'" [style.border]="getStyle()" [title]="title" [fieldset]="data"></radios>`,
+  template: `<radios [class.highlighted]="highlighted" [title]="title" [fieldset]="data"></radios>`,
   directives: [RadiosComponent]
 })
 export class ReportingfiguresComponent extends Widget {
-
-  protected highlighted: boolean = false;
 
   constructor(protected apiService: ApiService, protected form: FormService) {
     super(apiService, form, 'reporting-figures', 'Reporting Figures', 'getReportingFigures');
@@ -30,11 +28,4 @@ export class ReportingfiguresComponent extends Widget {
       return res;
   }
 
-  getStyle() {
-    return this.highlighted ? '1px solid black' : 'none';
-  }
-
-  highlight(status:boolean) {
-    this.highlighted = status;
-  }
 }
