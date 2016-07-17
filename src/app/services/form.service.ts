@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Fieldset } from '../models/fieldset';
 import { FormValue } from '../models/form-value';
+import { Widget } from '../abstract/widget'
 
 interface IfieldsetHash {
   [id:string]: Fieldset;
+}
+
+interface WidgetHash {
+  [id:string]: Widget;
 }
 
 @Injectable()
 export class FormService {
 
   values: IfieldsetHash = {};
+  widgets: WidgetHash = {};
 
   constructor() {}
 
@@ -20,12 +26,26 @@ export class FormService {
     return this.values[index] = data;
   }
 
+  setWidget(index: string, widget: Widget) {
+    this.widgets[index] = widget;
+  }
+
   getValue(index: string): Fieldset {
     return this.values[index];
   }
 
+  getWidget(index:string): Widget {
+    return this.widgets[index];
+  }
+
   hasValue(index:string): boolean {
     return (this.values[index]) ? true: false;
+  }
+
+  validate() {
+    for(let name in this.values) {
+      console.log(name,this.values[name].isValid(),this.values[name].getStatus());
+    }
   }
 
   getJSON(): string {

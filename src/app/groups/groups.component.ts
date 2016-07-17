@@ -3,6 +3,9 @@ import { Widget } from '../abstract/widget';
 import { RadiosComponent } from '../radios/radios.component';
 import { ApiService } from '../services/api.service';
 import { FormService } from '../services/form.service';
+import { Ivalidate,valid } from '../interfaces/ivalidate';
+import { Fieldset} from '../models/fieldset';
+
 
 @Component({
   moduleId: module.id,
@@ -30,8 +33,8 @@ export class GroupsComponent extends Widget {
     }
   }
 
-  validate():boolean {
-    return true;
+  validate(f: Fieldset):valid {
+    return {valid:true,error: ''};
   }
 
 }

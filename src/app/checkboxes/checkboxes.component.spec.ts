@@ -11,7 +11,7 @@ import {
 } from '@angular/core/testing';
 
 import { CheckboxesComponent } from './checkboxes.component';
-import { FormService} from '../form.service';
+import { FormService} from '../services/form.service';
 
 describe('Component: CheckboxesComponent', () => {
   it('should create an instance', () => {

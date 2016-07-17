@@ -3,6 +3,7 @@
 ## Pending Log
 
 - Form service spec missing
+- highlight function for Widget sons, make it abstract
 
 ## Intro
 

@@ -2,7 +2,7 @@
 
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { FormService } from '../form.service'
+import { FormService } from '../services/form.service'
 
 import {
   beforeEach, beforeEachProviders,

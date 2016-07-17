@@ -3,6 +3,8 @@ import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
 import { ApiService } from '../services/api.service';
 import { FormService } from '../services/form.service';
 import { Widget } from '../abstract/widget';
+import { Ivalidate,valid } from '../interfaces/ivalidate';
+import { Fieldset} from '../models/fieldset';
 
 @Component({
   moduleId: module.id,
@@ -16,7 +18,7 @@ export class CompanytypeComponent extends Widget {
     super(apiService,form,'company-type','Company Type','getCompanyTypes');
   }
 
-  validate():boolean {
-    return true;
+  validate(f: Fieldset):valid {
+    return {valid:true,error: ''};
   }
 }

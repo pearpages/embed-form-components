@@ -1,3 +1,5 @@
-<p>
-  form-error works!
-</p>
+<ul>
+  <li (mouseover)="highlight(error.id)" (mouseout)="removeHighlight(error.id)" *ngFor="let error of errorMessages; let i = index">{{error.error}} 
+    <button (click)="removeError(i)">X</button>
+  </li>
+</ul>

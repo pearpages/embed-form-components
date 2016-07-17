@@ -3,7 +3,9 @@ import { Widget } from '../abstract/widget';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
 import { ApiService } from '../services/api.service';
 import { FormService } from '../services/form.service';
-import { Fieldset } from '../models/fieldset';
+import { Ivalidate,valid } from '../interfaces/ivalidate';
+import { Fieldset} from '../models/fieldset';
+
 
 @Component({
   moduleId: module.id,
@@ -23,8 +25,8 @@ export class RegionsComponent extends Widget {
     this.uncheckCountries();
   }
 
-  validate():boolean {
-    return true;
+  validate(f: Fieldset):valid {
+    return {valid:true,error: ''};
   }
 
   private getCountriesData(): Fieldset {

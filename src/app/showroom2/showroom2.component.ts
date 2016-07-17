@@ -11,6 +11,7 @@ import { GroupscountriesregionsComponent } from '../groupscountriesregions/group
 import { CountriesComponent } from '../countries/countries.component';
 import { RegionsComponent } from '../regions/regions.component';
 import { GroupsComponent } from '../groups/groups.component';
+import { FormErrorComponent } from '../form-error/form-error.component';
 
 @Component({
   moduleId: module.id,
@@ -18,10 +19,12 @@ import { GroupsComponent } from '../groups/groups.component';
   templateUrl: 'showroom2.component.html',
   styleUrls: ['showroom2.component.css'],
   directives: [ReportingfiguresComponent,CompanytypeComponent,LobsComponent,PrimaryexcessComponent,OfficesComponent,UwComponent,GroupscountriesregionsComponent,
-  RegionsComponent,GroupsComponent,CountriesComponent],
+  RegionsComponent,GroupsComponent,CountriesComponent,FormErrorComponent],
   providers: [ApiService]
 })
 export class Showroom2Component implements OnInit {
+
+  errorMessages: any[] = [{id:'reporting-figures',error:'Selec either Net or Gross'}];
 
   @ViewChild(LobsComponent) lobs: LobsComponent;
   @ViewChild(ReportingfiguresComponent) reportingFigures: ReportingfiguresComponent;
@@ -37,6 +40,16 @@ export class Showroom2Component implements OnInit {
 
   constructor(public formService: FormService) {}
 
+  getHover(event) {
+    console.log(event);
+    let id = event.split(' ')[1];
+    if(event.includes('on')){
+      this.formService.getWidget(id).highlight(true);
+    }else{
+      this.formService.getWidget(id).highlight(false);
+    }
+  }
+
   ngOnInit() {
     this.components = [this.lobs,this.reportingFigures,this.companyType,this.primaryExcess,this.offices,this.countries,this.regions,this.groups];
   }
@@ -47,5 +60,9 @@ export class Showroom2Component implements OnInit {
 
   getJson() {
     return this.json = this.formService.getJSON();
+  }
+
+  validate() {
+    return this.formService.validate();
   }
 }

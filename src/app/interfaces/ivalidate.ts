@@ -1,4 +1,10 @@
+import { Fieldset } from '../models/fieldset';
+
+export interface valid {
+    valid: boolean;
+    error: string;
+}
+
 export interface Ivalidate {
-    valid: boolean,
-    error: string
+    (f: Fieldset): valid
 }

@@ -3,6 +3,9 @@ import { Widget } from '../abstract/widget';
 import { CheckboxesComponent } from '../checkboxes/checkboxes.component';
 import { ApiService } from '../services/api.service';
 import { FormService } from '../services/form.service';
+import { Ivalidate,valid } from '../interfaces/ivalidate';
+import { Fieldset} from '../models/fieldset';
+
 
 @Component({
   moduleId: module.id,
@@ -16,7 +19,7 @@ export class LobsComponent extends Widget {
     super(apiService,form,'lobs','UW LOB','getLobs');
    }
 
-  validate() {
-    return true;
+  validate(f: Fieldset):valid {
+    return {valid:true,error: ''};
   }
 }

@@ -11,7 +11,7 @@ import {
 } from '@angular/core/testing';
 
 import { Showroom2Component } from './showroom2.component';
-import { FormService } from '../form.service';
+import { FormService } from '../services/form.service';
 
 describe('Component: Showroom2', () => {
   it('should create an instance', () => {

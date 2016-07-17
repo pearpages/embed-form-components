@@ -1,14 +1,32 @@
 import { FormValue } from './form-value';
 import { CollectionSet } from './collectionset';
+import { Ivalidate, valid } from '../interfaces/ivalidate';
 
 export class Fieldset {
 
     set: CollectionSet = new CollectionSet();
+    protected validate: Ivalidate;
 
     constructor(private inputValues: FormValue[], private multi: boolean) { }
 
     isMulti(): boolean {
         return this.multi;
+    }
+
+    isValid(): boolean {
+        if(this.validate) {
+            return this.validate(this).valid;
+        } else {
+            return true;
+        }
+    }
+
+    getStatus(): valid {
+        if(this.validate) {
+            return this.validate(this);
+        } else {
+            return {valid:true,error:'OK'};
+        }
     }
 
     defineSet(id: string, values: any[]): CollectionSet {

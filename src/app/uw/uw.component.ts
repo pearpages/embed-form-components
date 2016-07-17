@@ -3,6 +3,8 @@ import { Widget } from '../abstract/widget';
 import { SelectComponent } from '../select/select.component';
 import { ApiService } from '../services/api.service';
 import { FormService } from '../services/form.service';
+import { Ivalidate,valid } from '../interfaces/ivalidate';
+import { Fieldset} from '../models/fieldset';
 
 @Component({
   moduleId: module.id,
@@ -16,7 +18,7 @@ export class UwComponent extends Widget {
     super(apiService, form, 'uws', 'UWs', 'getUws');
   }
 
-  validate(): boolean {
-    return true;
+  validate(f: Fieldset):valid {
+    return {valid:true,error: ''};
   }
 }
