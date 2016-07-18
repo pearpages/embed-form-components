@@ -3,17 +3,17 @@
         <ul class="nav navbar-nav" (click)="isActive()">
             <li [class.active]="isActive('/')"> <a [routerLink]="['/']">Basics</a></li>
             <li [class.active]="isActive('/gallery')"> <a [routerLink]="['/gallery']">Gallery</a></li>
-            <li><a>Broker Meeting</a></li>
-            <li><a>Fac Out Portfolio</a></li>
-            <li><a>Submission Volume Overview</a></li>
-            <li><a>Portfolio Analysis Report</a></li>
-            <li><a>Underwriting Activity</a></li>
-            <li><a>Claims Activitiy</a></li>
-            <li><a>Claims Volume Overview</a></li>
-            <li><a>Gross Written Premium</a></li>
-            <li><a>Limit Exception</a></li>
-            <li><a>Lloyds Monitoring</a></li>
-            <li><a>Monthly Comparison</a></li>
+            <li [class.active]="isActive('/broker-meeting')"><a [routerLink]="['/broker-meeting']">Broker Meeting</a></li>
+            <li [class.active]="isActive('/fac-out-portfolio')"><a [routerLink]="['/fac-out-portfolio']">Fac Out Portfolio</a></li>
+            <li [class.active]="isActive('/submission-volume-overview')"><a [routerLink]="['/submission-volume-overview']">Submission Volume Overview</a></li>
+            <li [class.active]="isActive('/portfolio-analysis-report')"><a [routerLink]="['/portfolio-analysis-report']">Portfolio Analysis Report</a></li>
+            <li [class.active]="isActive('/underwriting-activity')"><a [routerLink]="['/underwriting-activity']">Underwriting Activity</a></li>
+            <li [class.active]="isActive('/claims-activity')"><a [routerLink]="['/claims-activity']">Claims Activitiy</a></li>
+            <li [class.active]="isActive('/claims-volume-overview')"><a [routerLink]="['/claims-volume-overview']">Claims Volume Overview</a></li>
+            <li [class.active]="isActive('/gross-written-premium')"><a [routerLink]="['/gross-written-premium']">Gross Written Premium</a></li>
+            <li [class.active]="isActive('/limit-exception')"><a [routerLink]="['/limit-exception']">Limit Exception</a></li>
+            <li [class.active]="isActive('/lloyds-monitoring')"><a [routerLink]="['/lloyds-monitoring']">Lloyds Monitoring</a></li>
+            <li [class.active]="isActive('/monthly-comparison')"><a [routerLink]="['/monthly-comparison']">Monthly Comparison</a></li>
         </ul>
     </div>
 </nav>
