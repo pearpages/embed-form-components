@@ -10,7 +10,7 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { GroupsComponent } from './groups.component';
+import { RegionsSetComponent } from './regions-set.component';
 
 describe('Component: Groups', () => {
   it('should create an instance', () => {

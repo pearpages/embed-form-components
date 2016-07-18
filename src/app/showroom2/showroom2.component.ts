@@ -7,10 +7,9 @@ import { OfficesComponent } from '../offices/offices.component';
 import { UwComponent } from '../uw/uw.component';
 import { FormService } from '../services/form.service';
 import { ApiService } from '../services/api.service';
-import { GroupscountriesregionsComponent } from '../groupscountriesregions/groupscountriesregions.component';
 import { CountriesComponent } from '../countries/countries.component';
 import { RegionsComponent } from '../regions/regions.component';
-import { GroupsComponent } from '../groups/groups.component';
+import { RegionsSetComponent } from '../regions-set/regions-set.component';
 import { FormErrorComponent } from '../form-error/form-error.component';
 
 @Component({
@@ -18,8 +17,8 @@ import { FormErrorComponent } from '../form-error/form-error.component';
   selector: 'app-showroom2',
   templateUrl: 'showroom2.component.html',
   styleUrls: ['showroom2.component.css'],
-  directives: [ReportingfiguresComponent,CompanytypeComponent,LobsComponent,PrimaryexcessComponent,OfficesComponent,UwComponent,GroupscountriesregionsComponent,
-  RegionsComponent,GroupsComponent,CountriesComponent,FormErrorComponent],
+  directives: [ReportingfiguresComponent,CompanytypeComponent,LobsComponent,PrimaryexcessComponent,OfficesComponent,UwComponent,
+  RegionsComponent,RegionsSetComponent,CountriesComponent,FormErrorComponent],
   providers: [FormService]
 })
 export class Showroom2Component implements OnInit {
@@ -33,7 +32,7 @@ export class Showroom2Component implements OnInit {
   @ViewChild(OfficesComponent) offices: OfficesComponent;
   @ViewChild(CountriesComponent) countries: CountriesComponent;
   @ViewChild(RegionsComponent) regions: RegionsComponent;
-  @ViewChild(GroupsComponent) groups: GroupsComponent;
+  @ViewChild(RegionsSetComponent) groups: RegionsSetComponent;
 
   components: any[];
   json: string = '';

@@ -46,9 +46,9 @@ export class ApiService {
     return this.getFieldset(id, url, cache);
   }
 
-  getGroups(cache: boolean): Observable<Fieldset> {
-    const id = 'form-groups';
-    const url = '/api/groups.json';
+  getRegionsSets(cache: boolean): Observable<Fieldset> {
+    const id = 'form-regions-sets';
+    const url = '/api/regions-sets.json';
     return this.getFieldset(id, url, cache);
   }
 

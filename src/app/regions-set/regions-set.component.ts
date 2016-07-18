@@ -9,15 +9,15 @@ import { Fieldset} from '../models/fieldset';
 
 @Component({
   moduleId: module.id,
-  selector: 'groups',
+  selector: 'region-set',
   template: `<radios [class.highlighted]="highlighted" [title]="title" 
   [fieldset]="data" (radiosChange)="onGroupsChange($event)"></radios>`,
   directives: [RadiosComponent]
 })
-export class GroupsComponent extends Widget {
+export class RegionsSetComponent extends Widget {
 
   constructor(protected apiService: ApiService, protected form: FormService) { 
-    super(apiService,form,'groups','Groups','getGroups');
+    super(apiService,form,'regions-set','Regions Set','getRegionsSets');
   }
 
   onGroupsChange(event) {
@@ -34,7 +34,7 @@ export class GroupsComponent extends Widget {
   }
 
   validate(f: Fieldset):valid {
-    return {valid:true,error: 'Please select a group type'};
+    return {valid:true,error: 'Please select a region set type'};
   }
 
 }
