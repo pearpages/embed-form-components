@@ -1,4 +1,3 @@
-
 import { provideRouter, RouterConfig } from '@angular/router';
 import { ShowroomComponent } from './showroom/showroom.component';
 import { Showroom2Component } from './showroom2/showroom2.component';

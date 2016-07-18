@@ -47,7 +47,18 @@ const barrels: string[] = [
   'app/groups',
   'app/regions',
   'app/countries',
-  'app/form-error'
+  'app/form-error',
+  'app/broker-meeting',
+  'app/fac-out-portfolio',
+  'app/submission-volume-overview',
+  'app/portfolio-analysis-report',
+  'app/underwriting-activity',
+  'app/claims-activity',
+  'app/claims-volume-overview',
+  'app/gross-written-premium',
+  'app/limit-exception',
+  'app/lloyds-monitoring',
+  'app/monthly-comparison'
   /** @cli-barrel */
 ];
 
