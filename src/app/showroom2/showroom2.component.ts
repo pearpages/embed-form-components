@@ -20,7 +20,7 @@ import { FormErrorComponent } from '../form-error/form-error.component';
   styleUrls: ['showroom2.component.css'],
   directives: [ReportingfiguresComponent,CompanytypeComponent,LobsComponent,PrimaryexcessComponent,OfficesComponent,UwComponent,GroupscountriesregionsComponent,
   RegionsComponent,GroupsComponent,CountriesComponent,FormErrorComponent],
-  providers: [ApiService]
+  providers: [FormService]
 })
 export class Showroom2Component implements OnInit {
 

@@ -12,7 +12,8 @@ import { Ifieldset } from '../interfaces/ifieldset';
   selector: 'app-showroom',
   templateUrl: 'showroom.component.html',
   styleUrls: ['showroom.component.css'],
-  directives: [CheckboxesComponent, RadiosComponent, SelectComponent]
+  directives: [CheckboxesComponent, RadiosComponent, SelectComponent],
+  providers: [FormService]
 })
 export class ShowroomComponent implements OnInit {
 

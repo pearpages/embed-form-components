@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
-import {FormService} from './services/form.service'
+import { ApiService } from './services/api.service';
 
 @Component({
   moduleId: module.id,
@@ -8,7 +8,7 @@ import {FormService} from './services/form.service'
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   directives: [ROUTER_DIRECTIVES],
-  providers: [FormService]
+  providers: [ApiService]
 })
 export class AppComponent {
   title = 'Form Components';
