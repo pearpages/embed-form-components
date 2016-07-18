@@ -11,6 +11,7 @@ import { CountriesComponent } from '../countries/countries.component';
 import { RegionsComponent } from '../regions/regions.component';
 import { RegionsSetComponent } from '../regions-set/regions-set.component';
 import { FormErrorComponent } from '../form-error/form-error.component';
+import { TypeOfViewComponent } from '../type-of-view/type-of-view.component';
 
 @Component({
   moduleId: module.id,
@@ -18,7 +19,7 @@ import { FormErrorComponent } from '../form-error/form-error.component';
   templateUrl: 'showroom2.component.html',
   styleUrls: ['showroom2.component.css'],
   directives: [ReportingfiguresComponent,CompanytypeComponent,LobsComponent,PrimaryexcessComponent,OfficesComponent,UwComponent,
-  RegionsComponent,RegionsSetComponent,CountriesComponent,FormErrorComponent],
+  RegionsComponent,RegionsSetComponent,CountriesComponent,FormErrorComponent,TypeOfViewComponent],
   providers: [FormService]
 })
 export class Showroom2Component implements OnInit {

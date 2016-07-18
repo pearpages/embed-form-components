@@ -1,22 +1,22 @@
 {
         "values": [
             {
-                "value": "group1",
-                "label": "Group 1",
+                "value": "barcelona",
+                "label": "Barcelona Regions Group",
                 "visible": true,
                 "default": false,
                 "initial": false
             },
             {
-                "value": "group2",
-                "label": "Group 2",
+                "value": "london",
+                "label": "London Regions Group",
                 "visible": true,
                 "default": false,
                 "initial": false
             },
             {
-                "value": "group3",
-                "label": "Group 3",
+                "value": "management",
+                "label": "Management Regions Group",
                 "visible": true,
                 "default": false,
                 "initial": false

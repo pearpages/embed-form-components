@@ -57,7 +57,8 @@ const barrels: string[] = [
   'app/gross-written-premium',
   'app/limit-exception',
   'app/lloyds-monitoring',
-  'app/monthly-comparison'
+  'app/monthly-comparison',
+  'app/type-of-view',
   /** @cli-barrel */
 ];
 

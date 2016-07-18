@@ -1,0 +1,33 @@
+{
+    "values": [
+        {
+            "value": "regions-view",
+            "label": "Regions View",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "countries-view",
+            "label": "Countries View",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "brokers-view",
+            "label": "Brokers View",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "uws-view",
+            "label": "UWs View",
+            "visible": true,
+            "default": false,
+            "initial": false
+        }
+    ],
+    "multi": true
+}

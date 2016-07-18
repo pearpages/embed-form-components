@@ -27,6 +27,12 @@ export class ApiService {
     const url = '/api/offices.json';
     return this.getFieldset(id, url, cache);
   }
+  
+  getTypesOfView(cache:boolean): Observable<Fieldset> {
+    const id = 'form-types-of-view';
+    const url = '/api/types-of-view.json';
+    return this.getFieldset(id,url,cache);
+  }
 
   getPrimaryExcess(cache: boolean): Observable<Fieldset> {
     const id = 'form-primary-excess';

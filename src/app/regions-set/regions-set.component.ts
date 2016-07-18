@@ -9,7 +9,7 @@ import { Fieldset} from '../models/fieldset';
 
 @Component({
   moduleId: module.id,
-  selector: 'region-set',
+  selector: 'regions-set',
   template: `<radios [class.highlighted]="highlighted" [title]="title" 
   [fieldset]="data" (radiosChange)="onGroupsChange($event)"></radios>`,
   directives: [RadiosComponent]
