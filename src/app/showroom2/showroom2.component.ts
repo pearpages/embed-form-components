@@ -41,11 +41,11 @@ export class Showroom2Component implements OnInit {
   constructor(public formService: FormService) {}
 
   getHover(event) {
-    let id = event.split(' ')[1];
-    if(event.includes('off')){
-      this.formService.getWidget(id).highlight(false);
-    }else{
-      this.formService.getWidget(id).highlight(true);
+    console.log(event);
+    if(event.action==='on'){
+      this.formService.getWidget(event.id).highlight(true);
+    }else if(event.action==='off'){
+      this.formService.getWidget(event.id).highlight(false);
     }
   }
 

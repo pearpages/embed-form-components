@@ -17,11 +17,11 @@ export class FormErrorComponent implements OnInit {
   }
 
   highlight(id: string) {
-    this.hovering.emit('on '+id);
+    this.hovering.emit({action:'on',id:id});
   }
 
   removeHighlight(id:string) {
-    this.hovering.emit('off '+id);
+    this.hovering.emit({action:'off',id:id});
   }
 
   removeError(index) {
