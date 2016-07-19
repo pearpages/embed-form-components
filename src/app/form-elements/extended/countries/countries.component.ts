@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 import { Widget } from '../../../abstract/widget';
 import { CheckboxesComponent } from '../../core/checkboxes/checkboxes.component';
 import { ApiService } from '../../../services/api.service';
@@ -9,13 +9,27 @@ import { Fieldset} from '../../../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'countries',
-  template: `<checkboxes [class.highlighted]="highlighted" [fieldset]="data" ></checkboxes>`,
+  template: `
+  <h4>Countries</h4>
+  <label (click)="setType('ALL')" >All <input type="radio" [checked]="type === 'ALL'"/></label>
+  <label (click)="setType('CUSTOM')" >Custom<input type="radio" [checked]="type === 'CUSTOM'"/></label>
+  <checkboxes *ngIf="type==='CUSTOM'" [class.highlighted]="highlighted" [fieldset]="data" ></checkboxes>`,
   directives: [CheckboxesComponent]
 })
 export class CountriesComponent extends Widget {
 
+  type:string = 'ALL';
+
   constructor(protected apiService: ApiService, protected form: FormService) {
     super(apiService, form, 'countries', 'Countries', 'getCountries');
+  }
+
+  setType(value:string) {
+    this.type = value;
+  }
+
+  ngOnChanges() {
+    console.log(this);
   }
 
   validate(f: Fieldset):valid {

@@ -20,10 +20,15 @@ import { FormService } from '../../services/form.service';
 })
 export class SubmissionVolumeOverviewComponent implements OnInit {
 
-  constructor() {}
+  json: string;
+
+  constructor(private form: FormService) {}
 
   ngOnInit() {
   }
 
+  getJson() {
+    this.json = this.form.getJSON();
+  }
 
 }
