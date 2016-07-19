@@ -10,8 +10,16 @@ import { Fieldset} from '../../../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'regions',
-  template: `<checkboxes [class.highlighted]="highlighted" 
-  [fieldset]="data" [title]="title" (checkboxesChange)="updateCountries($event)"></checkboxes>`,
+  template: `
+  <div class="fieldset">
+    <div class="col-left">
+      <h4>{{title}}:</h4>
+    </div>
+    <div class="col-right">
+      <checkboxes [class.highlighted]="highlighted" [fieldset]="data" (checkboxesChange)="updateCountries($event)"></checkboxes>
+    </div>
+  </div>
+  `,
   directives: [CheckboxesComponent]
 })
 export class RegionsComponent extends Widget {

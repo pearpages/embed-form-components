@@ -10,10 +10,18 @@ import { Fieldset} from '../../../models/fieldset';
   moduleId: module.id,
   selector: 'countries',
   template: `
-  <h4>Countries</h4>
-  <label (click)="setType('ALL')" >All <input type="radio" [checked]="type === 'ALL'"/></label>
-  <label (click)="setType('CUSTOM')" >Custom<input type="radio" [checked]="type === 'CUSTOM'"/></label>
-  <checkboxes *ngIf="type==='CUSTOM'" [class.highlighted]="highlighted" [fieldset]="data" ></checkboxes>`,
+  <div class="fieldset">
+    <div class="col-left">
+      <h4>{{title}}:</h4>
+    </div>
+    <div class="col-right">
+      <div [class.highlighted]="highlighted">
+        <label (click)="setType('ALL')" >All <input type="radio" [checked]="type === 'ALL'"/></label>
+        <label (click)="setType('CUSTOM')" >Custom<input type="radio" [checked]="type === 'CUSTOM'"/></label>
+        <checkboxes *ngIf="type==='CUSTOM'" [fieldset]="data" ></checkboxes>
+      </div>
+    </div>
+  </div>`,
   directives: [CheckboxesComponent]
 })
 export class CountriesComponent extends Widget {

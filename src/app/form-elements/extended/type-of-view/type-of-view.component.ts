@@ -9,7 +9,16 @@ import { RadiosComponent } from '../../core/radios/radios.component';
 @Component({
   moduleId: module.id,
   selector: 'type-of-view',
-  templateUrl: 'type-of-view.component.html',
+  template: `
+  <div class="fieldset">
+    <div class="col-left">
+      <h4>{{title}}:</h4>
+    </div>
+    <div class="col-right">
+      <radios [class.highlighted]="highlighted" [fieldset]="data"></radios>
+    </div>
+  </div>
+  `,
   directives: [RadiosComponent]
 })
 export class TypeOfViewComponent extends Widget {

@@ -12,7 +12,6 @@ import { FormValue } from '../../../models/form-value';
 export class RadiosComponent implements OnInit {
 
   @Input() fieldset: Fieldset;
-  @Input() title: string;
   @Output() radiosChange = new EventEmitter();
 
   constructor(private formService: FormService) {}

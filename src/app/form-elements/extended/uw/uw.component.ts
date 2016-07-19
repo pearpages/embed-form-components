@@ -9,8 +9,16 @@ import { Fieldset} from '../../../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'uw',
-  template: `<my-select [class.highlighted]="highlighted" 
-  [fieldset]="data" [classes]="'uws'" [title]="title" [multiple]="true"></my-select>`,
+  template: `
+  <div class="fieldset">
+    <div class="col-left">
+      <h4>{{title}}:</h4>
+    </div>
+    <div class="col-right">
+      <my-select [class.highlighted]="highlighted" [fieldset]="data" [classes]="'uws'" [multiple]="true"></my-select>
+    </div>
+  </div>
+  `,
   directives: [SelectComponent]
 })
 export class UwComponent extends Widget {

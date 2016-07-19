@@ -10,8 +10,16 @@ import { Fieldset} from '../../../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'regions-set',
-  template: `<radios [class.highlighted]="highlighted" [title]="title" 
-  [fieldset]="data" (radiosChange)="onGroupsChange($event)"></radios>`,
+  template: `
+  <div class="fieldset">
+    <div class="col-left">
+      <h4>{{title}}:</h4>
+    </div>
+    <div class="col-right">
+      <radios [class.highlighted]="highlighted" [fieldset]="data" (radiosChange)="onGroupsChange($event)"></radios>
+    </div>
+  </div>
+  `,
   directives: [RadiosComponent]
 })
 export class RegionsSetComponent extends Widget {

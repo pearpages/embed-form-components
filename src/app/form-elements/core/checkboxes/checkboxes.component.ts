@@ -10,7 +10,6 @@ import { Fieldset } from '../../../models/fieldset';
 export class CheckboxesComponent implements OnInit {
 
   @Input() fieldset: Fieldset; 
-  @Input() title: string;
   @Output() checkboxesChange = new EventEmitter();
   
   constructor() {}

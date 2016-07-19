@@ -10,7 +10,16 @@ import { Fieldset} from '../../../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'offices',
-  template: `<checkboxes [class.highlighted]="highlighted" [title]="title" [fieldset]="data"></checkboxes>`,
+  template: `
+  <div class="fieldset">
+    <div class="col-left">
+      <h4>{{title}}:</h4>
+    </div>
+    <div class="col-right">
+      <checkboxes [class.highlighted]="highlighted" [title]="title" [fieldset]="data"></checkboxes>
+    </div>
+  </div>
+  `,
   directives: [CheckboxesComponent]
 })
 export class OfficesComponent extends Widget {

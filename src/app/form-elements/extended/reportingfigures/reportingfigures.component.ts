@@ -9,7 +9,16 @@ import { Fieldset } from '../../../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'reporting-figures',
-  template: `<radios [class.highlighted]="highlighted" [title]="title" [fieldset]="data"></radios>`,
+  template: `
+  <div class="fieldset">
+    <div class="col-left">
+      <h4>{{title}}:</h4>
+    </div>
+    <div class="col-right">
+      <radios [class.highlighted]="highlighted" [fieldset]="data"></radios>
+    </div>
+  </div>
+  `,
   directives: [RadiosComponent]
 })
 export class ReportingfiguresComponent extends Widget {
