@@ -3,7 +3,7 @@ import { Widget } from '../../../abstract/widget';
 import { CheckboxesComponent } from '../../core/checkboxes/checkboxes.component';
 import { ApiService } from '../../../services/api.service';
 import { FormService } from '../../../services/form.service';
-import { Ivalidate,valid } from '../../../interfaces/ivalidate';
+import { Ivalidate, valid } from '../../../interfaces/ivalidate';
 import { Fieldset} from '../../../models/fieldset';
 
 
@@ -25,17 +25,20 @@ import { Fieldset} from '../../../models/fieldset';
 export class RegionsComponent extends Widget {
 
   constructor(protected apiService: ApiService, protected form: FormService) {
-    super(apiService,form,'regions','Regions','getRegions');
-   }
+    super(apiService, form, 'regions', 'Regions', 'getRegions');
+  }
 
   updateCountries(event) {
-    this.getCountriesData().set.hideAll();
+    let countries = this.getCountriesData();
+    if(countries){
+      countries.set.hideAll();
+    }
     this.showCountries(event.value);
     this.uncheckCountries();
   }
 
-  validate(f: Fieldset):valid {
-    return {valid:true,error: 'Please selsect at least one region'};
+  validate(f: Fieldset): valid {
+    return { valid: true, error: 'Please selsect at least one region' };
   }
 
   private getCountriesData(): Fieldset {
@@ -45,14 +48,20 @@ export class RegionsComponent extends Widget {
   private showCountries(selectedRegions) {
     if (selectedRegions[0] !== false) {
       selectedRegions.forEach((regionSet) => {
-        this.getCountriesData().set.getSet(regionSet).show();
+        let countries = this.getCountriesData();
+        if(countries){
+          countries.set.getSet(regionSet).show();
+        }
       });
     }
   }
 
   private uncheckCountries() {
-    this.getCountriesData().set.getHiddenSets().forEach((set) => {
-      set.setFalse();
-    });
+    let countries = this.getCountriesData();
+    if (countries) {
+      countries.set.getHiddenSets().forEach((set) => {
+        set.setFalse();
+      });
+    }
   }
 }
