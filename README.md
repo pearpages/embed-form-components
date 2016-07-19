@@ -4,6 +4,7 @@
 
 - Form service spec missing
 - highlight function for Widget sons, make it abstract
+- core select component needs spec file
 
 ## Intro
 

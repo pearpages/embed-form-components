@@ -1,17 +1,17 @@
 import { provideRouter, RouterConfig } from '@angular/router';
-import { ShowroomComponent } from './showroom/showroom.component';
-import { Showroom2Component } from './showroom2/showroom2.component';
-import { BrokerMeetingComponent } from './broker-meeting/broker-meeting.component';
-import { FacOutPortfolioComponent } from './fac-out-portfolio/fac-out-portfolio.component';
-import { SubmissionVolumeOverviewComponent } from './submission-volume-overview/submission-volume-overview.component';
-import { PortfolioAnalysisReportComponent } from './portfolio-analysis-report/portfolio-analysis-report.component';
-import { ClaimsActivityComponent } from './claims-activity/claims-activity.component';
-import { ClaimsVolumeOverviewComponent } from './claims-volume-overview/claims-volume-overview.component';
-import { GrossWrittenPremiumComponent } from './gross-written-premium/gross-written-premium.component';
-import { LimitExceptionComponent } from './limit-exception/limit-exception.component';
-import { LloydsMonitoringComponent } from './lloyds-monitoring/lloyds-monitoring.component';
-import { MonthlyComparisonComponent } from './monthly-comparison/monthly-comparison.component';
-import { UnderwritingActivityComponent } from './underwriting-activity/underwriting-activity.component';
+import { ShowroomComponent } from './forms/showroom/showroom.component';
+import { Showroom2Component } from './forms/showroom2/showroom2.component';
+import { BrokerMeetingComponent } from './forms/broker-meeting/broker-meeting.component';
+import { FacOutPortfolioComponent } from './forms/fac-out-portfolio/fac-out-portfolio.component';
+import { SubmissionVolumeOverviewComponent } from './forms/submission-volume-overview/submission-volume-overview.component';
+import { PortfolioAnalysisReportComponent } from './forms/portfolio-analysis-report/portfolio-analysis-report.component';
+import { ClaimsActivityComponent } from './forms/claims-activity/claims-activity.component';
+import { ClaimsVolumeOverviewComponent } from './forms/claims-volume-overview/claims-volume-overview.component';
+import { GrossWrittenPremiumComponent } from './forms/gross-written-premium/gross-written-premium.component';
+import { LimitExceptionComponent } from './forms/limit-exception/limit-exception.component';
+import { LloydsMonitoringComponent } from './forms/lloyds-monitoring/lloyds-monitoring.component';
+import { MonthlyComparisonComponent } from './forms/monthly-comparison/monthly-comparison.component';
+import { UnderwritingActivityComponent } from './forms/underwriting-activity/underwriting-activity.component';
 
 export const routes: RouterConfig = [
   { path: '', component: ShowroomComponent },
