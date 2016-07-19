@@ -3,7 +3,7 @@ import { Widget } from '../../../abstract/widget';
 import { CheckboxesComponent } from '../../core/checkboxes/checkboxes.component';
 import { ApiService } from '../../../services/api.service';
 import { FormService } from '../../../services/form.service';
-import { Ivalidate,valid } from '../../../interfaces/ivalidate';
+import { Ivalidate, valid } from '../../../interfaces/ivalidate';
 import { Fieldset} from '../../../models/fieldset';
 
 @Component({
@@ -18,13 +18,25 @@ import { Fieldset} from '../../../models/fieldset';
 })
 export class CountriesComponent extends Widget {
 
-  type:string = 'ALL';
+  type: string;
 
   constructor(protected apiService: ApiService, protected form: FormService) {
     super(apiService, form, 'countries', 'Countries', 'getCountries');
   }
 
-  setType(value:string) {
+  setType(value: string) {
+    if (value === 'ALL') {
+      if (this.form.hasValue('regions')) {
+        let regions = this.form.getValue('regions').getOutputValues();
+        if (regions[0] !== false) {
+          regions.forEach((region) => {
+            this.data.set.getSet(region).setTrue();
+          });
+        }
+      }
+    } else if (value === 'CUSTOM') {
+      this.data.setToFalseAllCurrentValues();
+    }
     this.type = value;
   }
 
@@ -32,8 +44,8 @@ export class CountriesComponent extends Widget {
     console.log(this);
   }
 
-  validate(f: Fieldset):valid {
-    return {valid:true,error: 'Please select at least one country'};
+  validate(f: Fieldset): valid {
+    return { valid: true, error: 'Please select at least one country' };
   }
 
 }
