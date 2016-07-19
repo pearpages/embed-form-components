@@ -9,7 +9,7 @@ import { Fieldset} from '../models/fieldset';
 @Component({
   moduleId: module.id,
   selector: 'countries',
-  template: `<checkboxes [class.highlighted]="highlighted" [fieldset]="data" [title]="title"></checkboxes>`,
+  template: `<checkboxes [class.highlighted]="highlighted" [fieldset]="data" ></checkboxes>`,
   directives: [CheckboxesComponent]
 })
 export class CountriesComponent extends Widget {
