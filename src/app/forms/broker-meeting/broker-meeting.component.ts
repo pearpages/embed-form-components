@@ -4,12 +4,14 @@ import { OfficesComponent } from '../../form-elements/extended/offices/offices.c
 import { RegionsSetComponent } from '../../form-elements/extended/regions-set/regions-set.component';
 import { RegionsComponent } from '../../form-elements/extended/regions/regions.component';
 import { CountriesComponent } from '../../form-elements/extended/countries/countries.component';
+import { LobsComponent } from '../../form-elements/extended/lobs/lobs.component';
+import { CompanytypeComponent } from '../../form-elements/extended/companytype/companytype.component';
 
 @Component({
   moduleId: module.id,
   selector: 'app-broker-meeting',
   templateUrl: 'broker-meeting.component.html',
-  directives: [OfficesComponent,RegionsSetComponent,RegionsComponent,CountriesComponent],
+  directives: [OfficesComponent,RegionsSetComponent,RegionsComponent,CountriesComponent,LobsComponent,CompanytypeComponent],
   providers: [FormService]
 })
 export class BrokerMeetingComponent implements OnInit {
