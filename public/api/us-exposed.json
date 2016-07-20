@@ -1,0 +1,26 @@
+{
+        "values": [
+            {
+                "value": "yes",
+                "label": "Yes",
+                "visible": true,
+                "default": false,
+                "initial": false
+            },
+            {
+                "value": "no",
+                "label": "NO",
+                "visible": true,
+                "default": false,
+                "initial": false
+            },
+            {
+                "value": "all",
+                "label": "All",
+                "visible": true,
+                "default": false,
+                "initial": false
+            }
+        ],
+        "multi": false
+    }
