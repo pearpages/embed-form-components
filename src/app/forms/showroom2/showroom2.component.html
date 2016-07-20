@@ -1,29 +1,84 @@
-<button (click)="validate()">Validate</button>
-<form-error [errorMessages]="errorMessages" (hovering)="getHover($event)"></form-error>
-
+<h3>Dates</h3>
 <p>Date widget missing</p>
+<hr>
 
+<h3>Reporting Figures</h3>
+
+<h4>HTML</h4>
+<div class="well">
+    &lt;reporting-figures&gt;&lt;/reporting-figures&gt;
+</div>
+
+<h4>Example</h4>
 <reporting-figures></reporting-figures>
 
+<hr>
+
+<h3>Type of View</h3>
+
+<h4>HTML</h4>
+<div class="well">
+&lt;type-of-view&gt;&lt;/type-of-view&gt;    
+</div>
+
+<h4>Example</h4>
 <type-of-view></type-of-view>
+
+<hr>
+
+<h3>Offices</h3>
 <offices></offices>
-<!--groups-countries-regions></groups-countries-regions-->
+<hr>
 
-    <regions-set></regions-set>
-    <regions></regions>
-    <countries></countries>
+<h3>Regions Set</h3>
+<regions-set></regions-set>
+<hr>
 
+<h3>Regions</h3>
+<regions></regions>
+<hr>
+
+<h3>Countries</h3>
+<countries></countries>
+<hr>
+
+<h3>UW</h3>
 <uw></uw>
+<hr>
+
+<h3>lobs</h3>
 <lobs></lobs>
+<hr>
+
+<h3>Primary-Excess</h3>
 <primary-excess></primary-excess>
+<hr>
+
+<h3>CompanyType</h3>
 <company-type></company-type>
+<hr>
+
+<h3>Operations Type</h3>
 <p>Operations Type missing</p>
+<hr>
+
+<h4>Business Type</h4>
 <p>Business Type missing</p>
-<p>Extra checkboxes missing</p>
+<hr>
+
+<h4>Run Report Button</h4>
 <run-report></run-report>
 
 <hr>
 
-<h4>JSON</h4>
+<h4>Events</h4>
+
+<h3>Get JSON</h3>
 <button (click)="getJson()">Update JSON</button><p>{{json}}</p>
+
+<h3>Refresll Data from the Server</h3>
 <button (click)="forceRefresh()">Refresh All</button>
+
+<h3>Validation Widget</h3>
+<button (click)="validate()">Validate</button>
+<form-error [errorMessages]="errorMessages" (hovering)="getHover($event)"></form-error>
