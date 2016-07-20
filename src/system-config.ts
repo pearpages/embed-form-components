@@ -63,6 +63,7 @@ const barrels: string[] = [
   'app/forms/limit-exception',
   'app/forms/lloyds-monitoring',
   'app/forms/monthly-comparison'
+  'app/us-exposed',
   /** @cli-barrel */
 ];
 
