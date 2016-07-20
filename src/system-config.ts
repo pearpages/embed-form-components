@@ -35,8 +35,6 @@ const barrels: string[] = [
   'app/form-elements/core/checkboxes',
   'app/form-elements/core/radios',
   'app/form-elements/core/select',
-  'app/forms/showroom',
-  'app/forms/showroom2',
   'app/form-elements/extended/reportingfigures',
   'app/form-elements/extended/primaryexcess',
   'app/form-elements/extended/companytype',
@@ -46,7 +44,12 @@ const barrels: string[] = [
   'app/form-elements/extended/regions-set',
   'app/form-elements/extended/regions',
   'app/form-elements/extended/countries',
-  'app/form-elements/form-error',
+  'app/form-elements/extended/form-error',
+  'app/form-elements/extended/type-of-view',
+  'app/form-elements/extended/run-report',
+  'app/form-elements/extended/market-company',
+  'app/forms/showroom',
+  'app/forms/showroom2',
   'app/forms/broker-meeting',
   'app/forms/fac-out-portfolio',
   'app/forms/submission-volume-overview',
@@ -57,9 +60,7 @@ const barrels: string[] = [
   'app/forms/gross-written-premium',
   'app/forms/limit-exception',
   'app/forms/lloyds-monitoring',
-  'app/forms/monthly-comparison',
-  'app/forms-element/extended/type-of-view',
-  'app/forms-element/extended/run-report'
+  'app/forms/monthly-comparison'
   /** @cli-barrel */
 ];
 
