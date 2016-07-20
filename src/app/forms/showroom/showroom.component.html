@@ -12,11 +12,17 @@
 
     <h3>Radios</h3>
 
+    <h4>HTML</h4>
+    <div class="well">
+        &lt;radios [title]="'Radios'" [fieldset]="f1"&gt;&lt;/radios&gt;  
+    </div>
+
+    <h4>Rendered</h4>
     <div class="well">
       <radios [title]="'Radios'" [fieldset]="f1"></radios>
     </div>
 
-    <h4>Events</h4>
+    <h4>Events / Output </h4>
 
     <div class="well">
       {{getOutput('f1')}}
@@ -27,11 +33,17 @@
 
     <h3>Checkboxes</h3>
 
+    <h4>HTML</h4>
+    <div class="well">
+        &lt;checkboxes [title]="'Checkboxes'" [fieldset]="f2" &gt;&lt;/checkboxes&gt;  
+    </div>
+
+    <h4>Rendered</h4>
     <div class="well">
       <checkboxes [title]="'Checkboxes'" [fieldset]="f2" ></checkboxes>
     </div>
 
-    <h4>Events</h4>
+    <h4>Events / Output</h4>
 
     <div class="well">
       {{getOutput('f2')}}
@@ -47,11 +59,17 @@
 
     <h3>Select multiple</h3>
 
+    <h4>HTML</h4>
+    <div class="well">
+      &lt;my-select [title]="'MultiSelect'" [fieldset]="f3" [multiple]="true"&gt;&lt;/my-select&gt;
+    </div>
+
+    <h4>Rendred</h4>
     <div class="well">
       <my-select [title]="'MultiSelect'" [fieldset]="f3" [multiple]="true"></my-select>
     </div>
 
-    <h4>Events</h4>
+    <h4>Events / Output</h4>
 
     <div class="well">
       {{getOutput('f3')}}
@@ -62,11 +80,18 @@
 
     <h3>Select simple</h3>
 
+    <h4>HTML</h4>
+    <div class="well">
+      &lt;my-select [title]="'Select'" [fieldset]="f4" [multiple]="false"&gt;&lt;/my-select&gt;
+    </div>
+
+    <h4>Rendered</h4>
+
     <div class="well">
       <my-select [title]="'Select'" [fieldset]="f4" [multiple]="false"></my-select>
     </div>
 
-    <h4>Events</h4>
+    <h4>Events / Output</h4>
 
     <div class="well">
       {{getOutput('f4')}}
