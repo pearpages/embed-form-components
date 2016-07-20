@@ -65,10 +65,10 @@ export class ShowroomComponent implements OnInit {
   }
 
   getOutput(id): any[] {
-    if(this.getFieldset(id) === undefined) {
+    if(this[id] === undefined) {
       return [];
     }
-    return this.getFieldset(id).getOutputValues();
+    return this[id].getOutputValues();
   }
 
   toggleVisibility(id, set) {
