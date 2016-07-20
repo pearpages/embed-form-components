@@ -4,11 +4,13 @@ import { FormService } from '../../../../services/form.service';
 import { ApiService } from '../../../../services/api.service';
 import { Fieldset } from '../../../../models/fieldset';
 import { valid } from '../../../../interfaces/ivalidate';
+import { RadiosComponent } from '../../../core/radios/radios.component';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-local-policies',
-  template: ``
+  selector: 'local-policies',
+  template: `<radios [fieldset]="data"></radios>`,
+  directives: [RadiosComponent]
 })
 export class LocalPoliciesComponent extends Widget {
 

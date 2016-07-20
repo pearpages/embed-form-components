@@ -58,6 +58,12 @@ export class ApiService {
     return this.getFieldset(id, url, cache);
   }
 
+  getLocalPolicies(cache: boolean): Observable<Fieldset> {
+    const id = 'form-local-policies';
+    const url = '/api/local-policies.json';
+    return this.getFieldset(id, url, cache);
+  }
+
   getRegionsSets(cache: boolean): Observable<Fieldset> {
     const id = 'form-regions-sets';
     const url = '/api/regions-sets.json';
