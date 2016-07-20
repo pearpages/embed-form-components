@@ -53,7 +53,12 @@ export class ShowroomComponent implements OnInit {
     return this[id];
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.formService.setValue('f1',this.f1);
+    this.formService.setValue('f2',this.f2);
+    this.formService.setValue('f3',this.f3);
+    this.formService.setValue('f4',this.f4);
+  }
 
   reset(id) {
     this.getFieldset(id).reset();

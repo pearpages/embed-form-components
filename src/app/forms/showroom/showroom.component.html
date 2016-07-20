@@ -1,37 +1,77 @@
 <div class="row">
   <div class="col-md-12">
-    <h1>{{title}}</h1>
-
-    <radios [title]="'Radios'" [fieldset]="f1"></radios>
-    <checkboxes [title]="'Checkboxes'" [fieldset]="f2" ></checkboxes>
-    <my-select [title]="'MultiSelect'" [fieldset]="f3" [multiple]="true"></my-select>
-    <my-select [title]="'Select'" [fieldset]="f4" [multiple]="false"></my-select>
-
-    <hr>
-
+    
     <h2>Form Results</h2>
 
-    <h3>JSON</h3>
-    {{getJSON()}}
+    <h3>Form values in JSON</h3>
+    <div class="well">
+      {{getJSON()}}
+    </div>
 
     <hr>
 
-    <h2>External Events</h2>
+    <h3>Radios</h3>
 
-    <h4>Radios values: {{getOutput('myRadios')}}</h4>
+    <div class="well">
+      <radios [title]="'Radios'" [fieldset]="f1"></radios>
+    </div>
+
+    <h4>Events</h4>
+
+    <div class="well">
+      {{getOutput('myRadios')}}
+    </div>
     <button (click)="reset('f1')">reset radios</button>
 
-    <h4>Checkboxes Values: {{getOutput('myCheckboxes')}}</h4>
+    <hr>
+
+    <h3>Checkboxes</h3>
+
+    <div class="well">
+      <checkboxes [title]="'Checkboxes'" [fieldset]="f2" ></checkboxes>
+    </div>
+
+    <h4>Events</h4>
+
+    <div class="well">
+      {{getOutput('myCheckboxes')}}
+    </div>
+
     <button (click)="toggleVisibility('f2','one')">toggle visibility set one</button>
     <button (click)="toggleVisibility('f2','two')">toggle visibility set two</button>
     <button (click)="toggleVisibility('f2','three')">toggle visibility set three</button>
     <br/>
     <button (click)="reset('f2')">reset checkboxes</button>
 
-    <h4>MultiSelect: {{getOutput('select1')}}</h4>
+    <hr>
+
+    <h3>Select multiple</h3>
+
+    <div class="well">
+      <my-select [title]="'MultiSelect'" [fieldset]="f3" [multiple]="true"></my-select>
+    </div>
+
+    <h4>Events</h4>
+
+    <div class="well">
+      {{getOutput('select1')}}
+    </div>
     <button (click)="reset('f3')">reset multiselect</button>
 
-    <h4>Select: {{getOutput('select2')}}</h4>
+    <hr>
+
+    <h3>Select simple</h3>
+
+    <div class="well">
+      <my-select [title]="'Select'" [fieldset]="f4" [multiple]="false"></my-select>
+    </div>
+
+    <h4>Events</h4>
+
+    <div class="well">
+      {{getOutput('select2')}}
+    </div>
+    
     <button (click)="reset('f4')">reset select</button>
 
   </div>
