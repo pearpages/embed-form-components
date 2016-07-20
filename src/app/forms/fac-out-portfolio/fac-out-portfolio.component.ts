@@ -7,6 +7,8 @@ import { RegionsComponent } from '../../form-elements/extended/regions/regions.c
 import { CountriesComponent } from '../../form-elements/extended/countries/countries.component';
 import { LobsComponent } from '../../form-elements/extended/lobs/lobs.component';
 import { CompanytypeComponent } from '../../form-elements/extended/companytype/companytype.component';
+import { RunReportComponent } from '../../form-elements/extended/run-report/run-report.component';
+import { MarketCompanyComponent } from '../../form-elements/extended/market-company/market-company.component';
 
 
 @Component({
@@ -14,7 +16,7 @@ import { CompanytypeComponent } from '../../form-elements/extended/companytype/c
   selector: 'app-fac-out-portfolio',
   templateUrl: 'fac-out-portfolio.component.html',
   styleUrls: ['fac-out-portfolio.component.css'],
-  directives: [TypeOfViewComponent,OfficesComponent,RegionsSetComponent,LobsComponent,CompanytypeComponent,RegionsComponent],
+  directives: [TypeOfViewComponent,OfficesComponent,RegionsSetComponent,CountriesComponent,LobsComponent,CompanytypeComponent,RegionsComponent,MarketCompanyComponent,RunReportComponent],
   providers: [FormService]
 })
 export class FacOutPortfolioComponent implements OnInit {

@@ -7,6 +7,7 @@ import { CountriesComponent } from '../../form-elements/extended/countries/count
 import { UwComponent } from '../../form-elements/extended/uw/uw.component';
 import { LobsComponent } from  '../../form-elements/extended/lobs/lobs.component';
 import { CompanytypeComponent } from '../../form-elements/extended/companytype/companytype.component';
+import { RunReportComponent } from '../../form-elements/extended/run-report/run-report.component';
 import { FormService } from '../../services/form.service'; 
 
 @Component({
@@ -15,7 +16,7 @@ import { FormService } from '../../services/form.service';
   templateUrl: 'monthly-comparison.component.html',
   styleUrls: ['monthly-comparison.component.css'],
   providers: [FormService],
-  directives: [TypeOfViewComponent,OfficesComponent,RegionsComponent,RegionsSetComponent,CountriesComponent,UwComponent,LobsComponent,CompanytypeComponent]
+  directives: [TypeOfViewComponent,OfficesComponent,RegionsComponent,RegionsSetComponent,CountriesComponent,UwComponent,LobsComponent,CompanytypeComponent,RunReportComponent]
 })
 export class MonthlyComparisonComponent implements OnInit {
 

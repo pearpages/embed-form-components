@@ -10,11 +10,11 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { MarcketCompanyComponent } from './market-company.component';
+import { MarketCompanyComponent } from './market-company.component';
 
 describe('Component: MarcketCompany', () => {
   it('should create an instance', () => {
-    let component = new MarcketCompanyComponent();
+    let component = new MarketCompanyComponent();
     expect(component).toBeTruthy();
   });
 });

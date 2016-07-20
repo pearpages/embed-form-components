@@ -1,1 +1,1 @@
-export * from './marcket-company.component';
+export * from './market-company.component';

@@ -8,6 +8,7 @@ import { LobsComponent } from '../../form-elements/extended/lobs/lobs.component'
 import { CompanytypeComponent } from '../../form-elements/extended/companytype/companytype.component';
 import { PrimaryexcessComponent } from '../../form-elements/extended/primaryexcess/primaryexcess.component';
 import { UwComponent } from '../../form-elements/extended/uw/uw.component';
+import { RunReportComponent } from '../../form-elements/extended/run-report/run-report.component';
 
 @Component({
   moduleId: module.id,
@@ -15,7 +16,7 @@ import { UwComponent } from '../../form-elements/extended/uw/uw.component';
   templateUrl: 'underwriting-activity.component.html',
   styleUrls: ['underwriting-activity.component.css'],
   providers: [FormService],
-  directives: [ReportingfiguresComponent,TypeOfViewComponent,OfficesComponent,UwComponent,LobsComponent,PrimaryexcessComponent]
+  directives: [ReportingfiguresComponent,TypeOfViewComponent,OfficesComponent,UwComponent,LobsComponent,PrimaryexcessComponent,RunReportComponent]
 })
 export class UnderwritingActivityComponent implements OnInit {
 
