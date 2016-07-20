@@ -59,6 +59,7 @@ const barrels: string[] = [
   'app/forms/lloyds-monitoring',
   'app/forms/monthly-comparison',
   'app/forms-element/extended/type-of-view',
+  'app/forms-element/extended/run-report'
   /** @cli-barrel */
 ];
 
