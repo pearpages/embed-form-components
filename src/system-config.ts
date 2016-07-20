@@ -48,6 +48,8 @@ const barrels: string[] = [
   'app/form-elements/extended/type-of-view',
   'app/form-elements/extended/run-report',
   'app/form-elements/extended/market-company',
+  'app/form-elements/extended/market-company/market-co',
+  'app/form-elements/extended/market-company/local-policies',
   'app/forms/showroom',
   'app/forms/showroom2',
   'app/forms/broker-meeting',

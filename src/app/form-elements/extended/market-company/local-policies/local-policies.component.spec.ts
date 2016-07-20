@@ -10,12 +10,12 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { MarketCompanyComponent } from './market-company.component';
+import { LocalPoliciesComponent } from './local-policies.component';
 
-describe('Component: MarketCompany', () => {
+describe('Component: LocalPolicies', () => {
   /*
   it('should create an instance', () => {
-    let component = new MarketCompanyComponent();
+    let component = new LocalPoliciesComponent();
     expect(component).toBeTruthy();
   });
   */

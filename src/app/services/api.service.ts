@@ -40,6 +40,12 @@ export class ApiService {
     return this.getFieldset(id, url, cache);
   }
 
+  getMarketCo(cache:boolean): Observable<Fieldset> {
+    const id = 'form-market-co';
+    const url = '/api/market-co.json';
+    return this.getFieldset(id,url,cache);
+  }
+
   getReportingFigures(cache: boolean): Observable<Fieldset> {
     const id = 'form-reporting-figures';
     const url = '/api/reporting-figures.json';
