@@ -50,7 +50,9 @@ const barrels: string[] = [
   'app/form-elements/extended/market-company',
   'app/form-elements/extended/market-company/market-co',
   'app/form-elements/extended/market-company/local-policies',
-  'app/form-elements/extended/us-exposed/us-exposed',
+  'app/form-elements/extended/us-exposed',
+  'app/form-elements/extended/operations',
+  'app/form-elements/extended/business',
   'app/forms/showroom',
   'app/forms/showroom2',
   'app/forms/broker-meeting',
@@ -64,7 +66,6 @@ const barrels: string[] = [
   'app/forms/limit-exception',
   'app/forms/lloyds-monitoring',
   'app/forms/monthly-comparison'
-  
   /** @cli-barrel */
 ];
 
