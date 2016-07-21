@@ -9,7 +9,7 @@
             },
             {
                 "value": "no",
-                "label": "NO",
+                "label": "No",
                 "visible": true,
                 "default": false,
                 "initial": false

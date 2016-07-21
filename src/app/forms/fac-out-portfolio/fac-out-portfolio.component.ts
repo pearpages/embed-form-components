@@ -9,6 +9,7 @@ import { LobsComponent } from '../../form-elements/extended/lobs/lobs.component'
 import { CompanytypeComponent } from '../../form-elements/extended/companytype/companytype.component';
 import { RunReportComponent } from '../../form-elements/extended/run-report/run-report.component';
 import { MarketCompanyComponent } from '../../form-elements/extended/market-company/market-company.component';
+import { UsExposedComponent } from '../../form-elements/extended/us-exposed/us-exposed.component';
 
 
 @Component({

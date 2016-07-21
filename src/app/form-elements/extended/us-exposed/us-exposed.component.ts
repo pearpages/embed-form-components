@@ -8,8 +8,17 @@ import { RadiosComponent } from '../../core/radios/radios.component';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-us-exposed',
-  template: `<radios [fieldset]="data"></radios>`,
+  selector: 'us-exposed',
+  template: `
+  <div class="fieldset">
+    <div class="col-left">
+      <h4>US Exposed</h4>
+    </div>
+    <div class="col-right">
+      <radios [fieldset]="data"></radios>
+    </div>
+  </div>
+  `,
   directives: [RadiosComponent]
 })
 export class UsExposedComponent extends Widget {
