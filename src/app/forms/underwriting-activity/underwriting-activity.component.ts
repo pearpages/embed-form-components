@@ -9,6 +9,8 @@ import { CompanytypeComponent } from '../../form-elements/extended/companytype/c
 import { PrimaryexcessComponent } from '../../form-elements/extended/primaryexcess/primaryexcess.component';
 import { UwComponent } from '../../form-elements/extended/uw/uw.component';
 import { RunReportComponent } from '../../form-elements/extended/run-report/run-report.component';
+import { OperationsComponent } from '../../form-elements/extended/operations/operations.component';
+import { BusinessComponent } from '../../form-elements/extended/business/business.component';
 
 @Component({
   moduleId: module.id,
@@ -16,7 +18,7 @@ import { RunReportComponent } from '../../form-elements/extended/run-report/run-
   templateUrl: 'underwriting-activity.component.html',
   styleUrls: ['underwriting-activity.component.css'],
   providers: [FormService],
-  directives: [ReportingfiguresComponent,TypeOfViewComponent,OfficesComponent,UwComponent,LobsComponent,PrimaryexcessComponent,RunReportComponent]
+  directives: [ReportingfiguresComponent,TypeOfViewComponent,OfficesComponent,UwComponent,LobsComponent,PrimaryexcessComponent,RunReportComponent,OperationsComponent,BusinessComponent]
 })
 export class UnderwritingActivityComponent implements OnInit {
 

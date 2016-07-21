@@ -9,13 +9,16 @@ import { CompanytypeComponent } from '../../form-elements/extended/companytype/c
 import { PrimaryexcessComponent } from '../../form-elements/extended/primaryexcess/primaryexcess.component';
 import { RunReportComponent } from '../../form-elements/extended/run-report/run-report.component';
 import { UsExposedComponent } from '../../form-elements/extended/us-exposed/us-exposed.component';
+import { OperationsComponent } from '../../form-elements/extended/operations/operations.component';
+import { BusinessComponent } from '../../form-elements/extended/business/business.component';
 
 @Component({
   moduleId: module.id,
   selector: 'app-portfolio-analysis-report',
   templateUrl: 'portfolio-analysis-report.component.html',
   styleUrls: ['portfolio-analysis-report.component.css'],
-  directives: [ReportingfiguresComponent,TypeOfViewComponent,OfficesComponent,RegionsSetComponent,LobsComponent,CompanytypeComponent,PrimaryexcessComponent,RunReportComponent,UsExposedComponent],
+  directives: [ReportingfiguresComponent,TypeOfViewComponent,OfficesComponent,RegionsSetComponent,LobsComponent,CompanytypeComponent,PrimaryexcessComponent,RunReportComponent,UsExposedComponent,
+  OperationsComponent,BusinessComponent],
   providers: [FormService]
 })
 export class PortfolioAnalysisReportComponent implements OnInit {

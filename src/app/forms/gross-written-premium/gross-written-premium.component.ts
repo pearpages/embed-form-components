@@ -7,6 +7,8 @@ import { RegionsComponent } from '../../form-elements/extended/regions/regions.c
 import { CompanytypeComponent } from '../../form-elements/extended/companytype/companytype.component';
 import { RunReportComponent } from '../../form-elements/extended/run-report/run-report.component';
 import { MarketCompanyComponent } from '../../form-elements/extended/market-company/market-company.component';
+import { OperationsComponent } from '../../form-elements/extended/operations/operations.component';
+import { BusinessComponent } from '../../form-elements/extended/business/business.component';
 
 @Component({
   moduleId: module.id,
@@ -14,7 +16,7 @@ import { MarketCompanyComponent } from '../../form-elements/extended/market-comp
   templateUrl: 'gross-written-premium.component.html',
   styleUrls: ['gross-written-premium.component.css'],
   providers: [FormService],
-  directives: [OfficesComponent,RegionsSetComponent,CountriesComponent,CompanytypeComponent,RunReportComponent,MarketCompanyComponent,RegionsComponent]
+  directives: [OfficesComponent,RegionsSetComponent,CountriesComponent,CompanytypeComponent,RunReportComponent,MarketCompanyComponent,RegionsComponent,OperationsComponent,BusinessComponent]
 })
 export class GrossWrittenPremiumComponent implements OnInit {
 
