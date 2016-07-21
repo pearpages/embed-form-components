@@ -1,10 +1,22 @@
 <div class="form-group">
   <button *ngIf="hasSelectAllButton" class="btn btn-default btn-xs" (click)="toggle()" *ngIf="multiple" >{{getButtonText()}}</button>
-  <select [class]="'form-control ' + classes" [multiple]="multiple" [(ngModel)]="selectedValues" (change)=updateValues()>
-    <option *ngIf="isAnySelected()">Select One</option>
+  
+  <select *ngIf="!hasSets()" [class]="'form-control ' + classes" [multiple]="multiple" [(ngModel)]="selectedValues" (change)=updateValues()>
+    <option *ngIf="isAnySelected() && multiple === false">Select One</option>
     <option *ngFor="let value of getValues()" 
     [value]="value.getValue()" 
     [selected]="isSelected(value.getValue())"
     >{{value.getLabel()}}</option>
   </select>
+
+  <select *ngIf="hasSets()" [class]="'form-control ' + classes" [multiple]="multiple" [(ngModel)]="selectedValues" (change)=updateValues()>
+    <option *ngIf="isAnySelected() && multiple === false">Select One</option>
+    <optgroup style="overflow:hidden;" *ngFor="let label of fieldset.set.getLabels()" label="{{label}}">
+      <option *ngFor="let value of getOptions(label)" 
+      [value]="value.getValue()" 
+      [selected]="isSelected(value.getValue(),label)"
+      >{{value.getLabel()}}</option>
+    </optgroup>
+  </select>
+
 </div>

@@ -40,6 +40,14 @@ export class SelectComponent implements OnInit {
     return this.areAllSelected() ? 'Unselect All' : 'Select All'
   }
 
+  hasSets():boolean {
+    return (this.fieldset.set.getLabels().length > 0);
+  }
+
+  getOptions(label:string): FormValue[] {
+    return this.fieldset.set.getSet(label).getFormValues();
+  }
+
   updateValues() {
     this.fieldset.setToTrueTheCurrentValuesHavingThisValues(this.selectedValues);
   }

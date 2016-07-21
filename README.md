@@ -5,6 +5,8 @@
 - Form service spec missing
 - highlight function for Widget sons, make it abstract
 - core select component needs spec file
+- test changes in select behavior
+- finish options and business widgets
 - check all cases for Countries widget with All and custom
 
 ## Intro

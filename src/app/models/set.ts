@@ -45,6 +45,10 @@ export class Set {
         return this.values.reduce((previous,current) => { return (!current.visible && previous); },true);
     }
 
+    getFormValues(): FormValue[] {
+        return this.values;
+    }
+
     size():number {
         return this.values.length;
     }
