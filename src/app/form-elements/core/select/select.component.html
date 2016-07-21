@@ -14,7 +14,7 @@
     <optgroup style="overflow:hidden;" *ngFor="let label of fieldset.set.getLabels()" label="{{label}}">
       <option *ngFor="let value of getOptions(label)" 
       [value]="value.getValue()" 
-      [selected]="isSelected(value.getValue(),label)"
+      [selected]="isSelected(value.getValue())"
       >{{value.getLabel()}}</option>
     </optgroup>
   </select>
