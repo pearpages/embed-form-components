@@ -1,0 +1,275 @@
+{
+    "values": [
+        {
+            "value": "business1",
+            "label": "Business 1",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business2",
+            "label": "Business 2",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business3",
+            "label": "Business 3",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business4",
+            "label": "Business 4",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business5",
+            "label": "Business 5",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business6",
+            "label": "Business 6",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business7",
+            "label": "Business 7",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business8",
+            "label": "Business 8",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business9",
+            "label": "Business 9",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business10",
+            "label": "Business 10",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business11",
+            "label": "Business 11",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business12",
+            "label": "Business 12",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business13",
+            "label": "Business 13",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business14",
+            "label": "Business 14",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business15",
+            "label": "Business 15",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business16",
+            "label": "Business 16",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business17",
+            "label": "Business 17",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business18",
+            "label": "Business 18",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business19",
+            "label": "Business 19",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business20",
+            "label": "Business 20",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business21",
+            "label": "Business 21",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business22",
+            "label": "Business 22",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business23",
+            "label": "Business 23",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business24",
+            "label": "Business 24",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business25",
+            "label": "Business 25",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business26",
+            "label": "Business 26",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business27",
+            "label": "Business 27",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business28",
+            "label": "Business 28",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business29",
+            "label": "Business 29",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business30",
+            "label": "Business 30",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "business31",
+            "label": "Business 31",
+            "visible": false,
+            "default": false,
+            "initial": false
+        }
+    ],
+    "sets": [
+        {
+            "id": "set1",
+            "values": [
+                "business1",
+                "business2",
+                "business3",
+                "business4",
+                "business5",
+                "business6"
+            ]
+        },
+        {
+            "id": "set2",
+            "values": [
+                "business7",
+                "business8",
+                "business9",
+                "business10",
+                "business11",
+                "business12"
+            ]
+        },
+        {
+            "id": "set3",
+            "values": [
+                "business13",
+                "business14",
+                "business15",
+                "business16",
+                "business17",
+                "business18"
+            ]
+        },
+        {
+            "id": "set4",
+            "values": [
+                "business19",
+                "business20",
+                "business21",
+                "business22",
+                "business23",
+                "business24",
+                "business25",
+                "business26",
+                "business27",
+                "business28",
+                "business29",
+                "business30",
+                "business31"
+            ]
+        }
+    ],
+    "multi": true
+}

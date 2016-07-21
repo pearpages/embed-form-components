@@ -15,6 +15,7 @@ export class SelectComponent implements OnInit {
   @Input() title: string;
   @Input() fieldset: Fieldset;
   @Input() classes: string;
+  @Input() hasSelectAllButton: boolean = true;
   selectedValues: string[];
 
   constructor(private formService: FormService) { }

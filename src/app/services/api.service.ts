@@ -22,6 +22,18 @@ export class ApiService {
     return this.getFieldset(id, url, cache);
   }
 
+  getBusiness(cache:boolean): Observable<Fieldset> {
+    const id = 'form-business';
+    const url = '/api/business.json';
+    return this.getFieldset(id,url,cache);
+  }
+
+  getOperations(cache:boolean): Observable<Fieldset> {
+    const id = 'form-operations';
+    const url = '/api/operations.json';
+    return this.getFieldset(id,url,cache);
+  }
+
   getUSexposed(cache: boolean): Observable<Fieldset> {
     const id = 'form-us-exposed';
     const url = '/api/us-exposed.json';

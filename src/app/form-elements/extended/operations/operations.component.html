@@ -2,5 +2,10 @@
   <div class="col-left">
     <h4>Operations Type:</h4>
   </div>
-  <div class="col-right"></div>
+  <div class="col-right">
+    <div>
+      <button [ngClass]="getClasses(set)" *ngFor="let set of getSets()" (click)="updateSelectedSet(set)">{{set}}</button>
+    </div>
+    <my-select [hasSelectAllButton]="false" [class.highlighted]="highlighted" [fieldset]="data" multiple="true" [classes]="'wide'"></my-select>
+  </div>
 </div>

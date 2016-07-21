@@ -21,6 +21,22 @@ export class CollectionSet {
         return this.set[id];
     }
 
+    getAll(): Set[] {
+        let res = [];
+        for(let set in this.set){
+            res.push(this.set[set]);
+        }
+        return res;
+    }
+
+    getLabels(): String[] {
+        let res = [];
+        for(let set in this.set){
+            res.push(set);
+        }
+        return res;
+    }
+
     hideAll() {
         for (let set in this.set) {
             this.set[set].hide();

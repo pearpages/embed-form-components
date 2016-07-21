@@ -1,0 +1,275 @@
+{
+    "values": [
+        {
+            "value": "operation1",
+            "label": "Operation 1",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation2",
+            "label": "Operation 2",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation3",
+            "label": "Operation 3",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation4",
+            "label": "Operation 4",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation5",
+            "label": "Operation 5",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation6",
+            "label": "Operation 6",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation7",
+            "label": "Operation 7",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation8",
+            "label": "Operation 8",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation9",
+            "label": "Operation 9",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation10",
+            "label": "Operation 10",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation11",
+            "label": "Operation 11",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation12",
+            "label": "Operation 12",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation13",
+            "label": "Operation 13",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation14",
+            "label": "Operation 14",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation15",
+            "label": "Operation 15",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation16",
+            "label": "Operation 16",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation17",
+            "label": "Operation 17",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation18",
+            "label": "Operation 18",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation19",
+            "label": "Operation 19",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation20",
+            "label": "Operation 20",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation21",
+            "label": "Operation 21",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation22",
+            "label": "Operation 22",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation23",
+            "label": "Operation 23",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation24",
+            "label": "Operation 24",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation25",
+            "label": "Operation 25",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation26",
+            "label": "Operation 26",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation27",
+            "label": "Operation 27",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation28",
+            "label": "Operation 28",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation29",
+            "label": "Operation 29",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation30",
+            "label": "Operation 30",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "operation31",
+            "label": "Operation 31",
+            "visible": false,
+            "default": false,
+            "initial": false
+        }
+    ],
+    "sets": [
+        {
+            "id": "set1",
+            "values": [
+                "operation1",
+                "operation2",
+                "operation3",
+                "operation4",
+                "operation5",
+                "operation6"
+            ]
+        },
+        {
+            "id": "set2",
+            "values": [
+                "operation7",
+                "operation8",
+                "operation9",
+                "operation10",
+                "operation11",
+                "operation12"
+            ]
+        },
+        {
+            "id": "set3",
+            "values": [
+                "operation13",
+                "operation14",
+                "operation15",
+                "operation16",
+                "operation17",
+                "operation18"
+            ]
+        },
+        {
+            "id": "set4",
+            "values": [
+                "operation19",
+                "operation20",
+                "operation21",
+                "operation22",
+                "operation23",
+                "operation24",
+                "operation25",
+                "operation26",
+                "operation27",
+                "operation28",
+                "operation29",
+                "operation30",
+                "operation31"
+            ]
+        }
+    ],
+    "multi": true
+}

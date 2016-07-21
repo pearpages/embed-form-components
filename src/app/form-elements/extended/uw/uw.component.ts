@@ -15,7 +15,7 @@ import { Fieldset} from '../../../models/fieldset';
       <h4>{{title}}:</h4>
     </div>
     <div class="col-right">
-      <my-select [class.highlighted]="highlighted" [fieldset]="data" [classes]="'uws'" [multiple]="true"></my-select>
+      <my-select [class.highlighted]="highlighted" [fieldset]="data" [classes]="'wide'" [multiple]="true"></my-select>
     </div>
   </div>
   `,
