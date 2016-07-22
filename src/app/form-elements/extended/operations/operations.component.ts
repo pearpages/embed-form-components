@@ -15,23 +15,29 @@ import { Fieldset } from '../../../models/fieldset';
 })
 export class OperationsComponent extends Widget {
 
-  selectedSet: string;
+  selectedSet: Array<string> = [];
 
   constructor(protected apiService: ApiService, protected form: FormService) {
     super(apiService,form,'operations','Operations','getOperations');
   }
 
   getSets(): String[] {
-    return [].concat(['All'],this.data.set.getLabels());
+    return [].concat(['All','NON-SME'],this.data.set.getLabels());
+  }
+
+  isVisible(): boolean {
+    if(this.selectedSet.indexOf('ALL') !== -1 || this.selectedSet.indexOf('NON-SME') !== -1) {
+      return false;
+    }
   }
 
   updateSelectedSet(set:string) {
-    this.selectedSet = set;
+    this.selectedSet.push(set);
   }
 
   getClasses(set:string): string[] {
     let classes = ['btn','btn-default','btn-sm'];
-    if(set === this.selectedSet){
+    if(this.selectedSet.indexOf(set) !== -1){
       classes.push('active');
     }
     return classes;
