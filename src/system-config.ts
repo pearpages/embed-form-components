@@ -7,10 +7,18 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'primeng' : 'vendor/primeng',
+  'primeui' : 'vendor/primeui'
 };
 
 /** User packages configuration. */
 const packages: any = {
+    'primeng': {
+      'primeng' : 'cjs'
+    },
+    'primeui': {
+      'primeui' : 'cjs'
+    }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -24,6 +32,7 @@ const barrels: string[] = [
   '@angular/compiler',
   '@angular/http',
   '@angular/router',
+  '@angular/forms',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
 

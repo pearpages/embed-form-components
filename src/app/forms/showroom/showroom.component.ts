@@ -6,13 +6,14 @@ import { FormService } from '../../services/form.service';
 import { Fieldsetmapper } from '../../models/fieldsetmapper';
 import { Fieldset } from '../../models/fieldset';
 import { Ifieldset } from '../../interfaces/ifieldset';
+import {TabView,TabPanel} from 'primeng/primeng';
 
 @Component({
   moduleId: module.id,
   selector: 'app-showroom',
   templateUrl: 'showroom.component.html',
   styleUrls: ['showroom.component.css'],
-  directives: [CheckboxesComponent, RadiosComponent, SelectComponent],
+  directives: [CheckboxesComponent, RadiosComponent, SelectComponent,TabView,TabPanel],
   providers: [FormService]
 })
 export class ShowroomComponent implements OnInit {

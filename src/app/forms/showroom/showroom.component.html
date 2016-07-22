@@ -1,18 +1,102 @@
 <div class="row">
   <div class="col-md-12">
-    
-    <h2>Basic Elements Examples and Gallery</h2>
 
-    <ul>
-      <li>Radios</li>
-      <li>Checkboxes</li>
-      <li>Select
-        <ul>
-          <li>Multiple</li>
-          <li>Simple</li>
-        </ul>
-      </li>
-    </ul>
+    <h2>Basic/Core Elements</h2>
+
+    <p>In the following tabas there are the basic examples of components.</p>
+
+    <hr>
+
+    <p-tabView>
+      <p-tabPanel header="Radios">
+        <h3>Radios</h3>
+
+        <h4>HTML</h4>
+        <div class="well">
+          &lt;radios [title]="'Radios'" [fieldset]="f1"&gt;&lt;/radios&gt;
+        </div>
+
+        <h4>Rendered</h4>
+        <div class="well">
+          <radios [title]="'Radios'" [fieldset]="f1"></radios>
+        </div>
+
+        <h4>Events / Output </h4>
+
+        <div class="well">
+          {{getOutput('f1')}}
+        </div>
+        <button (click)="reset('f1')">reset radios</button>
+      </p-tabPanel>
+      <p-tabPanel header="Checkboxes">
+        <h3>Checkboxes</h3>
+
+        <h4>HTML</h4>
+        <div class="well">
+          &lt;checkboxes [title]="'Checkboxes'" [fieldset]="f2" &gt;&lt;/checkboxes&gt;
+        </div>
+
+        <h4>Rendered</h4>
+        <div class="well">
+          <checkboxes [title]="'Checkboxes'" [fieldset]="f2"></checkboxes>
+        </div>
+
+        <h4>Events / Output</h4>
+
+        <div class="well">
+          {{getOutput('f2')}}
+        </div>
+
+        <button (click)="toggleVisibility('f2','one')">toggle visibility set one</button>
+        <button (click)="toggleVisibility('f2','two')">toggle visibility set two</button>
+        <button (click)="toggleVisibility('f2','three')">toggle visibility set three</button>
+        <br/>
+        <button (click)="reset('f2')">reset checkboxes</button>
+
+      </p-tabPanel>
+      <p-tabPanel header="Select (multiple)">
+        <h3>Select multiple</h3>
+
+        <h4>HTML</h4>
+        <div class="well">
+          &lt;my-select [title]="'MultiSelect'" [fieldset]="f3" [multiple]="true"&gt;&lt;/my-select&gt;
+        </div>
+
+        <h4>Rendred</h4>
+        <div class="well">
+          <my-select [title]="'MultiSelect'" [fieldset]="f3" [multiple]="true"></my-select>
+        </div>
+
+        <h4>Events / Output</h4>
+
+        <div class="well">
+          {{getOutput('f3')}}
+        </div>
+        <button (click)="reset('f3')">reset multiselect</button>
+      </p-tabPanel>
+      <p-tabPanel header="Select (simple)">
+        <h3>Select simple</h3>
+
+        <h4>HTML</h4>
+        <div class="well">
+          &lt;my-select [title]="'Select'" [fieldset]="f4" [multiple]="false"&gt;&lt;/my-select&gt;
+        </div>
+
+        <h4>Rendered</h4>
+
+        <div class="well">
+          <my-select [title]="'Select'" [fieldset]="f4" [multiple]="false"></my-select>
+        </div>
+
+        <h4>Events / Output</h4>
+
+        <div class="well">
+          {{getOutput('f4')}}
+        </div>
+
+        <button (click)="reset('f4')">reset select</button>
+      </p-tabPanel>
+    </p-tabView>
 
     <hr>
 
@@ -20,97 +104,6 @@
     <div class="well">
       {{getJSON()}}
     </div>
-
-    <hr>
-
-    <h3>Radios</h3>
-
-    <h4>HTML</h4>
-    <div class="well">
-        &lt;radios [title]="'Radios'" [fieldset]="f1"&gt;&lt;/radios&gt;  
-    </div>
-
-    <h4>Rendered</h4>
-    <div class="well">
-      <radios [title]="'Radios'" [fieldset]="f1"></radios>
-    </div>
-
-    <h4>Events / Output </h4>
-
-    <div class="well">
-      {{getOutput('f1')}}
-    </div>
-    <button (click)="reset('f1')">reset radios</button>
-
-    <hr>
-
-    <h3>Checkboxes</h3>
-
-    <h4>HTML</h4>
-    <div class="well">
-        &lt;checkboxes [title]="'Checkboxes'" [fieldset]="f2" &gt;&lt;/checkboxes&gt;  
-    </div>
-
-    <h4>Rendered</h4>
-    <div class="well">
-      <checkboxes [title]="'Checkboxes'" [fieldset]="f2" ></checkboxes>
-    </div>
-
-    <h4>Events / Output</h4>
-
-    <div class="well">
-      {{getOutput('f2')}}
-    </div>
-
-    <button (click)="toggleVisibility('f2','one')">toggle visibility set one</button>
-    <button (click)="toggleVisibility('f2','two')">toggle visibility set two</button>
-    <button (click)="toggleVisibility('f2','three')">toggle visibility set three</button>
-    <br/>
-    <button (click)="reset('f2')">reset checkboxes</button>
-
-    <hr>
-
-    <h3>Select multiple</h3>
-
-    <h4>HTML</h4>
-    <div class="well">
-      &lt;my-select [title]="'MultiSelect'" [fieldset]="f3" [multiple]="true"&gt;&lt;/my-select&gt;
-    </div>
-
-    <h4>Rendred</h4>
-    <div class="well">
-      <my-select [title]="'MultiSelect'" [fieldset]="f3" [multiple]="true"></my-select>
-    </div>
-
-    <h4>Events / Output</h4>
-
-    <div class="well">
-      {{getOutput('f3')}}
-    </div>
-    <button (click)="reset('f3')">reset multiselect</button>
-
-    <hr>
-
-    <h3>Select simple</h3>
-
-    <h4>HTML</h4>
-    <div class="well">
-      &lt;my-select [title]="'Select'" [fieldset]="f4" [multiple]="false"&gt;&lt;/my-select&gt;
-    </div>
-
-    <h4>Rendered</h4>
-
-    <div class="well">
-      <my-select [title]="'Select'" [fieldset]="f4" [multiple]="false"></my-select>
-    </div>
-
-    <h4>Events / Output</h4>
-
-    <div class="well">
-      {{getOutput('f4')}}
-    </div>
-
-    <button (click)="reset('f4')">reset select</button>
 
   </div>
 </div>

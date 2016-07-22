@@ -15,6 +15,8 @@ module.exports = function(defaults) {
       'es6-shim/es6-shim.js',
       'reflect-metadata/**/*.+(ts|js|js.map)',
       'rxjs/**/*.+(js|js.map)',
+      'primeng/**/*.+(js|js.map)',
+      'primeui/**/*.+(js|js.map|css|woff|ttf|woff2)',
       '@angular/**/*.+(js|js.map)',
       'bootstrap/dist/css/bootstrap.css'
     ]
