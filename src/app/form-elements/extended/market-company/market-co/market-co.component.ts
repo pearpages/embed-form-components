@@ -9,7 +9,7 @@ import { SelectComponent } from '../../../core/select/select.component';
 @Component({
   moduleId: module.id,
   selector: 'market-co',
-  template: `<my-select [fieldset]="data" [multiple]="false"></my-select>`,
+  template: `<my-select [hasSelectAllButton]="false" [fieldset]="data" [multiple]="false"></my-select>`,
   directives: [SelectComponent]
 })
 export class MarketCoComponent extends Widget {
