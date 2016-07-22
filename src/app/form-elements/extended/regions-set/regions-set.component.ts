@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { Widget } from '../../../abstract/widget';
 import { RadiosComponent } from '../../core/radios/radios.component';
+import { RegionsComponent } from '../../extended/regions/regions.component';
+import { CountriesComponent } from '../../extended/countries/countries.component';
 import { ApiService } from '../../../services/api.service';
 import { FormService } from '../../../services/form.service';
 import { Ivalidate,valid } from '../../../interfaces/ivalidate';
 import { Fieldset} from '../../../models/fieldset';
 
-
 @Component({
   moduleId: module.id,
   selector: 'regions-set',
+  directives: [RadiosComponent,RegionsComponent,CountriesComponent],
   template: `
   <div class="fieldset">
     <div class="col-left">
@@ -19,8 +21,9 @@ import { Fieldset} from '../../../models/fieldset';
       <radios [class.highlighted]="highlighted" [fieldset]="data" (radiosChange)="onGroupsChange($event)"></radios>
     </div>
   </div>
-  `,
-  directives: [RadiosComponent]
+  <regions></regions>
+  <countries></countries>
+  `
 })
 export class RegionsSetComponent extends Widget {
 

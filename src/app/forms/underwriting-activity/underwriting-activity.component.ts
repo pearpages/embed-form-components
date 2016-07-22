@@ -18,7 +18,7 @@ import { BusinessComponent } from '../../form-elements/extended/business/busines
   templateUrl: 'underwriting-activity.component.html',
   styleUrls: ['underwriting-activity.component.css'],
   providers: [FormService],
-  directives: [ReportingfiguresComponent,TypeOfViewComponent,OfficesComponent,UwComponent,LobsComponent,PrimaryexcessComponent,RunReportComponent,OperationsComponent,BusinessComponent]
+  directives: [ReportingfiguresComponent,TypeOfViewComponent,RegionsSetComponent,OfficesComponent,UwComponent,LobsComponent,PrimaryexcessComponent,RunReportComponent,OperationsComponent,BusinessComponent]
 })
 export class UnderwritingActivityComponent implements OnInit {
 
