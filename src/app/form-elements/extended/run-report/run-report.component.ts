@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormService } from '../../../services/form.service';
 
 @Component({
   moduleId: module.id,
@@ -11,16 +12,22 @@ import { Component, OnInit } from '@angular/core';
   <div class="col-right">
     <label><input type="checkbox"> Show only total</label><br/>
     <label><input type="checkbox"> Remember these parameters for my next visit</label><br/>
-    <button class="btn btn-default">Run Report</button>
+    <button (click)="getJSON()" class="btn btn-default">Run Report</button>
   </div>
 </div>
+<p>{{json}}</p>
   `
 })
 export class RunReportComponent implements OnInit {
 
-  constructor() {}
+  json:string;
 
-  ngOnInit() {
-  }
+  constructor(private form: FormService) {}
+
+  ngOnInit() {}
+
+  getJSON() {
+    this.json =  this.form.getJSON();
+  }  
 
 }
