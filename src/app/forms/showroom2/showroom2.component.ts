@@ -12,6 +12,7 @@ import { RegionsComponent } from '../../form-elements/extended/regions/regions.c
 import { RegionsSetComponent } from '../../form-elements/extended/regions-set/regions-set.component';
 import { FormErrorComponent } from '../../form-elements/form-error/form-error.component';
 import { TypeOfViewComponent } from '../../form-elements/extended/type-of-view/type-of-view.component';
+import {TabView,TabPanel} from 'primeng/primeng';
 
 @Component({
   moduleId: module.id,
@@ -19,7 +20,7 @@ import { TypeOfViewComponent } from '../../form-elements/extended/type-of-view/t
   templateUrl: 'showroom2.component.html',
   styleUrls: ['showroom2.component.css'],
   directives: [ReportingfiguresComponent,CompanytypeComponent,LobsComponent,PrimaryexcessComponent,OfficesComponent,UwComponent,
-  RegionsComponent,RegionsSetComponent,CountriesComponent,FormErrorComponent,TypeOfViewComponent],
+  RegionsComponent,RegionsSetComponent,CountriesComponent,FormErrorComponent,TypeOfViewComponent,TabView,TabPanel],
   providers: [FormService]
 })
 export class Showroom2Component implements OnInit {
