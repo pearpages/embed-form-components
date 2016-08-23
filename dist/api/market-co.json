@@ -1,0 +1,40 @@
+{
+        "values": [
+            {
+                "value": "marketco1",
+                "label": "MarketCo1",
+                "visible": true,
+                "default": false,
+                "initial": false
+            },
+            {
+                "value": "marketco2",
+                "label": "MarketCo2",
+                "visible": true,
+                "default": false,
+                "initial": false
+            },
+            {
+                "value": "marketco3",
+                "label": "MarketCo3",
+                "visible": true,
+                "default": false,
+                "initial": false
+            },
+            {
+                "value": "marketco4",
+                "label": "MarketCo4",
+                "visible": true,
+                "default": false,
+                "initial": false
+            },
+            {
+                "value": "marketco5",
+                "label": "MarketCo5",
+                "visible": true,
+                "default": false,
+                "initial": false
+            }
+        ],
+        "multi": false
+    }

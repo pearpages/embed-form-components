@@ -1,0 +1,10 @@
+<div class="form-group">
+  <button class="btn btn-default btn-xs" (click)="toggle()" [innerText]="getButtonText()"></button><br/>
+  <div style="display:inline" *ngFor="let value of getValues()">
+    <label *ngIf="value.visible">
+      <input type="checkbox" 
+      (click)="updateValue(value)"
+      [checked]="value.current"
+      [disabled]="!value.visible"> {{value.getLabel()}}</label>
+  </div>
+</div>

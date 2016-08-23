@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label *ngFor="let value of getValues()">
+    <input type="radio" 
+    name="radio" 
+    (click)="updateValue(value)" 
+    [checked]="isChecked(value)"> {{value.getLabel()}}
+</label>
+</div>

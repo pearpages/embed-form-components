@@ -1,0 +1,94 @@
+{
+    "values": [
+        {
+            "value": "region1",
+            "label": "Region 1",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region2",
+            "label": "Region 2",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region3",
+            "label": "Region 3",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region4",
+            "label": "Region 4",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region5",
+            "label": "Region 5",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region6",
+            "label": "Region 6",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region7",
+            "label": "Region 7",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region8",
+            "label": "Region 8",
+            "visible": false,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "region9",
+            "label": "Region 9",
+            "visible": false,
+            "default": false,
+            "initial": false
+        }
+    ],
+    "sets": [
+        {
+            "id": "barcelona",
+            "values": [
+                "region1",
+                "region2",
+                "region3"
+            ]
+        },
+        {
+            "id": "london",
+            "values": [
+                "region4",
+                "region5",
+                "region6"
+            ]
+        },
+        {
+            "id": "management",
+            "values": [
+                "region7",
+                "region8",
+                "region9"
+            ]
+        }
+    ],
+    "multi": true
+}

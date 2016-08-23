@@ -1,0 +1,127 @@
+<p-tabView>
+    <p-tabPanel header="Dates">
+        <h3>Dates</h3>
+        <p>Date widget missing</p>
+        <hr>
+    </p-tabPanel>
+
+    <p-tabPanel header="Reporting Figures">
+        <h3>Reporting Figures</h3>
+
+        <h4>HTML</h4>
+        <div class="well">
+            &lt;reporting-figures&gt;&lt;/reporting-figures&gt;
+        </div>
+
+        <h4>Example</h4>
+        <reporting-figures></reporting-figures>
+
+        <hr>
+    </p-tabPanel>
+
+    <p-tabPanel header="Type of View">
+        <h3>Type of View</h3>
+
+        <h4>HTML</h4>
+        <div class="well">
+            &lt;type-of-view&gt;&lt;/type-of-view&gt;
+        </div>
+
+        <h4>Example</h4>
+        <type-of-view></type-of-view>
+
+        <hr>
+    </p-tabPanel>
+
+    <p-tabPanel header="Offices">
+        <h3>Offices</h3>
+        <offices></offices>
+        <hr>
+    </p-tabPanel>
+
+    <p-tabPanel header="Regions Set">
+        <h3>Regions Set</h3>
+        <regions-set></regions-set>
+        <hr>
+    </p-tabPanel>
+
+    <p-tabPanel header="Regions">
+        <h3>Regions</h3>
+        <regions></regions>
+        <hr>
+
+    </p-tabPanel>
+    <p-tabPanel header="Countries">
+        <h3>Countries</h3>
+        <countries></countries>
+        <hr>
+
+    </p-tabPanel>
+    <p-tabPanel header="UW">
+
+
+        <h3>UW</h3>
+        <uw></uw>
+        <hr>
+
+    </p-tabPanel>
+
+    <p-tabPanel header="lobs">
+        <h3>lobs</h3>
+        <lobs></lobs>
+        <hr>
+    </p-tabPanel>
+
+    <p-tabPanel header="Primary Excess">
+        <h3>Primary-Excess</h3>
+        <primary-excess></primary-excess>
+        <hr>
+    </p-tabPanel>
+
+    <p-tabPanel header="Company Type">
+        <h3>CompanyType</h3>
+        <company-type></company-type>
+        <hr>
+    </p-tabPanel>
+
+    <p-tabPanel header="Opeations Type">
+        <h3>Operations Type</h3>
+        <p>Operations Type missing</p>
+        <hr>
+    </p-tabPanel>
+
+    <p-tabPanel header="Business Type">
+
+        <h4>Business Type</h4>
+        <p>Business Type missing</p>
+        <hr>
+    </p-tabPanel>
+
+    <p-tabPanel header="Run Report Button">
+
+        <h4>Run Report Button</h4>
+        <run-report></run-report>
+
+        <hr>
+
+    </p-tabPanel>
+
+    <p-tabPanel header="Events">
+        <h4>Events</h4>
+
+        <h3>Get JSON</h3>
+        <button (click)="getJson()">Update JSON</button>
+        <p>{{json}}</p>
+
+        <h3>Refresll Data from the Server</h3>
+        <button (click)="forceRefresh()">Refresh All</button>
+    </p-tabPanel>
+    <p-tabPanel header="Form Errors Container">
+        <h3>Validation Widget</h3>
+        <button (click)="validate()">Validate</button>
+        <form-error [errorMessages]="errorMessages" (hovering)="getHover($event)"></form-error>
+    </p-tabPanel>
+
+    <p-tabPanel header="Empty"></p-tabPanel>
+    
+</p-tabView>

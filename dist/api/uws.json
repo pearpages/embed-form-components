@@ -1,0 +1,221 @@
+{
+    "values": [
+        {
+            "value": "ppages",
+            "label": "Pere Pages",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "mcameron",
+            "label": "Mason Cameron",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "fturpen",
+            "label": "Felicitas Turpen",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "krandol",
+            "label": "Kyra Randol",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "kbroach",
+            "label": "Karrie Broach",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "gchairez",
+            "label": "Gwyn Chairez",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "cbrodeur",
+            "label": "Carola Brodeur",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "mcamille",
+            "label": "Mora Camille",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "njanas",
+            "label": "Nida Janas",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "egingras",
+            "label": "Ernesto Gingras",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "chaugh",
+            "label": "Camila Haugh",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "criney",
+            "label": "Charita Riney",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "slapinski",
+            "label": "Shasta Lapinski",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "sstrait",
+            "label": "Sha Strait",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "rlintner",
+            "label": "Rea Lintner",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "vshatzer",
+            "label": "Van Shatzer",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "mleib",
+            "label": "Markus Leib",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "dvalazquez",
+            "label": "Danielle Valazquez",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "cbigelow",
+            "label": "Carolin Bigelow",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },{
+            "value": "scap",
+            "label": "Shanika Cap",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "lmarotta",
+            "label": "Louella Marotta",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "motero",
+            "label": "Marianne Otero",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "tcantrelle",
+            "label": "Tisa Cantrelle",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "klanphere",
+            "label": "Kaycee Lanphere",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "ysanderson",
+            "label": "Yuette Sanderson",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "lceasar",
+            "label": "Lanie Ceasar",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "ytillison",
+            "label": "Yuonne Tillison",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "mbaros",
+            "label": "Marceline Baros",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "ldrey",
+            "label": "Lucille Drey",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "dolomo",
+            "label": "Domenic Olmo",
+            "visible": true,
+            "default": false,
+            "initial": false
+        },
+        {
+            "value": "nloeffler",
+            "label": "Natalia Loeffler",
+            "visible": true,
+            "default": false,
+            "initial": false
+        }
+    ],
+    "multi": true
+}

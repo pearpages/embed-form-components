@@ -1,0 +1,26 @@
+{
+        "values": [
+            {
+                "value": "barcelona",
+                "label": "Barcelona Regions Group",
+                "visible": true,
+                "default": false,
+                "initial": false
+            },
+            {
+                "value": "london",
+                "label": "London Regions Group",
+                "visible": true,
+                "default": false,
+                "initial": false
+            },
+            {
+                "value": "management",
+                "label": "Management Regions Group",
+                "visible": true,
+                "default": false,
+                "initial": false
+            }
+        ],
+        "multi": false
+    }

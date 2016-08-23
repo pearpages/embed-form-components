@@ -1,0 +1,26 @@
+{
+        "values": [
+            {
+                "value": "one",
+                "label": "One",
+                "visible": true,
+                "default": false,
+                "initial": false
+            },
+            {
+                "value": "two",
+                "label": "Two",
+                "visible": true,
+                "default": false,
+                "initial": false
+            },
+            {
+                "value": "three",
+                "label": "Three",
+                "visible": true,
+                "default": false,
+                "initial": false
+            }
+        ],
+        "multi": false
+    }
